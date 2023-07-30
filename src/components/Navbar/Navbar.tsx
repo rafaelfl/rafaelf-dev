@@ -1,19 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { Box, Flex, HStack, IconButton, useDisclosure, Stack, Fade } from "@chakra-ui/react";
+import { Box, Flex, IconButton, useDisclosure, Stack } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
-import logoRafaelf from "../../../public/logo-rafaelf.svg";
+import { NavLink } from "./NavLink/NavLink";
+
+import logo from "../../../public/assets/images/logo.svg";
 
 import "./Navbar.scss";
-import useScrollSpySection from "@/hooks/useScrollSpySection";
-
-interface NavLinkProps {
-  href?: string;
-  activeSection?: boolean;
-  children: React.ReactNode;
-}
 
 const Links = [
   { title: "Home", href: "#home" },
@@ -21,29 +16,6 @@ const Links = [
   { title: "Projects", href: "#projects" },
   { title: "Contact", href: "#contact" },
 ];
-
-const NavLink = ({ href, children, activeSection = false }: NavLinkProps) => {
-  return (
-    <Box
-      as="a"
-      px={2}
-      py={1}
-      rounded={"md"}
-      _hover={{
-        textDecoration: "none",
-        color: "white",
-      }}
-      href={href}
-      fontSize={{
-        base: "md",
-        md: "lg",
-      }}
-      {...(activeSection ? { fontWeight: "bold", color: "darkyellow" } : { color: "gray" })}
-    >
-      {children}
-    </Box>
-  );
-};
 
 interface NavbarProps {
   activeSection?: string;
@@ -53,34 +25,30 @@ export default function Navbar({ activeSection }: NavbarProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box as="header" bg={"darkblue"} px={4} width="full" position="sticky" top={0}>
-      <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
-        <HStack spacing={8} alignItems={"center"} flex={1} justify={"space-between"}>
-          <Image
-            src={logoRafaelf}
-            alt="Rafael Fernandes logo"
-            className="max-h-12"
-            width={176}
-            priority
-          />
-          <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
+    <header className="bg-darkblue px-20 w-full sticky top-0 z-10">
+      <div className="flex h-20 justify-between items-center">
+        <div className="flex flex-1 space-x-3.5 justify-between items-center">
+          <Image src={logo} alt="Rafael Fernandes logo" className="max-h-12" width={192} priority />
+
+          <nav className="hidden lg:flex space-x-20">
             {Links.map((link) => (
               <NavLink
                 key={link.href}
                 href={link.href}
-                activeSection={activeSection === link.href.substring(1)}
+                intent={activeSection === link.href.substring(1) ? "active" : "default"}
               >
                 {link.title}
               </NavLink>
             ))}
-          </HStack>
-        </HStack>
+          </nav>
+        </div>
+
         <Flex alignItems={"center"}>
           <IconButton
-            size={"md"}
+            size={"lg"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={"Open Menu"}
-            display={{ md: "none" }}
+            display={{ lg: "none" }}
             onClick={isOpen ? onClose : onOpen}
             color="white"
           />
@@ -101,16 +69,16 @@ export default function Navbar({ activeSection }: NavbarProps) {
             </MenuList>
           </Menu> */}
         </Flex>
-      </Flex>
+      </div>
 
       {isOpen ? (
-        <Box pb={4} display={{ md: "none" }}>
+        <Box pb={4} display={{ lg: "none" }}>
           <Stack as={"nav"} spacing={4}>
             {Links.map((link) => (
               <NavLink
                 key={link.href}
                 href={link.href}
-                activeSection={activeSection === link.href.substring(1)}
+                intent={activeSection === link.href.substring(1) ? "active" : "default"}
               >
                 {link.title}
               </NavLink>
@@ -118,6 +86,6 @@ export default function Navbar({ activeSection }: NavbarProps) {
           </Stack>
         </Box>
       ) : null}
-    </Box>
+    </header>
   );
 }

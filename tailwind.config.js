@@ -6,13 +6,17 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      display: 'var(--font-fredoka)',
+    },
     colors: {
       current: 'currentColor',
-      'darkblue': '#2C3144',
-      'cyan': '#3BDCE3',
-      'darkyellow': '#F5B600',
-      'yellow': '#FFD03F',
-      'gray': '#D7D7D8',
+      darkblue: '#2C3144',
+      cyan: '#3BDCE3',
+      darkyellow: '#F5B600',
+      yellow: '#FFD03F',
+      gray: '#D7D7D8',
+      white: '#FFFFFF',
     },
   },
   plugins: [],

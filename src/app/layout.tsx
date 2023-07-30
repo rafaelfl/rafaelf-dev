@@ -8,6 +8,7 @@ import "./globals.scss";
 const fredoka = Fredoka({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
+  variable: "--font-fredoka",
 });
 
 export const metadata: Metadata = {

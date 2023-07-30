@@ -6,6 +6,9 @@ import tailwindConfig from "../tailwind.config";
 const tailwind = resolveConfig(tailwindConfig);
 
 const theme = {
+  fonts: {
+    heading: tailwind.theme?.fontFamily?.display,
+  },
   colors: {
     current: tailwind.theme?.colors?.current,
     darkblue: tailwind.theme?.colors?.darkblue,
