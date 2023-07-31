@@ -24,7 +24,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <header className="bg-darkblue px-20 w-full sticky top-0 z-10">
+    <header className="bg-darkblue px-8 md:px-20 w-full sticky top-0 z-10">
       <div className="flex justify-between items-center h-20">
         <div className="flex flex-1 justify-between items-center space-x-3.5">
           <Image src={logo} alt="Rafael Fernandes logo" className="max-h-12" width={192} priority />
