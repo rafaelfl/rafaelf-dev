@@ -5,7 +5,7 @@ const link = tv({
   variants: {
     intent: {
       default: "text-gray hover:text-white font-medium",
-      active: "text-darkyellow hover:text-yellow font-bold",
+      active: "text-darkyellow hover:text-yellow font-semibold",
     },
   },
   defaultVariants: {

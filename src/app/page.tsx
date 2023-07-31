@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 
 import useScrollSpySection from "@/hooks/useScrollSpySection";
 import Navbar from "@/components/Navbar/Navbar";
@@ -14,111 +13,98 @@ export default function Home() {
   const activeSection = useScrollSpySection();
 
   return (
-    <Box as="main" className="flex min-h-screen flex-col items-center justify-start">
+    <main className="flex min-h-screen flex-col items-center justify-start">
       <Navbar activeSection={activeSection} />
-      <Box width="full">
-        <Box as="section" id="home" bg="darkblue" color="white" p={20} minH={"100vh"}>
-          <Grid
-            templateColumns={{
-              base: "1fr",
-              md: "repeat(2, 1fr)",
-            }}
-            gap={6}
-          >
-            <GridItem w="100%">
-              <Flex
-                flex={1}
-                direction={"column"}
-                justifyContent={"center"}
-                alignItems={"start"}
-                h={"100%"}
-              >
-                <h1 className="text-9xl leading-none">
-                  Hi! I am{" "}
-                  <Text as={"span"} color={"darkyellow"} fontWeight={"semibold"}>
-                    Rafael! <span className={styles.wave}>👋</span>
-                  </Text>
-                </h1>
-              </Flex>
-            </GridItem>
 
-            <GridItem w="100%">
-              <Image src={photo} alt="Rafael Fernandes logo" height={553} priority />
-            </GridItem>
-          </Grid>
-        </Box>
+      <section id="home" className="bg-darkblue text-white p-20 min-h-screen w-full">
+        <div className="container max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-1 flex-col justify-center items-start h-full">
+            <h1 className="text-9xl leading-none">
+              Hi! I am{" "}
+              <span className="text-darkyellow font-semibold">
+                Rafael! <span className={styles.wave}>👋</span>
+              </span>
+            </h1>
+          </div>
 
-        <Box as="section" id="about" bg="white" p={20} minH={"100vh"}>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-        </Box>
-        <Box as="section" id="projects" bg="yellow" p={20} minH={"100vh"}>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-        </Box>
-        <Box as="section" id="contact" bg="white" p={20} minH={"100vh"}>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-          <p>Main Content Here</p>
-        </Box>
-      </Box>
-    </Box>
+          <div className="w-full">
+            <Image src={photo} alt="Rafael Fernandes logo" height={553} priority />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="bg-white p-20 min-h-screen w-full">
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+      </section>
+
+      <section id="projects" className="bg-white p-20 min-h-screen w-full">
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+      </section>
+
+      <section id="contact" className="bg-white p-20 min-h-screen w-full">
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+        <p>Main Content Here</p>
+      </section>
+    </main>
   );
 }

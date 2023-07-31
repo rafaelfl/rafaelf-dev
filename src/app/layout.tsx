@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka } from "next/font/google";
 
-import { Providers } from "./providers";
-
 import "./globals.scss";
 
 const fredoka = Fredoka({
@@ -19,9 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={fredoka.className}>
-        <Providers>{children}</Providers>
-      </body>
+      <body className={fredoka.className}>{children}</body>
     </html>
   );
 }
