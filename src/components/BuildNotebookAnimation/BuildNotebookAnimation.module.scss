@@ -1,0 +1,25 @@
+
+.rotateGear {
+    animation-name: rotate-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 6s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 31.24px 31.7529px;       /* Pivot around the bottom-left palm */
+    display: inline-block;
+    z-index: 0;
+  }
+  
+  @keyframes rotate-animation {
+    0% { transform: rotate(0.0deg) }
+    10% { transform: rotate(36deg) }
+    20% { transform: rotate(72deg) }
+    30% { transform: rotate(108deg) }
+    40% { transform: rotate(144deg) }
+    50% { transform: rotate(180deg) }
+    60% { transform: rotate(216deg) }
+    70% { transform: rotate(252deg) }
+    80% { transform: rotate(324deg) }
+    90% { transform: rotate(360deg) }
+    100% { transform: rotate(360deg) }
+  }
+
+  

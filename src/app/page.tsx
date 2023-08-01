@@ -1,17 +1,19 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { tv } from "tailwind-variants";
 
 import useScrollSpySection from "@/hooks/useScrollSpySection";
 import Navbar from "@/components/Navbar/Navbar";
+import BuildNotebookAnimation from "@/components/BuildNotebookAnimation/BuildNotebookAnimation";
 
 import photo from "../../public/assets/images/photo.png";
 
 import styles from "./styles.module.scss";
 
 const section = tv({
-  base: "px-8 md:px-20 min-h-screen w-full py-12",
+  base: "flex flex-col justify-between items-center gap-4 px-8 md:px-20 w-full pt-6 pb-0",
   variants: {
     bg: {
       darkblue: "bg-darkblue text-white",
@@ -56,6 +58,8 @@ export default function Home() {
             />
           </div>
         </div>
+
+        <BuildNotebookAnimation />
       </section>
 
       <section id="about" className={section()}>
