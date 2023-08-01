@@ -34,14 +34,14 @@ export default function Home() {
       <section id="home" className={section({ bg: "darkblue" })}>
         <div className="container max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex flex-1 flex-col justify-center items-start h-full">
-            <h1 className="text-7xl lg:text-responsive-title leading-none font-medium tracking-wide">
+            <h1 className="text-6xl lg:text-responsive-title leading-none font-medium tracking-wide">
               Hi! I am{" "}
-              <span className="text-darkyellow font-semibold">
+              <span className="block text-darkyellow font-semibold">
                 Rafael! <span className={styles.wave}>👋</span>
               </span>
             </h1>
 
-            <h2 className="mt-8 font-normal lg:font-medium text-2xl">
+            <h2 className="mt-8 font-normal text-1.5xl">
               I build solid, scalable, accessible and responsive digital experiences for the web
             </h2>
           </div>
@@ -50,7 +50,7 @@ export default function Home() {
             <Image
               src={photo}
               alt="Rafael Fernandes logo"
-              height={400}
+              height={350}
               priority
               className="mx-auto"
             />

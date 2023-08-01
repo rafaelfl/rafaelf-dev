@@ -12,7 +12,8 @@ module.exports = {
         display: 'var(--font-fredoka)',
       },
       fontSize: {
-        "responsive-title": 'clamp(5.5rem, 7vw, 7rem)',
+        '1.5xl': '1.375rem',
+        'responsive-title': 'clamp(3.75rem, 5vw, 5rem)',
       },
       colors: {
         current: 'currentColor',
