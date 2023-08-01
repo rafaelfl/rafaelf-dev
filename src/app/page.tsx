@@ -19,6 +19,9 @@ const section = tv({
       yellow: "bg-yellow",
       white: "bg-white",
     },
+    minHeight: {
+      fullPage: "min-h-screen",
+    },
   },
   defaultVariants: {
     bg: "white",
@@ -61,7 +64,7 @@ export default function Home() {
         <BuildNotebookAnimation />
       </section>
 
-      <section id="about" className={section()}>
+      <section id="about" className={section({ minHeight: "fullPage" })}>
         <p>Main Content Here</p>
         <p>Main Content Here</p>
         <p>Main Content Here</p>
@@ -97,7 +100,7 @@ export default function Home() {
         <p>Main Content Here</p>
       </section>
 
-      <section id="projects" className={section({ bg: "yellow" })}>
+      <section id="projects" className={section({ bg: "yellow", minHeight: "fullPage" })}>
         <p>Main Content Here</p>
         <p>Main Content Here</p>
         <p>Main Content Here</p>
@@ -121,7 +124,7 @@ export default function Home() {
         <p>Main Content Here</p>
       </section>
 
-      <section id="contact" className={section()}>
+      <section id="contact" className={section({ minHeight: "fullPage" })}>
         <p>Main Content Here</p>
         <p>Main Content Here</p>
         <p>Main Content Here</p>
