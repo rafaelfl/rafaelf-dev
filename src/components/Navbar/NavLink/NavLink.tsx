@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { VariantProps, tv } from "tailwind-variants";
 
 const link = tv({
@@ -5,7 +6,7 @@ const link = tv({
   variants: {
     intent: {
       default: "text-gray hover:text-white font-medium",
-      active: "text-darkyellow hover:text-yellow font-semibold",
+      active: "text-darkyellow hover:text-yellow font-medium",
     },
   },
   defaultVariants: {
@@ -14,14 +15,14 @@ const link = tv({
 });
 
 interface NavLinkProps extends VariantProps<typeof link> {
-  href?: string;
+  href: string;
   children: React.ReactNode;
 }
 
 export const NavLink = ({ href, children, intent, ...rest }: NavLinkProps) => {
   return (
-    <a href={href} className={link({ intent })} {...rest}>
+    <Link href={href} className={link({ intent })} {...rest}>
       {children}
-    </a>
+    </Link>
   );
 };
