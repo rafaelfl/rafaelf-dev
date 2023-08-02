@@ -5,7 +5,7 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "./NavLink/NavLink";
 import useDisclosure from "@/hooks/useDisclosure";
 
-import logo from "../../../public/assets/images/logo.svg";
+import logo from "@/assets/images/logo.svg";
 
 import "./Navbar.scss";
 
