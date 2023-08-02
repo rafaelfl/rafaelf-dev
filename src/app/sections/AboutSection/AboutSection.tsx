@@ -55,6 +55,7 @@ const AboutSection = (props: AboutSectionProps) => {
           alt="Star"
           caption="Experience"
           description="More than 20 years of experience developing, testing and maintaining web and mobile software applications"
+          animationDelay={100}
         />
 
         <AboutItem
@@ -62,6 +63,7 @@ const AboutSection = (props: AboutSectionProps) => {
           alt="A person with a speech balloon"
           caption="Communication skills"
           description="The experience as a professor and the leadership of several software projects improved both verbal and non-verbal communication"
+          animationDelay={200}
         />
 
         <AboutItem
@@ -69,6 +71,7 @@ const AboutSection = (props: AboutSectionProps) => {
           alt="An increasing graphic"
           caption="Results driven"
           description="A clinic eye to identify problems, find and develop simple solutions, seeking to deliver results beyond the minimum requirements"
+          animationDelay={500}
         />
 
         <AboutItem
@@ -76,6 +79,7 @@ const AboutSection = (props: AboutSectionProps) => {
           alt="Monitor with a heart"
           caption="Passion"
           description="Passionate about my work and proud of my achievements: I believe that technology can make the world better"
+          animationDelay={700}
         />
       </div>
 
