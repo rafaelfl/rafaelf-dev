@@ -57,7 +57,7 @@ const AboutSection = (props: AboutSectionProps) => {
         <h2 className={`${title({ decoration: "underline", size: "large" })} mt-8 mb-6`}>About</h2>
       </Animated>
 
-      <Animated animation="lateralFade" className="mb-6">
+      <Animated animation="lateralFade" className="mb-6" style={{ transitionDelay: "0.8s" }}>
         <h3 className={title()}>I am a Senior Software Engineer</h3>
       </Animated>
 

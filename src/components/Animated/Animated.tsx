@@ -1,4 +1,4 @@
-import { ReactNode, useRef } from "react";
+import { ComponentProps, ReactNode, useRef } from "react";
 import { tv } from "tailwind-variants";
 import { useInView } from "framer-motion";
 
@@ -34,7 +34,7 @@ const animatedFade = tv({
   },
 });
 
-interface AnimatedComponentProps {
+interface AnimatedComponentProps extends ComponentProps<"div"> {
   animation: "lateralFade" | "flipFade" | "fadeIn";
   className?: string;
   animationDelay?: 0 | 75 | 100 | 150 | 200 | 300 | 500 | 700 | 1000;
@@ -46,9 +46,10 @@ const Animated = ({
   className = "",
   animationDelay,
   children,
+  ...rest
 }: AnimatedComponentProps) => {
   const wrapper = useRef<HTMLHeadingElement>(null);
-  const isInView = useInView(wrapper);
+  const isInView = useInView(wrapper, { once: true });
 
   let animatedClass = "";
 
@@ -76,7 +77,7 @@ const Animated = ({
   }
 
   return (
-    <div ref={wrapper} className={`${animatedClass} ${className} ${animationDelayClass}`}>
+    <div ref={wrapper} className={`${animatedClass} ${className} ${animationDelayClass}`} {...rest}>
       {children}
     </div>
   );
