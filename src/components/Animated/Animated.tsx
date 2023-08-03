@@ -20,16 +20,22 @@ const animatedFade = tv({
       visible: `${styles.flipYAxis}`,
       notvisible: "",
     },
+    fadeIn: {
+      none: "",
+      visible: "opacity-100",
+      notvisible: "opacity-0",
+    },
   },
   defaultVariants: {
     animation: "static",
     lateralFade: "none",
     flipFade: "none",
+    fadeIn: "none",
   },
 });
 
 interface AnimatedComponentProps {
-  animation: "lateralFade" | "flipFade";
+  animation: "lateralFade" | "flipFade" | "fadeIn";
   className?: string;
   animationDelay?: 0 | 75 | 100 | 150 | 200 | 300 | 500 | 700 | 1000;
   children: ReactNode;
@@ -55,6 +61,11 @@ const Animated = ({
     animatedClass = animatedFade({
       animation: "animated",
       flipFade: isInView ? "visible" : "notvisible",
+    });
+  } else if (animation === "fadeIn") {
+    animatedClass = animatedFade({
+      animation: "animated",
+      fadeIn: isInView ? "visible" : "notvisible",
     });
   }
 

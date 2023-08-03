@@ -17,8 +17,10 @@ const AboutItem = ({ src, alt, caption, description, animationDelay = 0 }: About
           <Image src={src} alt={alt} />
         </div>
       </Animated>
-      <figcaption className="text-xl font-medium tracking-wide mt-3.5">{caption}</figcaption>
-      <p className="mt-4 text-center">{description}</p>
+      <Animated animation="fadeIn" animationDelay={animationDelay} className="text-center">
+        <figcaption className="text-xl font-medium tracking-wide mt-3.5">{caption}</figcaption>
+        <p className="mt-4 text-center">{description}</p>
+      </Animated>
     </figure>
   );
 };
