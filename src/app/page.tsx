@@ -3,14 +3,15 @@
 import { tv } from "tailwind-variants";
 
 import useScrollSpySection from "@/hooks/useScrollSpySection";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/app/components/Navbar/Navbar";
 import HomeSection from "./sections/HomeSection/HomeSection";
 import AboutSection from "./sections/AboutSection/AboutSection";
 import ProjectsSection from "./sections/ProjectsSection/ProjectsSection";
 import ContactSection from "./sections/ContactSection/ContactSection";
+import ExperienceSection from "./sections/ExperienceSection/ExperienceSection";
 
 const section = tv({
-  base: "flex flex-col justify-center items-center gap-4 px-8 md:px-20 w-full pt-6 pb-0",
+  base: "flex flex-col justify-start items-center gap-4 px-8 md:px-20 w-full pt-6 pb-0",
   variants: {
     bg: {
       darkblue: "bg-darkblue text-white",
@@ -37,9 +38,11 @@ export default function Home() {
 
       <AboutSection className={section({ minHeight: "fullPage" })} />
 
-      <ProjectsSection className={section({ bg: "yellow", minHeight: "fullPage" })} />
+      <ExperienceSection className={section({ bg: "yellow" })} />
 
-      <ContactSection className={section({ minHeight: "fullPage" })} />
+      <ProjectsSection className={section({ minHeight: "fullPage" })} />
+
+      <ContactSection className={section({ bg: "darkblue", minHeight: "fullPage" })} />
     </main>
   );
 }

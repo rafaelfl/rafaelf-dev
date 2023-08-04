@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
-import { tv } from "tailwind-variants";
+import Image from "next/image";
 
-import Animated from "@/components/Animated/Animated";
+import Animated from "@/app/components/Animated/Animated";
 
 import starImage from "@/assets/images/star.svg";
 import communicationImage from "@/assets/images/communication.svg";
@@ -18,35 +18,9 @@ import javascriptLogo from "@/assets/images/stack/javascript.svg";
 import sassLogo from "@/assets/images/stack/sass.svg";
 import mongoLogo from "@/assets/images/stack/mongodb.svg";
 import firebaseLogo from "@/assets/images/stack/firebase.svg";
+import { titleStyle } from "@/app/styles/titleStyle";
 
 import AboutItem from "./AboutItem/AboutItem";
-import Image from "next/image";
-
-const title = tv({
-  base: "text-darkblue font-semibold pb-2 tracking-wide text-center",
-  variants: {
-    decoration: {
-      default: "",
-      underline:
-        "relative after:content-[''] after:absolute after:bottom-0 after:border after:w-2/3 after:left-1/2 after:translate-x-[-50%] after:text-darkblue",
-    },
-    size: {
-      large: "text-4xl",
-      normal: "text-3xl",
-    },
-    fontWeight: {
-      normal: "font-normal",
-      medium: "font-medium",
-      semibold: "font-semibold",
-      bold: "font-bold",
-    },
-  },
-  defaultVariants: {
-    decoration: "default",
-    size: "normal",
-    fontWeight: "semibold",
-  },
-});
 
 type AboutSectionProps = ComponentProps<"section">;
 
@@ -54,11 +28,13 @@ const AboutSection = (props: AboutSectionProps) => {
   return (
     <section id="about" {...props}>
       <Animated animation="lateralFade">
-        <h2 className={`${title({ decoration: "underline", size: "large" })} mt-8 mb-6`}>About</h2>
+        <h2 className={`${titleStyle({ decoration: "underline", size: "large" })} mt-8 mb-6`}>
+          About
+        </h2>
       </Animated>
 
-      <Animated animation="lateralFade" className="mb-6" style={{ transitionDelay: "0.8s" }}>
-        <h3 className={title()}>I am a Senior Software Engineer</h3>
+      <Animated animation="lateralFade" className="mb-6" style={{ transitionDelay: "0.4s" }}>
+        <h3 className={titleStyle()}>I am a Senior Software Engineer</h3>
       </Animated>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 items-start max-w-5xl mb-16">
@@ -109,7 +85,7 @@ const AboutSection = (props: AboutSectionProps) => {
         <Image src={sassLogo} alt="Sass logo" />
         <Image src={mongoLogo} alt="MongoDB logo" />
         <Image src={firebaseLogo} alt="Firebase logo" />
-        <p className="col-span-5 text-white text-center text-xl">...and more!</p>
+        <p className="col-span-2 lg:col-span-5 text-white text-center text-xl">...and more!</p>
       </div>
     </section>
   );

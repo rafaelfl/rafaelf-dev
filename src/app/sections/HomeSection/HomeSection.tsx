@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
 import Image from "next/image";
 
-import BuildNotebookAnimation from "@/components/BuildNotebookAnimation/BuildNotebookAnimation";
+import BuildNotebookAnimation from "@/app/components/BuildNotebookAnimation/BuildNotebookAnimation";
 
 import photo from "@/assets/images/photo.png";
 

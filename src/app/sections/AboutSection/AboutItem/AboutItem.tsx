@@ -1,4 +1,4 @@
-import Animated from "@/components/Animated/Animated";
+import Animated from "@/app/components/Animated/Animated";
 import Image from "next/image";
 
 interface AboutItemProps {

@@ -4,7 +4,7 @@ import { useInView } from "framer-motion";
 
 import styles from "./Animated.module.scss";
 
-const animatedFade = tv({
+const animatedFadeStyle = tv({
   variants: {
     animation: {
       animated: `${styles.animate}`,
@@ -54,17 +54,17 @@ const Animated = ({
   let animatedClass = "";
 
   if (animation === "lateralFade") {
-    animatedClass = animatedFade({
+    animatedClass = animatedFadeStyle({
       animation: "animated",
       lateralFade: isInView ? "visible" : "notvisible",
     });
   } else if (animation === "flipFade") {
-    animatedClass = animatedFade({
+    animatedClass = animatedFadeStyle({
       animation: "animated",
       flipFade: isInView ? "visible" : "notvisible",
     });
   } else if (animation === "fadeIn") {
-    animatedClass = animatedFade({
+    animatedClass = animatedFadeStyle({
       animation: "animated",
       fadeIn: isInView ? "visible" : "notvisible",
     });
