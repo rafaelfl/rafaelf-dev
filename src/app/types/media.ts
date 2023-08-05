@@ -1,5 +1,5 @@
 export interface Media {
-  type: "image" | "video";
+  type: "image";
   src: string;
   width: number;
   height: number;

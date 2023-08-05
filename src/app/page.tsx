@@ -40,7 +40,7 @@ export default function Home() {
 
       <ExperienceSection className={section({ bg: "yellow" })} />
 
-      <ProjectsSection className={section({ minHeight: "fullPage" })} />
+      <ProjectsSection className={section()} />
 
       <ContactSection className={section({ bg: "darkblue", minHeight: "fullPage" })} />
     </main>

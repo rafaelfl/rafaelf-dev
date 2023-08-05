@@ -1,10 +1,12 @@
 import { useCallback, useState } from "react";
 import Image from "next/image";
-
-import { Media } from "@/app/types";
 import { tv } from "tailwind-variants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
+import { Media } from "@/app/types";
+
+import styles from "./Carousel.module.scss";
 
 const mediaGalleryStyle = tv({
   base: "duration-700 ease-in-out",
@@ -53,12 +55,8 @@ const Carousel = ({ medias, className }: CarouselProps) => {
         </button>
 
         {/* Carousel wrapper */}
-        <div className="overflow-hidden relative rounded-lg">
+        <div className={`overflow-hidden relative rounded-lg ${styles.imageShadow}`}>
           {medias.map((m, index) => {
-            if (m.type === "video") {
-              return <div key={m.src} />;
-            }
-
             return (
               <div
                 key={`image-${m.src}`}
@@ -69,7 +67,7 @@ const Carousel = ({ medias, className }: CarouselProps) => {
                 <Image
                   src={m.src}
                   alt={m.alt ?? ""}
-                  className="block object-contain w-full max-w-[40rem] h-[22.5rem]"
+                  className="block object-contain w-auto max-w-[33rem] h-[22.5rem]"
                   width={m.width}
                   height={m.height}
                 />
