@@ -23,7 +23,7 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
         <h3 className={sectionTitleStyle()}>ImaginaKIDS</h3>
       </Animated>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center mb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden mb-20">
         <Animated animation="lateralLeftFade" style={{ transitionDelay: "0.4s" }}>
           <Carousel
             medias={[

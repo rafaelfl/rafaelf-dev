@@ -67,7 +67,7 @@ const Carousel = ({ medias, className }: CarouselProps) => {
                 <Image
                   src={m.src}
                   alt={m.alt ?? ""}
-                  className="block object-contain w-auto max-w-[33rem] h-[22.5rem]"
+                  className="block object-contain w-full max-w-[33rem] aspect-[1.44]"
                   width={m.width}
                   height={m.height}
                 />
