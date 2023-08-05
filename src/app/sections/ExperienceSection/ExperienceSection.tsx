@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 
-import { titleStyle } from "@/app/styles/titleStyle";
+import { sectionTitleStyle } from "@/app/styles/titleStyle";
 import Accordion from "@/app/components/Accordion/Accordion";
 import Chip from "@/app/components/Chip/Chip";
 import Link from "next/link";
@@ -10,7 +10,7 @@ type ExperienceSectionProps = ComponentProps<"section">;
 const ExperienceSection = (props: ExperienceSectionProps) => {
   return (
     <section id="experience" {...props}>
-      <h2 className={`${titleStyle({ decoration: "underline", size: "large" })} mt-8 mb-6`}>
+      <h2 className={`${sectionTitleStyle({ decoration: "underline", size: "large" })} mt-8 mb-6`}>
         Experience
       </h2>
 

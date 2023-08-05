@@ -18,7 +18,7 @@ import javascriptLogo from "@/assets/images/stack/javascript.svg";
 import sassLogo from "@/assets/images/stack/sass.svg";
 import mongoLogo from "@/assets/images/stack/mongodb.svg";
 import firebaseLogo from "@/assets/images/stack/firebase.svg";
-import { titleStyle } from "@/app/styles/titleStyle";
+import { sectionTitleStyle } from "@/app/styles/titleStyle";
 
 import AboutItem from "./AboutItem/AboutItem";
 
@@ -27,14 +27,16 @@ type AboutSectionProps = ComponentProps<"section">;
 const AboutSection = (props: AboutSectionProps) => {
   return (
     <section id="about" {...props}>
-      <Animated animation="lateralFade">
-        <h2 className={`${titleStyle({ decoration: "underline", size: "large" })} mt-8 mb-6`}>
+      <Animated animation="lateralLeftFade">
+        <h2
+          className={`${sectionTitleStyle({ decoration: "underline", size: "large" })} mt-8 mb-6`}
+        >
           About
         </h2>
       </Animated>
 
-      <Animated animation="lateralFade" className="mb-6" style={{ transitionDelay: "0.4s" }}>
-        <h3 className={titleStyle()}>I am a Senior Software Engineer</h3>
+      <Animated animation="lateralLeftFade" className="mb-6" style={{ transitionDelay: "0.4s" }}>
+        <h3 className={sectionTitleStyle()}>I am a Senior Software Engineer</h3>
       </Animated>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 items-start max-w-5xl mb-16">

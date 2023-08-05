@@ -10,10 +10,15 @@ const animatedFadeStyle = tv({
       animated: `${styles.animate}`,
       static: "",
     },
-    lateralFade: {
+    lateralLeftFade: {
       none: "",
       visible: "translate-x-[none] opacity-100",
       notvisible: "translate-x-[-200px] opacity-0",
+    },
+    lateralRightFade: {
+      none: "",
+      visible: "translate-x-[none] opacity-100",
+      notvisible: "translate-x-[200px] opacity-0",
     },
     flipFade: {
       none: "",
@@ -28,14 +33,15 @@ const animatedFadeStyle = tv({
   },
   defaultVariants: {
     animation: "static",
-    lateralFade: "none",
+    lateralLeftFade: "none",
+    lateralRightFade: "none",
     flipFade: "none",
     fadeIn: "none",
   },
 });
 
 interface AnimatedComponentProps extends ComponentProps<"div"> {
-  animation: "lateralFade" | "flipFade" | "fadeIn";
+  animation: "lateralLeftFade" | "lateralRightFade" | "flipFade" | "fadeIn";
   className?: string;
   animationDelay?: 0 | 75 | 100 | 150 | 200 | 300 | 500 | 700 | 1000;
   children: ReactNode;
@@ -53,10 +59,15 @@ const Animated = ({
 
   let animatedClass = "";
 
-  if (animation === "lateralFade") {
+  if (animation === "lateralLeftFade") {
     animatedClass = animatedFadeStyle({
       animation: "animated",
-      lateralFade: isInView ? "visible" : "notvisible",
+      lateralLeftFade: isInView ? "visible" : "notvisible",
+    });
+  } else if (animation === "lateralRightFade") {
+    animatedClass = animatedFadeStyle({
+      animation: "animated",
+      lateralRightFade: isInView ? "visible" : "notvisible",
     });
   } else if (animation === "flipFade") {
     animatedClass = animatedFadeStyle({
