@@ -69,7 +69,7 @@ const Carousel = ({ medias, className }: CarouselProps) => {
                 className={mediaGalleryStyle({
                   presentation: selectedIndex === index ? "show" : "hide",
                   absolutePosition: index > 0,
-                  className: "object-contain w-full max-w-[33rem] aspect-[1.44]",
+                  className: "object-contain w-full max-w-[33rem]",
                 })}
                 width={m.width}
                 height={m.height}

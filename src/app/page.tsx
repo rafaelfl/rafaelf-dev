@@ -2,7 +2,7 @@
 
 import { tv } from "tailwind-variants";
 
-import useScrollSpySection from "@/hooks/useScrollSpySection";
+import useScrollSpySection from "@/app/hooks/useScrollSpySection";
 import Navbar from "@/app/components/Navbar/Navbar";
 import HomeSection from "./sections/HomeSection/HomeSection";
 import AboutSection from "./sections/AboutSection/AboutSection";

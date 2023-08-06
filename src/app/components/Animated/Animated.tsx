@@ -57,38 +57,42 @@ const Animated = ({
   const wrapper = useRef<HTMLHeadingElement>(null);
   const isInView = useInView(wrapper, { once: true });
 
-  let animatedClass = "";
-
-  if (animation === "lateralLeftFade") {
-    animatedClass = animatedFadeStyle({
-      animation: "animated",
-      lateralLeftFade: isInView ? "visible" : "notvisible",
-    });
-  } else if (animation === "lateralRightFade") {
-    animatedClass = animatedFadeStyle({
-      animation: "animated",
-      lateralRightFade: isInView ? "visible" : "notvisible",
-    });
-  } else if (animation === "flipFade") {
-    animatedClass = animatedFadeStyle({
-      animation: "animated",
-      flipFade: isInView ? "visible" : "notvisible",
-    });
-  } else if (animation === "fadeIn") {
-    animatedClass = animatedFadeStyle({
-      animation: "animated",
-      fadeIn: isInView ? "visible" : "notvisible",
-    });
-  }
-
   let animationDelayClass = "";
 
   if (animationDelay) {
     animationDelayClass = styles[`animation-delay-${animationDelay}`];
   }
 
+  let animatedClass = "";
+
+  if (animation === "lateralLeftFade") {
+    animatedClass = animatedFadeStyle({
+      animation: "animated",
+      lateralLeftFade: isInView ? "visible" : "notvisible",
+      className: `${animationDelayClass} ${className}`,
+    });
+  } else if (animation === "lateralRightFade") {
+    animatedClass = animatedFadeStyle({
+      animation: "animated",
+      lateralRightFade: isInView ? "visible" : "notvisible",
+      className: `${animationDelayClass} ${className}`,
+    });
+  } else if (animation === "flipFade") {
+    animatedClass = animatedFadeStyle({
+      animation: "animated",
+      flipFade: isInView ? "visible" : "notvisible",
+      className: `${animationDelayClass} ${className}`,
+    });
+  } else if (animation === "fadeIn") {
+    animatedClass = animatedFadeStyle({
+      animation: "animated",
+      fadeIn: isInView ? "visible" : "notvisible",
+      className: `${animationDelayClass} ${className}`,
+    });
+  }
+
   return (
-    <div ref={wrapper} className={`${animatedClass} ${className} ${animationDelayClass}`} {...rest}>
+    <div ref={wrapper} className={animatedClass} {...rest}>
       {children}
     </div>
   );

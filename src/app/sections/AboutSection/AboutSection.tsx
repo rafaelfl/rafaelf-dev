@@ -3,21 +3,21 @@ import Image from "next/image";
 
 import Animated from "@/app/components/Animated/Animated";
 
-import starImage from "@/assets/images/star.svg";
-import communicationImage from "@/assets/images/communication.svg";
-import resultsImage from "@/assets/images/results.svg";
-import passionImage from "@/assets/images/passion.svg";
+import starImage from "@/app/assets/images/star.svg";
+import communicationImage from "@/app/assets/images/communication.svg";
+import resultsImage from "@/app/assets/images/results.svg";
+import passionImage from "@/app/assets/images/passion.svg";
 
-import reactLogo from "@/assets/images/stack/react.svg";
-import reactNativeLogo from "@/assets/images/stack/react-native.svg";
-import nextLogo from "@/assets/images/stack/nextjs.svg";
-import nodeLogo from "@/assets/images/stack/nodejs.svg";
-import flutterLogo from "@/assets/images/stack/flutter.svg";
-import typescriptLogo from "@/assets/images/stack/typescript.svg";
-import javascriptLogo from "@/assets/images/stack/javascript.svg";
-import sassLogo from "@/assets/images/stack/sass.svg";
-import mongoLogo from "@/assets/images/stack/mongodb.svg";
-import firebaseLogo from "@/assets/images/stack/firebase.svg";
+import reactLogo from "@/app/assets/images/stack/react.svg";
+import reactNativeLogo from "@/app/assets/images/stack/react-native.svg";
+import nextLogo from "@/app/assets/images/stack/nextjs.svg";
+import nodeLogo from "@/app/assets/images/stack/nodejs.svg";
+import flutterLogo from "@/app/assets/images/stack/flutter.svg";
+import typescriptLogo from "@/app/assets/images/stack/typescript.svg";
+import javascriptLogo from "@/app/assets/images/stack/javascript.svg";
+import sassLogo from "@/app/assets/images/stack/sass.svg";
+import mongoLogo from "@/app/assets/images/stack/mongodb.svg";
+import firebaseLogo from "@/app/assets/images/stack/firebase.svg";
 import { sectionTitleStyle } from "@/app/styles/titleStyle";
 
 import AboutItem from "./AboutItem/AboutItem";

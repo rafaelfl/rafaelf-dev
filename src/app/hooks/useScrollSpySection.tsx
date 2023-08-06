@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { throttle } from "@/utils";
+import { throttle } from "@/app/utils";
 
 interface useScrollSpySectionProps {
   sectionSelector?: string;
@@ -18,15 +18,8 @@ const useScrollSpySection = (props?: useScrollSpySectionProps) => {
     const pageYOffset = window.scrollY;
 
     sections.current.forEach((section) => {
-      // const rectInView = section.getBoundingClientRect();
-
-      // // this decides how much of the element should be visible
+      // this decides how much of the element should be visible
       const leniency = window.innerHeight * percentageVisible;
-      // const useHeight = window.innerHeight;
-
-      // if (rectInView.top + leniency >= 0 && rectInView.bottom - leniency <= useHeight) {
-      //   newActiveSection = section.id;
-      // }
 
       const sectionOffsetTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;

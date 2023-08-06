@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import BuildNotebookAnimation from "@/app/components/BuildNotebookAnimation/BuildNotebookAnimation";
 
-import photo from "@/assets/images/photo.png";
+import photo from "@/app/assets/images/photo.png";
 
 import styles from "./HomeSection.module.scss";
 

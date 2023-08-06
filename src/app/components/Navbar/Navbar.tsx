@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import { NavLink } from "./NavLink/NavLink";
-import useDisclosure from "@/hooks/useDisclosure";
+import useDisclosure from "@/app/hooks/useDisclosure";
 
-import logo from "@/assets/images/logo.svg";
+import logo from "@/app/assets/images/logo.svg";
 
 import "./Navbar.scss";
 
