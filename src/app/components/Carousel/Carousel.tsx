@@ -12,12 +12,16 @@ const mediaGalleryStyle = tv({
   base: "duration-700 ease-in-out",
   variants: {
     presentation: {
-      show: "block",
-      hide: "hidden",
+      show: "opacity-100",
+      hide: "opacity-0",
+    },
+    absolutePosition: {
+      true: "absolute left-0 top-0",
     },
   },
   defaultVariants: {
     presentation: "hide",
+    absolutePosition: false,
   },
 });
 
@@ -58,20 +62,18 @@ const Carousel = ({ medias, className }: CarouselProps) => {
         <div className={`overflow-hidden relative rounded-lg ${styles.imageShadow}`}>
           {medias.map((m, index) => {
             return (
-              <div
+              <Image
                 key={`image-${m.src}`}
+                src={m.src}
+                alt={m.alt ?? ""}
                 className={mediaGalleryStyle({
                   presentation: selectedIndex === index ? "show" : "hide",
+                  absolutePosition: index > 0,
+                  className: "object-contain w-full max-w-[33rem] aspect-[1.44]",
                 })}
-              >
-                <Image
-                  src={m.src}
-                  alt={m.alt ?? ""}
-                  className="block object-contain w-full max-w-[33rem] aspect-[1.44]"
-                  width={m.width}
-                  height={m.height}
-                />
-              </div>
+                width={m.width}
+                height={m.height}
+              />
             );
           })}
         </div>
