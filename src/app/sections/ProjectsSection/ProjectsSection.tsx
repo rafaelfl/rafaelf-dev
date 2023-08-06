@@ -4,7 +4,7 @@ import Carousel from "@/app/components/Carousel/Carousel";
 import { sectionTitleStyle } from "@/app/styles/titleStyle";
 
 import Animated from "@/app/components/Animated/Animated";
-import ImaginaKIDSProject from "./ImaginaKIDSProject/ImaginaKIDSProject";
+import ImaginaKIDSProject from "./projects/ImaginaKIDSProject";
 
 type ProjectsSectionProps = ComponentProps<"section">;
 

@@ -1,0 +1,19 @@
+.carouselPerspectiveLeft {
+    transition: all .6s ease;
+    transform: perspective(800px) rotateY(25deg) scale(.8) rotateX(10deg);
+}
+
+.carouselPerspectiveLeft:hover {
+    transition: all .6s ease;
+    transform: perspective(800px) rotateY(0deg) translateY(0px) rotateX(0deg) scale(1);
+}
+
+.carouselPerspectiveRight {
+    transition: all .6s ease;
+    transform: perspective(800px) rotateY(-25deg) scale(.8) rotateX(10deg);
+}
+
+.carouselPerspectiveRight:hover {
+    transition: all .6s ease;
+    transform: perspective(800px) rotateY(0deg) translateY(0px) rotateX(0deg) scale(1);
+}
