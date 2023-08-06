@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 
 export const sectionTitleStyle = tv({
-  base: "text-darkblue font-semibold pb-2 tracking-wide text-center",
+  base: "text-darkblue font-semibold tracking-wide text-center",
   variants: {
     decoration: {
       default: "",
