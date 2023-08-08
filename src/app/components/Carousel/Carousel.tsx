@@ -1,4 +1,5 @@
-import { useCallback, useState } from "react";
+import { ReactNode, useCallback, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { tv } from "tailwind-variants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,12 +26,22 @@ const mediaGalleryStyle = tv({
   },
 });
 
+interface ConditionalWrapperProps {
+  condition: boolean;
+  wrapper: (children: ReactNode) => ReactNode;
+  children: ReactNode | Array<ReactNode>;
+}
+
+const ConditionalWrapper = ({ condition, wrapper, children }: ConditionalWrapperProps) =>
+  condition ? wrapper(children) : children;
+
 interface CarouselProps {
   medias: Array<Media>;
+  projectLink?: string;
   className?: string;
 }
 
-const Carousel = ({ medias, className }: CarouselProps) => {
+const Carousel = ({ medias, projectLink = "", className }: CarouselProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const previousImage = useCallback(
@@ -62,18 +73,27 @@ const Carousel = ({ medias, className }: CarouselProps) => {
         <div className={`overflow-hidden relative rounded-lg ${styles.imageShadow}`}>
           {medias.map((m, index) => {
             return (
-              <Image
+              <ConditionalWrapper
                 key={`image-${m.src}`}
-                src={m.src}
-                alt={m.alt ?? ""}
-                className={mediaGalleryStyle({
-                  presentation: selectedIndex === index ? "show" : "hide",
-                  absolutePosition: index > 0,
-                  className: "object-contain w-full max-w-[33rem]",
-                })}
-                width={m.width}
-                height={m.height}
-              />
+                condition={!!projectLink}
+                wrapper={(children) => (
+                  <Link href={projectLink} scroll={false} onClick={() => console.log(projectLink)}>
+                    {children}
+                  </Link>
+                )}
+              >
+                <Image
+                  src={m.src}
+                  alt={m.alt ?? ""}
+                  className={mediaGalleryStyle({
+                    presentation: selectedIndex === index ? "show" : "hide",
+                    absolutePosition: index > 0,
+                    className: "object-contain w-full max-w-[33rem]",
+                  })}
+                  width={m.width}
+                  height={m.height}
+                />
+              </ConditionalWrapper>
             );
           })}
         </div>

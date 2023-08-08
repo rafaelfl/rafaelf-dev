@@ -6,9 +6,9 @@ import useScrollSpySection from "@/app/hooks/useScrollSpySection";
 import Navbar from "@/app/components/Navbar/Navbar";
 import HomeSection from "./sections/HomeSection/HomeSection";
 import AboutSection from "./sections/AboutSection/AboutSection";
+import ExperienceSection from "./sections/ExperienceSection/ExperienceSection";
 import ProjectsSection from "./sections/ProjectsSection/ProjectsSection";
 import ContactSection from "./sections/ContactSection/ContactSection";
-import ExperienceSection from "./sections/ExperienceSection/ExperienceSection";
 
 const section = tv({
   base: "flex flex-col justify-start items-center gap-4 px-8 md:px-20 w-full pt-6 pb-0",
