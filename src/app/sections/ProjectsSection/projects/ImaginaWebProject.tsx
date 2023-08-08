@@ -5,7 +5,6 @@ const ImaginaWebProject = () => {
   return (
     <ProjectItem
       ltr={false}
-      projectLink="/show/imaginaweb"
       medias={imaginaWebMedias}
       about="With the advent of the pandemic, many schools had to stop their activities, making it impossible, for the students, to use the school iPads. A web version of the platform was developed, allowing students to use their personal computers to build their stories. The web version offered the same features as the app version, but with an increased product scalability."
       technologies="React.js, Firebase (Authentication, Database, Storage), Redux, Bootstrap"

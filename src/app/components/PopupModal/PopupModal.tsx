@@ -1,15 +1,20 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { MouseEventHandler, ReactNode, useCallback, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
+import { tv } from "tailwind-variants";
+
+const overlay = tv({
+  base: "fixed top-0 left-0 z-80 w-screen h-screen bg-black/70 block",
+});
 
 interface PopupModalProps {
   children: ReactNode;
 }
 
 const PopupModal = ({ children }: PopupModalProps) => {
-  const overlay = useRef(null);
-  const wrapper = useRef(null);
+  const overlayRef = useRef(null);
+  const wrapperRef = useRef(null);
   const router = useRouter();
 
   const onDismiss = useCallback(() => {
@@ -18,11 +23,11 @@ const PopupModal = ({ children }: PopupModalProps) => {
 
   const onClick: MouseEventHandler = useCallback(
     (e) => {
-      if (e.target === overlay.current || e.target === wrapper.current) {
+      if (e.target === overlayRef.current || e.target === wrapperRef.current) {
         if (onDismiss) onDismiss();
       }
     },
-    [onDismiss, overlay, wrapper]
+    [onDismiss, overlayRef, wrapperRef]
   );
 
   const onKeyDown = useCallback(
@@ -34,48 +39,46 @@ const PopupModal = ({ children }: PopupModalProps) => {
 
   useEffect(() => {
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    document.body.style.overflowY = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflowY = "visible";
+    };
   }, [onKeyDown]);
 
   return (
-    <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-      <div
-        ref={overlay}
-        onClick={onClick}
-        className="fixed inset-0 bg-gray bg-opacity-75 transition-opacity"
-      ></div>
+    <div
+      id="modal"
+      className="z-20 flex justify-center items-center"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div ref={overlayRef} className={overlay()} onClick={onClick}>
+        <div
+          ref={wrapperRef}
+          className="fixed inset-0 z-10 overflow-hidden object-cover w-11/12 md:w-10/12 h-full mx-auto max-w-7xl flex justify-center items-center"
+        >
+          <button
+            type="button"
+            className="fixed top-10 right-10 text-darkGray rounded-md"
+            onClick={onDismiss}
+          >
+            <span className="sr-only">Close</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              className="w-10 h-10"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
 
-      {/* overflow-y-auto */}
-      <div ref={wrapper} className="fixed inset-0 z-10 overflow-hidden">
-        <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-          <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-            <div className="absolute top-0 right-0 pt-4 pe-4">
-              <button type="button" className="text-darkGray rounded-md" onClick={onDismiss}>
-                <span className="sr-only">Close</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-
-            <div className="bg-white px-4 py-5 sm:p-6">
-              <div className="sm:flex sm:items-start">
-                <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">{children}</div>
-              </div>
-            </div>
-          </div>
+          {children}
         </div>
       </div>
     </div>

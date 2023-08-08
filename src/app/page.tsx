@@ -1,9 +1,12 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { tv } from "tailwind-variants";
 
 import useScrollSpySection from "@/app/hooks/useScrollSpySection";
 import Navbar from "@/app/components/Navbar/Navbar";
+import PopupModal from "@/app/components/PopupModal/PopupModal";
 import HomeSection from "./sections/HomeSection/HomeSection";
 import AboutSection from "./sections/AboutSection/AboutSection";
 import ExperienceSection from "./sections/ExperienceSection/ExperienceSection";
@@ -30,6 +33,9 @@ const section = tv({
 export default function Home() {
   const activeSection = useScrollSpySection();
 
+  const searchParams = useSearchParams();
+  const modalImage = searchParams.get("modal");
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-start">
       <Navbar activeSection={activeSection} />
@@ -43,6 +49,12 @@ export default function Home() {
       <ProjectsSection className={section()} />
 
       <ContactSection className={section({ bg: "darkblue", minHeight: "fullPage" })} />
+
+      {modalImage && (
+        <PopupModal>
+          <Image src={`/images/${modalImage}`} alt="Screenshot image" width={1000} height={1000} />
+        </PopupModal>
+      )}
     </main>
   );
 }
