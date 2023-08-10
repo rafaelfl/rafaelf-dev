@@ -8,6 +8,7 @@ import styles from "./ProjectItem.module.scss";
 
 interface ProjectItemProps {
   medias: Array<Media>;
+  mediaCarousel: string;
   about: string;
   technologies: string;
   sourceCode?: string;
@@ -17,6 +18,7 @@ interface ProjectItemProps {
 
 const ProjectItem = ({
   medias,
+  mediaCarousel,
   about,
   technologies,
   ltr = true,
@@ -32,6 +34,7 @@ const ProjectItem = ({
       >
         <Carousel
           medias={medias}
+          mediaCarousel={mediaCarousel}
           className={`p-4 ${
             ltr ? styles.carouselPerspectiveLeft : styles.carouselPerspectiveRight
           }`}

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { tv } from "tailwind-variants";
 
 const overlay = tv({
-  base: "fixed top-0 left-0 z-80 w-screen h-screen bg-black/70 block",
+  base: "fixed top-0 left-0 z-10 w-screen h-screen bg-black/70 flex justify-center items-center",
 });
 
 interface PopupModalProps {
@@ -57,7 +57,7 @@ const PopupModal = ({ children }: PopupModalProps) => {
       <div ref={overlayRef} className={overlay()} onClick={onClick}>
         <div
           ref={wrapperRef}
-          className="fixed inset-0 z-10 overflow-hidden object-cover w-11/12 md:w-10/12 h-full mx-auto max-w-7xl flex justify-center items-center"
+          className="overflow-hidden w-11/12 md:w-10/12 h-full mx-auto max-w-7xl max-h-[80%] flex justify-center items-center"
         >
           <button
             type="button"

@@ -26,12 +26,25 @@ const mediaGalleryStyle = tv({
   },
 });
 
+const imageNavigationButtonStyles = tv({
+  variants: {
+    disabled: {
+      true: "opacity-40 cursor-default",
+      false: "opacity-100 cursor-pointer",
+    },
+  },
+  defaultVariants: {
+    disabled: false,
+  },
+});
+
 interface CarouselProps {
   medias: Array<Media>;
+  mediaCarousel: string;
   className?: string;
 }
 
-const Carousel = ({ medias, className }: CarouselProps) => {
+const Carousel = ({ medias, mediaCarousel, className }: CarouselProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const previousImage = useCallback(
@@ -53,7 +66,8 @@ const Carousel = ({ medias, className }: CarouselProps) => {
         {/* Previous button */}
         <button
           type="button"
-          className="cursor-pointer"
+          className={imageNavigationButtonStyles({ disabled: medias.length < 2 })}
+          disabled={medias.length < 2}
           onClick={() => setSelectedIndex(previousImage)}
         >
           <FontAwesomeIcon icon={faChevronLeft} size="2xl" className="text-darkblue w-5" />
@@ -65,7 +79,7 @@ const Carousel = ({ medias, className }: CarouselProps) => {
             return (
               <Link
                 key={`image-${m.src}`}
-                href={`/?modal=${m.src}`}
+                href={`/?modal=${m.src}&media=${mediaCarousel}`}
                 scroll={false}
                 // necessary to make the active link available for clicking
                 className={selectedIndex !== index ? "absolute -z-10" : ""}
@@ -88,7 +102,8 @@ const Carousel = ({ medias, className }: CarouselProps) => {
         {/* Next button */}
         <button
           type="button"
-          className="cursor-pointer"
+          className={imageNavigationButtonStyles({ disabled: medias.length < 2 })}
+          disabled={medias.length < 2}
           onClick={() => setSelectedIndex(nextImage)}
         >
           <FontAwesomeIcon icon={faChevronRight} size="2xl" className="text-darkblue w-5" />

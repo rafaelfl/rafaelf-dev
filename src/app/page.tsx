@@ -12,6 +12,7 @@ import AboutSection from "./sections/AboutSection/AboutSection";
 import ExperienceSection from "./sections/ExperienceSection/ExperienceSection";
 import ProjectsSection from "./sections/ProjectsSection/ProjectsSection";
 import ContactSection from "./sections/ContactSection/ContactSection";
+import ScreenshotImage from "./components/ScreenshotImage/ScreenshotImage";
 
 const section = tv({
   base: "flex flex-col justify-start items-center gap-4 px-8 md:px-20 w-full pt-6 pb-0",
@@ -35,6 +36,7 @@ export default function Home() {
 
   const searchParams = useSearchParams();
   const modalImage = searchParams.get("modal");
+  const mediaImage = searchParams.get("media") ?? "";
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start">
@@ -52,7 +54,7 @@ export default function Home() {
 
       {modalImage && (
         <PopupModal>
-          <Image src={`/images/${modalImage}`} alt="Screenshot image" width={1000} height={1000} />
+          <ScreenshotImage src={`/images/${modalImage}`} mediaCarousel={mediaImage} />
         </PopupModal>
       )}
     </main>
