@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 import { Media } from "@/app/types";
 import Animated from "../Animated/Animated";
@@ -58,7 +61,7 @@ const ProjectItem = ({
                 href={sourceCode}
                 target="_blank"
               >
-                {sourceCode}
+                {sourceCode} <FontAwesomeIcon icon={faGithub} size="xl" />
               </Link>
             </>
           )}
@@ -71,7 +74,7 @@ const ProjectItem = ({
                 href={livePreview}
                 target="_blank"
               >
-                {livePreview}
+                {livePreview} <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="lg" />
               </Link>
             </>
           )}

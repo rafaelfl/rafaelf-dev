@@ -1,4 +1,8 @@
 import { ComponentProps } from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 import { sectionTitleStyle } from "@/app/styles/titleStyle";
 import Animated from "@/app/components/Animated/Animated";
@@ -9,7 +13,6 @@ import ImaginaShoppingProject from "./projects/ImaginaShoppingProject";
 import SheldonProject from "./projects/SheldonProject";
 import GitrendProject from "./projects/GitrendProject";
 import ModosProject from "./projects/ModosProject";
-import Link from "next/link";
 
 type ProjectsSectionProps = ComponentProps<"section">;
 
@@ -92,7 +95,8 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
             href="https://github.com/rafaelfl/express-typescript-auth"
             target="_blank"
           >
-            https://github.com/rafaelfl/express-typescript-auth
+            https://github.com/rafaelfl/express-typescript-auth{" "}
+            <FontAwesomeIcon icon={faGithub} size="xl" />
           </Link>
 
           <h4 className="text-2xl text-darkblue">Live preview</h4>
@@ -101,7 +105,7 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
             href="https://api.rafaelf.dev/"
             target="_blank"
           >
-            https://api.rafaelf.dev/
+            https://api.rafaelf.dev/ <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="lg" />
           </Link>
 
           <Link
@@ -109,7 +113,8 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
             href="https://api.rafaelf.dev/api-docs/"
             target="_blank"
           >
-            https://api.rafaelf.dev/api-docs/
+            https://api.rafaelf.dev/api-docs/{" "}
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="lg" />
           </Link>
 
           <h4 className="text-2xl text-darkblue">Technologies</h4>
@@ -144,7 +149,8 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
             href="https://github.com/rafaelfl/web3-security-contract-detector"
             target="_blank"
           >
-            https://github.com/rafaelfl/web3-security-contract-detector
+            https://github.com/rafaelfl/web3-security-contract-detector{" "}
+            <FontAwesomeIcon icon={faGithub} size="xl" />
           </Link>
 
           <h4 className="text-2xl text-darkblue">Technologies</h4>
