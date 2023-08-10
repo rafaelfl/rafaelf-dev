@@ -5,7 +5,6 @@ const ImaginaKIDSProject = () => {
   return (
     <ProjectItem
       medias={imaginaKidsMedias}
-      mediaCarousel="imaginakids"
       about="ImaginaKIDS is an iOS application, designed specifically for iPads, used by students to
           create their own digital books. The stories created using the app can be printed,
           transforming them to real books. The application allows the students to create multiple

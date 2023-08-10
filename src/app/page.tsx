@@ -6,13 +6,11 @@ import { tv } from "tailwind-variants";
 
 import useScrollSpySection from "@/app/hooks/useScrollSpySection";
 import Navbar from "@/app/components/Navbar/Navbar";
-import PopupModal from "@/app/components/PopupModal/PopupModal";
 import HomeSection from "./sections/HomeSection/HomeSection";
 import AboutSection from "./sections/AboutSection/AboutSection";
 import ExperienceSection from "./sections/ExperienceSection/ExperienceSection";
 import ProjectsSection from "./sections/ProjectsSection/ProjectsSection";
 import ContactSection from "./sections/ContactSection/ContactSection";
-import ScreenshotImage from "./components/ScreenshotImage/ScreenshotImage";
 
 const section = tv({
   base: "flex flex-col justify-start items-center gap-4 px-8 md:px-20 w-full pt-6 pb-0",
@@ -51,12 +49,6 @@ export default function Home() {
       <ProjectsSection className={section()} />
 
       <ContactSection className={section({ bg: "darkblue", minHeight: "fullPage" })} />
-
-      {modalImage && (
-        <PopupModal>
-          <ScreenshotImage src={`/images/${modalImage}`} mediaCarousel={mediaImage} />
-        </PopupModal>
-      )}
     </main>
   );
 }
