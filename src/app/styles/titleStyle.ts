@@ -6,7 +6,9 @@ export const sectionTitleStyle = tv({
     decoration: {
       default: "",
       underline:
-        "relative after:content-[''] after:absolute after:bottom-0 after:border after:w-2/3 after:left-1/2 after:translate-x-[-50%] after:text-darkblue",
+        "relative after:content-[''] after:absolute after:-bottom-2 after:border after:w-2/3 after:left-1/2 after:translate-x-[-50%] after:text-darkblue",
+      underlineWhite:
+        "relative after:content-[''] after:absolute after:-bottom-2 after:border after:w-2/3 after:left-1/2 after:translate-x-[-50%] after:text-white after: text-white",
     },
     size: {
       large: "text-4xl",

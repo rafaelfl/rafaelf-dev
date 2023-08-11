@@ -48,7 +48,7 @@ export default function Home() {
 
       <ProjectsSection className={section()} />
 
-      <ContactSection className={section({ bg: "darkblue", minHeight: "fullPage" })} />
+      <ContactSection className={section({ bg: "darkblue" })} />
     </main>
   );
 }

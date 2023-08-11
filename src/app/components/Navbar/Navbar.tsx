@@ -28,7 +28,13 @@ export default function Navbar({ activeSection }: NavbarProps) {
     <header className="bg-darkblue px-8 md:px-16 w-full sticky top-0 z-10">
       <div className="flex justify-between items-center h-20">
         <div className="flex flex-1 justify-between items-center space-x-3.5">
-          <Image src={logo} alt="Rafael Fernandes logo" className="max-h-12" width={192} priority />
+          <Image
+            src={logo}
+            alt="Rafael Fernandes logo"
+            className="h-12 w-auto"
+            width={192}
+            priority
+          />
 
           <nav className="hidden lg:flex gap-3">
             {links.map((link) => (
