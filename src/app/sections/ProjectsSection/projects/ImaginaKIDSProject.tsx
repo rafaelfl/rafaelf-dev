@@ -11,6 +11,18 @@ const ImaginaKIDSProject = () => {
           books, to set their titles, to include customized characters, scenarios, balloons and
           text boxes."
       technologies="React Native, Firebase, Native modules (Swift)"
+      video={{
+        type: "video",
+        width: 1036,
+        height: 720,
+        poster: "/videos/ImaginaKIDS-thumb.png",
+        sources: [
+          {
+            src: "/videos/ImaginaKIDS.mp4",
+            type: "video/mp4",
+          },
+        ],
+      }}
     />
   );
 };

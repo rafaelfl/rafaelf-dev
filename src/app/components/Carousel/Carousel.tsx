@@ -36,16 +36,23 @@ const imageNavigationButtonStyles = tv({
   },
 });
 
+type SetStateAction = number | ((prevState: number) => number);
+
 interface CarouselProps {
   medias: Array<Media>;
+  onClick: (index: number) => void;
+  selectedIndex: number;
+  setSelectedIndex: (value: SetStateAction) => void;
   className?: string;
 }
 
-const Carousel = ({ medias, className }: CarouselProps) => {
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
+const Carousel = ({
+  medias,
+  className,
+  selectedIndex,
+  setSelectedIndex,
+  onClick,
+}: CarouselProps) => {
   const previousImage = useCallback(
     (val: number) => {
       if (val === 0) {
@@ -81,7 +88,7 @@ const Carousel = ({ medias, className }: CarouselProps) => {
                   key={`image-${m.src}`}
                   href=""
                   prefetch={false}
-                  onClick={() => setIsLightboxOpen(true)}
+                  onClick={() => onClick(selectedIndex)}
                   scroll={false}
                   // necessary to make the active link available for clicking
                   className={selectedIndex !== index ? "absolute -z-10" : ""}
@@ -126,16 +133,6 @@ const Carousel = ({ medias, className }: CarouselProps) => {
           ))}
         </div>
       </div>
-
-      {/* Image lightbox */}
-      <Lightbox
-        open={isLightboxOpen}
-        close={() => setIsLightboxOpen(false)}
-        index={selectedIndex}
-        slides={medias.map((m) => ({ src: `/images/${m.src}`, alt: m.alt }))}
-        styles={{ container: { backgroundColor: "rgba(0, 0, 0, .8)" } }}
-        on={{ view: ({ index }) => setSelectedIndex(index) }}
-      />
     </>
   );
 };
