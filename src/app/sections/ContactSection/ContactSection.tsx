@@ -24,21 +24,21 @@ const ContactSection = (props: ContactSectionProps) => {
         Get in touch
       </h2>
 
-      <div className="flex justify-between items-center w-full mb-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center w-full mb-12">
         <Link href="https://github.com/rafaelfl" target="_blank">
-          <Image src={github} alt="Github logo" className="h-12 w-auto" />
+          <Image src={github} alt="Github logo" className="h-12 w-auto mx-auto" />
         </Link>
 
         <Link href="https://www.linkedin.com/in/rafael-fernandes-lopes" target="_blank">
-          <Image src={linkedin} alt="LinkedIn logo" className="h-12 w-auto" />
+          <Image src={linkedin} alt="LinkedIn logo" className="h-12 w-auto mx-auto" />
         </Link>
 
         <Link href="https://twitter.com/rafaelf_l" target="_blank">
-          <Image src={twitter} alt="Twitter logo" className="h-12 w-auto" />
+          <Image src={twitter} alt="Twitter logo" className="h-12 w-auto mx-auto" />
         </Link>
 
         <Link href="mailto:rafael.fernandes@gmail.com" target="_blank">
-          <Image src={email} alt="Email logo" className="h-12 w-auto" />
+          <Image src={email} alt="Email logo" className="h-12 w-auto mx-auto" />
         </Link>
       </div>
 
