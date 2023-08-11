@@ -1,13 +1,13 @@
 import { ComponentProps } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 import { sectionTitleStyle } from "@/app/styles/titleStyle";
 
-import github from "@/app/assets/images/github.svg";
-import linkedin from "@/app/assets/images/linkedin.svg";
-import twitter from "@/app/assets/images/twitter.svg";
-import email from "@/app/assets/images/email.svg";
-import Link from "next/link";
-import Image from "next/image";
+import github from "@/app/assets/images/contact/github.svg";
+import linkedin from "@/app/assets/images/contact/linkedin.svg";
+import twitter from "@/app/assets/images/contact/twitter.svg";
+import email from "@/app/assets/images/contact/email.svg";
 
 type ContactSectionProps = ComponentProps<"section">;
 
