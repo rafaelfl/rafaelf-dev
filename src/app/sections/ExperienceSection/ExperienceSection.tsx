@@ -10,7 +10,13 @@ type ExperienceSectionProps = ComponentProps<"section">;
 const ExperienceSection = (props: ExperienceSectionProps) => {
   return (
     <section id="experience" {...props}>
-      <h2 className={`${sectionTitleStyle({ decoration: "underline", size: "large" })} mt-8 mb-6`}>
+      <h2
+        className={sectionTitleStyle({
+          decoration: "underline",
+          size: "large",
+          className: "mt-8 mb-6",
+        })}
+      >
         Experience
       </h2>
 

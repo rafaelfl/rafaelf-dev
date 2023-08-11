@@ -11,6 +11,10 @@ import { Media } from "@/app/types";
 import styles from "./Carousel.module.scss";
 import "yet-another-react-lightbox/styles.css";
 
+const carouselStyle = tv({
+  base: "max-w-2xl mx-auto flex flex-col items-center justify-center",
+});
+
 const mediaGalleryStyle = tv({
   base: "duration-700 ease-in-out",
   variants: {
@@ -68,7 +72,7 @@ const Carousel = ({
 
   return (
     <>
-      <div className={`max-w-2xl mx-auto flex flex-col items-center justify-center ${className}`}>
+      <div className={carouselStyle({ className })}>
         <div className="flex justify-center items-center gap-2">
           {/* Previous button */}
           <button

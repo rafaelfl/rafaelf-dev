@@ -29,7 +29,11 @@ const AboutSection = (props: AboutSectionProps) => {
     <section id="about" {...props}>
       <Animated animation="lateralLeftFade">
         <h2
-          className={`${sectionTitleStyle({ decoration: "underline", size: "large" })} mt-8 mb-6`}
+          className={sectionTitleStyle({
+            decoration: "underline",
+            size: "large",
+            className: "mt-8 mb-6",
+          })}
         >
           About
         </h2>
