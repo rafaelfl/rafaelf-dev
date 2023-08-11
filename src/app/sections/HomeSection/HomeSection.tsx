@@ -29,7 +29,7 @@ const HomeSection = (props: HomeSectionProps) => {
         <div className="container w-full">
           <Image
             src={photo}
-            alt="Rafael Fernandes logo"
+            alt="Rafael Fernandes photo"
             height={350}
             priority
             className="mx-auto"

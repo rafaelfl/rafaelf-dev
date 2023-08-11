@@ -122,7 +122,7 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
       </Accordion>
 
       <Link href="/cv.pdf" target="_blank" className="text-2xl underline font-medium mb-10">
-        View Full Résumé &rarr;
+        View Full Résumé (in PDF format) &rarr;
       </Link>
     </section>
   );

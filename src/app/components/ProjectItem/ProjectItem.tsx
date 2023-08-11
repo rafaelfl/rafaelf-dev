@@ -49,7 +49,9 @@ const ProjectItem = ({
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden lg:min-h-[19rem] xl:min-h-[24.5rem] 2xl:min-h-[27.25rem] mb-20">
+      <div
+        className={`grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden lg:min-h-[19rem] xl:min-h-[24.5rem] 2xl:min-h-[27.25rem] mb-20 ${styles.readingOrderAuto}`}
+      >
         <Animated
           animation={ltr ? "lateralLeftFade" : "lateralRightFade"}
           style={{ transitionDelay: "0.4s" }}
@@ -72,7 +74,7 @@ const ProjectItem = ({
         <Animated
           animation={ltr ? "lateralRightFade" : "lateralLeftFade"}
           style={{ transitionDelay: "0.4s" }}
-          className={`${ltr ? "lg:order-1" : "lg:-order-1"}`}
+          className={`${ltr ? "lg:order-1 " : "lg:-order-1"}`}
         >
           <div className="flex flex-col">
             <h4 className="text-2xl text-darkblue">About</h4>
@@ -81,41 +83,47 @@ const ProjectItem = ({
             {sourceCode && (
               <>
                 <h4 className="text-2xl text-darkblue">Source code</h4>
-                <Link
-                  className="text-base mb-4 text-lightgray hover:underline"
-                  href={sourceCode}
-                  target="_blank"
-                >
-                  {sourceCode} <FontAwesomeIcon icon={faGithub} size="xl" />
-                </Link>
+                <div>
+                  <Link
+                    className="text-base mb-4 text-lightgray hover:underline"
+                    href={sourceCode}
+                    target="_blank"
+                  >
+                    {sourceCode} <FontAwesomeIcon icon={faGithub} size="xl" />
+                  </Link>
+                </div>
               </>
             )}
 
             {livePreview && (
               <>
                 <h4 className="text-2xl text-darkblue">Live preview</h4>
-                <Link
-                  className="text-base mb-4 text-lightgray hover:underline"
-                  href={livePreview}
-                  target="_blank"
-                >
-                  {livePreview} <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="lg" />
-                </Link>
+                <div>
+                  <Link
+                    className="text-base mb-4 text-lightgray hover:underline"
+                    href={livePreview}
+                    target="_blank"
+                  >
+                    {livePreview} <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="lg" />
+                  </Link>
+                </div>
               </>
             )}
 
             {video && (
               <>
                 <h4 className="text-2xl text-darkblue">Demo</h4>
-                <Link
-                  className="text-base mb-4 text-lightgray hover:underline"
-                  href=""
-                  prefetch={false}
-                  onClick={() => setIsVideoLightboxOpen(true)}
-                  scroll={false}
-                >
-                  Video <FontAwesomeIcon icon={faVideo} size="lg" />
-                </Link>
+                <div>
+                  <Link
+                    className="text-base mb-4 text-lightgray hover:underline"
+                    href=""
+                    prefetch={false}
+                    onClick={() => setIsVideoLightboxOpen(true)}
+                    scroll={false}
+                  >
+                    Video <FontAwesomeIcon icon={faVideo} size="lg" />
+                  </Link>
+                </div>
 
                 <Lightbox
                   open={isVideoLightboxOpen}

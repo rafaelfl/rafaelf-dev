@@ -62,7 +62,7 @@ const AboutSection = (props: AboutSectionProps) => {
 
         <AboutItem
           src={resultsImage}
-          alt="An increasing graphic"
+          alt="A growing graph"
           caption="Results driven"
           description="A clinic eye to identify existing problems, find and develop solutions, seeking to deliver results beyond the minimum requirements"
           animationDelay={500}

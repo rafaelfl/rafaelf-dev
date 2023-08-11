@@ -30,7 +30,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
         <div className="flex flex-1 justify-between items-center space-x-3.5">
           <Image
             src={logo}
-            alt="Rafael Fernandes logo"
+            alt="Rafael Fernandes site logo"
             className="h-12 w-auto"
             width={192}
             priority

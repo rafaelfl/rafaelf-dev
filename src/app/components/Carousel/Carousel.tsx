@@ -1,10 +1,9 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { tv } from "tailwind-variants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import Lightbox from "yet-another-react-lightbox";
 
 import { Media } from "@/app/types";
 
@@ -82,6 +81,7 @@ const Carousel = ({
             onClick={() => setSelectedIndex(previousImage)}
           >
             <FontAwesomeIcon icon={faChevronLeft} size="2xl" className="text-darkblue w-5" />
+            <p className="sr-only">Show previous image</p>
           </button>
 
           {/* Carousel wrapper */}
@@ -96,6 +96,8 @@ const Carousel = ({
                   scroll={false}
                   // necessary to make the active link available for clicking
                   className={selectedIndex !== index ? "absolute -z-10" : ""}
+                  tabIndex={selectedIndex !== index ? -1 : 0}
+                  aria-hidden={selectedIndex !== index}
                 >
                   <Image
                     src={`/images/${m.src}`}
@@ -120,6 +122,7 @@ const Carousel = ({
             onClick={() => setSelectedIndex(nextImage)}
           >
             <FontAwesomeIcon icon={faChevronRight} size="2xl" className="text-darkblue w-5" />
+            <p className="sr-only">Show next image</p>
           </button>
         </div>
 

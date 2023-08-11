@@ -45,7 +45,7 @@ export const imaginaShoppingMedias: Array<Media> = [
   {
     type: "image",
     src: "imaginashopping/2-cart.png",
-    alt: "ImaginaShopping cart containing some books, in which is possible to see the bundle prices and the total price",
+    alt: "ImaginaShopping cart containing some books, the bundle prices and the total price",
     width: 640,
     height: 311,
   },
@@ -59,7 +59,7 @@ export const imaginaShoppingMedias: Array<Media> = [
   {
     type: "image",
     src: "imaginashopping/4-payment.png",
-    alt: "ImaginaShopping payment screen containing some personal data (covered by a black mark) and the summary of the purchase",
+    alt: "ImaginaShopping payment screen with some personal data and the summary of the purchase",
     width: 640,
     height: 311,
   },
@@ -76,14 +76,14 @@ export const imaginaWebMedias: Array<Media> = [
   {
     type: "image",
     src: "imaginaweb/1-cover.png",
-    alt: "Cover screen of ImaginaWeb with the title 'My Story', the student's name (Rafael Fernandes Lopes) and a list of available scenarios to be included in the cover. The cover contains an image of a rollercoaster with some kids",
+    alt: "Cover screen of ImaginaWeb with the title 'My Story', the student's name and a list of scenarios",
     width: 640,
     height: 311,
   },
   {
     type: "image",
     src: "imaginaweb/2-page.png",
-    alt: "Screenshot of a ImaginaWeb story page containing a kitchen as the scenario, a white dog and a girl saying 'Hello'",
+    alt: "ImaginaWeb story page with a kitchen scenario, a white dog and a girl saying 'Hello'",
     width: 640,
     height: 311,
   },
@@ -138,7 +138,7 @@ export const sheldonMedias: Array<Media> = [
   {
     type: "image",
     src: "sheldon/1-main.png",
-    alt: "Sheldon main screen showing a list of students, as well as some button to select different book types and to generate the book covers, the text block and ebooks. There are some icons to open the generated files",
+    alt: "Sheldon main screen showing a list of students, and buttons to generate different book types",
     width: 640,
     height: 311,
   },
