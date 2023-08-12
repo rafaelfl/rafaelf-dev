@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Lightbox } from "yet-another-react-lightbox";
 import { Video } from "yet-another-react-lightbox/plugins";
 import Link from "next/link";
@@ -42,6 +42,9 @@ const ProjectItem = ({
   livePreview,
   video,
 }: ProjectItemProps) => {
+  const imagePortalRef = useRef<HTMLDivElement>(null);
+  const videoPortalRef = useRef<HTMLDivElement>(null);
+
   const [isImageLightboxOpen, setImageIsLightboxOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -50,13 +53,16 @@ const ProjectItem = ({
   return (
     <>
       <div
-        className={`grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden lg:min-h-[19rem] xl:min-h-[24.5rem] 2xl:min-h-[27.25rem] mb-20 ${styles.readingOrderAuto}`}
+        ref={videoPortalRef}
+        className={`grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden lg:min-h-[19rem] xl:min-h-[24.5rem] 2xl:min-h-[27.25rem] mb-20`}
       >
         <Animated
           animation={ltr ? "lateralLeftFade" : "lateralRightFade"}
           style={{ transitionDelay: "0.4s" }}
           className="order-none"
         >
+          <div ref={imagePortalRef} className="inline-block"></div>
+
           <Carousel
             medias={medias}
             className={`p-4 ${
@@ -134,6 +140,9 @@ const ProjectItem = ({
                     autoPlay: true,
                     muted: true,
                   }}
+                  portal={{
+                    root: videoPortalRef.current,
+                  }}
                 />
               </>
             )}
@@ -152,6 +161,9 @@ const ProjectItem = ({
         slides={medias.map((m) => ({ src: `/images/${m.src}`, alt: m.alt }))}
         styles={{ container: { backgroundColor: "rgba(0, 0, 0, .8)" } }}
         on={{ view: ({ index }) => setSelectedIndex(index) }}
+        portal={{
+          root: imagePortalRef.current,
+        }}
       />
     </>
   );

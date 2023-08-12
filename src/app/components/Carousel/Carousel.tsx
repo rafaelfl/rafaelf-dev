@@ -27,7 +27,7 @@ const mediaGalleryStyle = tv({
   },
 });
 
-const imageNavigationButtonStyles = tv({
+const imageNavigationButtonStyle = tv({
   variants: {
     disabled: {
       true: "opacity-40 cursor-default",
@@ -36,6 +36,15 @@ const imageNavigationButtonStyles = tv({
   },
   defaultVariants: {
     disabled: false,
+  },
+});
+
+const carouselLinksStyle = tv({
+  base: "outline-1 outline-solid inline-block -outline-offset-1",
+  variants: {
+    hidden: {
+      true: "absolute -z-10 left-0 top-0",
+    },
   },
 });
 
@@ -76,7 +85,7 @@ const Carousel = ({
           {/* Previous button */}
           <button
             type="button"
-            className={imageNavigationButtonStyles({ disabled: medias.length < 2 })}
+            className={imageNavigationButtonStyle({ disabled: medias.length < 2 })}
             disabled={medias.length < 2}
             onClick={() => setSelectedIndex(previousImage)}
           >
@@ -95,7 +104,7 @@ const Carousel = ({
                   onClick={() => onClick(selectedIndex)}
                   scroll={false}
                   // necessary to make the active link available for clicking
-                  className={selectedIndex !== index ? "absolute -z-10" : ""}
+                  className={carouselLinksStyle({ hidden: selectedIndex !== index })}
                   tabIndex={selectedIndex !== index ? -1 : 0}
                   aria-hidden={selectedIndex !== index}
                 >
@@ -117,7 +126,7 @@ const Carousel = ({
           {/* Next button */}
           <button
             type="button"
-            className={imageNavigationButtonStyles({ disabled: medias.length < 2 })}
+            className={imageNavigationButtonStyle({ disabled: medias.length < 2 })}
             disabled={medias.length < 2}
             onClick={() => setSelectedIndex(nextImage)}
           >
@@ -134,7 +143,7 @@ const Carousel = ({
               type="button"
               className={`w-3 h-3 rounded-full ${selectedIndex === index ? "bg-black" : "bg-gray"}`}
               aria-current={selectedIndex === index}
-              aria-label={`Slide ${index}`}
+              aria-label={`Select image ${index + 1}`}
               onClick={() => setSelectedIndex(index)}
             />
           ))}
