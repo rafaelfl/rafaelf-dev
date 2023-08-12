@@ -99,7 +99,7 @@ const Carousel = ({
               return (
                 <Link
                   key={`image-${m.src}`}
-                  href=""
+                  href="#"
                   prefetch={false}
                   onClick={() => onClick(selectedIndex)}
                   scroll={false}

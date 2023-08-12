@@ -4,15 +4,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const BuildNotebookAnimation = forwardRef<SVGSVGElement>(function Animation(_props, ref) {
   const { scrollYProgress } = useScroll();
 
-  const rotateClockwise = useTransform(scrollYProgress, [0, 0.2], [0, 360], { clamp: false });
-  const rotateCounterClockwise = useTransform(scrollYProgress, [0, 0.2], [360, 0], {
+  const rotateClockwise = useTransform(scrollYProgress, [0, 0.1], [0, 360], { clamp: false });
+  const rotateCounterClockwise = useTransform(scrollYProgress, [0, 0.1], [360, 0], {
     clamp: false,
   });
 
   const rotateClockwise3x = useTransform(scrollYProgress, [0, 0.05], [0, 360], { clamp: false });
 
-  const rotateClockwiseSlow = useTransform(scrollYProgress, [0, 0.5], [0, 360], { clamp: false });
-  const rotateCounterClockwiseSlow = useTransform(scrollYProgress, [0, 0.5], [360, 0], {
+  const rotateClockwiseSlow = useTransform(scrollYProgress, [0, 0.2], [0, 360], { clamp: false });
+  const rotateCounterClockwiseSlow = useTransform(scrollYProgress, [0, 0.2], [360, 0], {
     clamp: false,
   });
 

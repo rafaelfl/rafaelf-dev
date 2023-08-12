@@ -122,7 +122,7 @@ const ProjectItem = ({
                 <div>
                   <Link
                     className="text-base mb-4 text-lightgray hover:underline"
-                    href=""
+                    href="#"
                     prefetch={false}
                     onClick={() => setIsVideoLightboxOpen(true)}
                     scroll={false}
