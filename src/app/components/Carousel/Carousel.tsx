@@ -58,10 +58,6 @@ interface CarouselProps {
   className?: string;
 }
 
-const imageLoader = ({ src, width, quality }: ImageLoaderProps) => {
-  return "/loader.svg";
-};
-
 const Carousel = ({
   medias,
   className,
@@ -125,7 +121,7 @@ const Carousel = ({
                     width={m.width}
                     height={m.height}
                     placeholder="blur"
-                    loader={imageLoader}
+                    loading="eager"
                   />
                 </Link>
               );
