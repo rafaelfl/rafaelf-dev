@@ -1,6 +1,8 @@
+import { StaticImageData } from "next/image";
+
 export interface Media {
   type: "image";
-  src: string;
+  src: StaticImageData;
   width: number;
   height: number;
   alt?: string;

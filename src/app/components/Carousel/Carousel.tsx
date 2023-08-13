@@ -112,7 +112,7 @@ const Carousel = ({
                   aria-hidden={selectedIndex !== index}
                 >
                   <Image
-                    src={`/images/${m.src}`}
+                    src={m.src}
                     alt={m.alt ?? ""}
                     className={mediaGalleryStyle({
                       presentation: selectedIndex === index ? "show" : "hide",
@@ -120,6 +120,7 @@ const Carousel = ({
                     })}
                     width={m.width}
                     height={m.height}
+                    placeholder="blur"
                   />
                 </Link>
               );

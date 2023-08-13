@@ -7,8 +7,10 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare, faVideo } from "@fortawesome/free-solid-svg-icons";
 
 import { Media } from "@/app/types";
+
 import Animated from "../Animated/Animated";
 import Carousel from "../Carousel/Carousel";
+import NextJsImage from "../NextJsImage/NextJsImage";
 
 import styles from "./ProjectItem.module.scss";
 
@@ -161,7 +163,8 @@ const ProjectItem = ({
         open={isImageLightboxOpen}
         close={() => setImageIsLightboxOpen(false)}
         index={selectedIndex}
-        slides={medias.map((m) => ({ src: `/images/${m.src}`, alt: m.alt }))}
+        slides={medias.map((m) => m.src)}
+        render={{ slide: NextJsImage }}
         styles={{ container: { backgroundColor: "rgba(0, 0, 0, .8)" } }}
         on={{ view: ({ index }) => setSelectedIndex(index) }}
         portal={{
