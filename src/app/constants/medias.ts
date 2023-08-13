@@ -1,28 +1,28 @@
 import { Media } from "../types";
 
-import gitrendMain from "@/app/assets/images/screenshot/gitrend/1-main.png";
+import gitrendMain from "@/app/assets/images/screenshot/gitrend/1-main.webp";
 
-import imaginaKidsBooks from "@/app/assets/images/screenshot/imaginakids/1-books.png";
-import imaginaKidsPage from "@/app/assets/images/screenshot/imaginakids/2-page.png";
-import imaginaKidsCharacter from "@/app/assets/images/screenshot/imaginakids/3-character.png";
+import imaginaKidsBooks from "@/app/assets/images/screenshot/imaginakids/1-books.webp";
+import imaginaKidsPage from "@/app/assets/images/screenshot/imaginakids/2-page.webp";
+import imaginaKidsCharacter from "@/app/assets/images/screenshot/imaginakids/3-character.webp";
 
-import imaginaShoppingMain from "@/app/assets/images/screenshot/imaginashopping/1-main.png";
-import imaginaShoppingCart from "@/app/assets/images/screenshot/imaginashopping/2-cart.png";
-import imaginaShoppingCheckout from "@/app/assets/images/screenshot/imaginashopping/3-checkout.png";
-import imaginaShoppingPayment from "@/app/assets/images/screenshot/imaginashopping/4-payment.png";
-import imaginaShoppingCreditCard from "@/app/assets/images/screenshot/imaginashopping/5-creditcard.png";
+import imaginaShoppingMain from "@/app/assets/images/screenshot/imaginashopping/1-main.webp";
+import imaginaShoppingCart from "@/app/assets/images/screenshot/imaginashopping/2-cart.webp";
+import imaginaShoppingCheckout from "@/app/assets/images/screenshot/imaginashopping/3-checkout.webp";
+import imaginaShoppingPayment from "@/app/assets/images/screenshot/imaginashopping/4-payment.webp";
+import imaginaShoppingCreditCard from "@/app/assets/images/screenshot/imaginashopping/5-creditcard.webp";
 
-import imaginaWebCover from "@/app/assets/images/screenshot/imaginaweb/1-cover.png";
-import imaginaWebPage from "@/app/assets/images/screenshot/imaginaweb/2-page.png";
-import imaginaWebCharacter from "@/app/assets/images/screenshot/imaginaweb/3-character.png";
+import imaginaWebCover from "@/app/assets/images/screenshot/imaginaweb/1-cover.webp";
+import imaginaWebPage from "@/app/assets/images/screenshot/imaginaweb/2-page.webp";
+import imaginaWebCharacter from "@/app/assets/images/screenshot/imaginaweb/3-character.webp";
 
-import modos1 from "@/app/assets/images/screenshot/modos/phone1.png";
-import modos2 from "@/app/assets/images/screenshot/modos/phone2.png";
-import modos3 from "@/app/assets/images/screenshot/modos/phone3.png";
-import modos4 from "@/app/assets/images/screenshot/modos/phone4.png";
-import modos5 from "@/app/assets/images/screenshot/modos/phone5.png";
+import modos1 from "@/app/assets/images/screenshot/modos/phone1.webp";
+import modos2 from "@/app/assets/images/screenshot/modos/phone2.webp";
+import modos3 from "@/app/assets/images/screenshot/modos/phone3.webp";
+import modos4 from "@/app/assets/images/screenshot/modos/phone4.webp";
+import modos5 from "@/app/assets/images/screenshot/modos/phone5.webp";
 
-import sheldonMain from "@/app/assets/images/screenshot/sheldon/1-main.png";
+import sheldonMain from "@/app/assets/images/screenshot/sheldon/1-main.webp";
 
 export const gitrendMedias: Array<Media> = [
   {
