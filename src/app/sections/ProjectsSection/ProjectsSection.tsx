@@ -24,7 +24,7 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
           className={sectionTitleStyle({
             decoration: "underline",
             size: "large",
-            className: "mt-8 mb-6",
+            className: "my-8",
           })}
         >
           Some Projects

@@ -67,9 +67,7 @@ const ProjectItem = ({
 
           <Carousel
             medias={medias}
-            className={`p-4 ${
-              ltr ? styles.carouselPerspectiveLeft : styles.carouselPerspectiveRight
-            }`}
+            className="p-4"
             onClick={(idx) => {
               setSelectedIndex(idx);
               setImageIsLightboxOpen(true);
