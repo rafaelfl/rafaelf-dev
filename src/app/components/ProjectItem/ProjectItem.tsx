@@ -56,7 +56,7 @@ const ProjectItem = ({
     <>
       <div
         ref={videoPortalRef}
-        className={`grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden lg:min-h-[19rem] xl:min-h-[24.5rem] 2xl:min-h-[27.25rem] mb-20`}
+        className={`grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden lg:min-h-[19rem] xl:min-h-[24rem] 2xl:min-h-[27.25rem] mb-14`}
       >
         <Animated
           animation={ltr ? "lateralLeftFade" : "lateralRightFade"}
@@ -118,12 +118,15 @@ const ProjectItem = ({
               </>
             )}
 
+            <h4 className="text-2xl text-darkblue">Technologies</h4>
+            <p className="text-base text-lightgray">{technologies}</p>
+
             {video && (
               <>
-                <h4 className="text-2xl text-darkblue">Demo</h4>
-                <div>
+                {/* <h4 className="text-2xl text-darkblue">Demo</h4> */}
+                <div className="mb-5 mt-6">
                   <Link
-                    className="text-base mb-4 text-lightgray hover:underline"
+                    className="text-base mb-4 text-white bg-darkblue py-3 px-3 rounded-md font-medium"
                     href="#"
                     prefetch={false}
                     onClick={(e) => {
@@ -132,7 +135,7 @@ const ProjectItem = ({
                     }}
                     scroll={false}
                   >
-                    Video <FontAwesomeIcon icon={faVideo} size="lg" />
+                    View Demo
                   </Link>
                 </div>
 
@@ -151,9 +154,6 @@ const ProjectItem = ({
                 />
               </>
             )}
-
-            <h4 className="text-2xl text-darkblue">Technologies</h4>
-            <p className="text-base text-lightgray">{technologies}</p>
           </div>
         </Animated>
       </div>

@@ -94,11 +94,13 @@ const Carousel = ({
           </button>
 
           {/* Carousel wrapper */}
-          <div className={`overflow-hidden relative rounded-lg ${styles.imageShadow}`}>
+          <div
+            className={`overflow-hidden relative rounded-lg ${styles.imageShadow} flex items-center`}
+          >
             {medias.map((m, index) => {
               return (
                 <Link
-                  key={`image-${m.src}`}
+                  key={`image-${m.alt}`}
                   href="#"
                   prefetch={false}
                   onClick={(e) => {
@@ -144,7 +146,7 @@ const Carousel = ({
         <div className="w-full h-5 flex justify-center gap-2 mt-4">
           {medias.map((m, index) => (
             <button
-              key={`button-${m.src}`}
+              key={`button-${m.alt}`}
               type="button"
               className={`w-3 h-3 rounded-full ${selectedIndex === index ? "bg-black" : "bg-gray"}`}
               aria-current={selectedIndex === index}
