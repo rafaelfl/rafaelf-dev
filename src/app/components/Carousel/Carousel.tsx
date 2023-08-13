@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { ImageLoaderProps } from "next/image";
 import { tv } from "tailwind-variants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -57,6 +57,10 @@ interface CarouselProps {
   setSelectedIndex: (value: SetStateAction) => void;
   className?: string;
 }
+
+const imageLoader = ({ src, width, quality }: ImageLoaderProps) => {
+  return "/loader.svg";
+};
 
 const Carousel = ({
   medias,
@@ -118,7 +122,10 @@ const Carousel = ({
                       presentation: selectedIndex === index ? "show" : "hide",
                       className: "object-contain w-full max-w-[33rem]",
                     })}
+                    width={m.width}
+                    height={m.height}
                     placeholder="blur"
+                    loader={imageLoader}
                   />
                 </Link>
               );
