@@ -25,20 +25,52 @@ const ContactSection = (props: ContactSectionProps) => {
       </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center w-full mb-12">
-        <Link href="https://github.com/rafaelfl" target="_blank">
-          <Image src={github} alt="Github logo" className="h-12 w-auto mx-auto" />
+        <Link href="https://github.com/rafaelfl" target="_blank" className="w-auto mx-auto">
+          <div className="flex justify-center items-center gap-4 h-12">
+            <Image
+              src={github}
+              alt="Github logo"
+              className="inline-block h-full w-auto object-contain"
+            />
+            <p className="inline-block text-3xl font-medium">Github</p>
+          </div>
         </Link>
 
-        <Link href="https://www.linkedin.com/in/rafael-fernandes-lopes" target="_blank">
-          <Image src={linkedin} alt="LinkedIn logo" className="h-12 w-auto mx-auto" />
+        <Link
+          href="https://www.linkedin.com/in/rafael-fernandes-lopes"
+          target="_blank"
+          className="w-auto mx-auto"
+        >
+          <div className="flex justify-center items-center gap-4 h-12">
+            <Image
+              src={linkedin}
+              alt="LinkedIn logo"
+              className="inline-block h-full w-auto object-contain"
+            />
+            <p className="inline-block text-3xl font-medium">LinkedIn</p>
+          </div>
         </Link>
 
-        <Link href="https://twitter.com/rafaelf_l" target="_blank">
-          <Image src={twitter} alt="Twitter logo" className="h-12 w-auto mx-auto" />
+        <Link href="https://twitter.com/rafaelf_l" target="_blank" className="w-auto mx-auto">
+          <div className="flex justify-center items-center gap-4 h-12">
+            <Image
+              src={twitter}
+              alt="Twitter logo"
+              className="inline-block h-full w-auto object-contain"
+            />
+            <p className="inline-block text-3xl font-medium">Twitter</p>
+          </div>
         </Link>
 
-        <Link href="mailto:rafael.fernandes@gmail.com" target="_blank">
-          <Image src={email} alt="Email logo" className="h-12 w-auto mx-auto" />
+        <Link href="mailto:rafael.fernandes@gmail.com" target="_blank" className="w-auto mx-auto">
+          <div className="flex justify-center items-center gap-4 h-12">
+            <Image
+              src={email}
+              alt="Email logo"
+              className="inline-block h-full w-auto object-contain"
+            />{" "}
+            <p className="inline-block text-3xl font-medium">Email</p>
+          </div>
         </Link>
       </div>
 
