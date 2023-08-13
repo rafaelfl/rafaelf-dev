@@ -118,8 +118,6 @@ const Carousel = ({
                       presentation: selectedIndex === index ? "show" : "hide",
                       className: "object-contain w-full max-w-[33rem]",
                     })}
-                    width={m.width}
-                    height={m.height}
                     placeholder="blur"
                   />
                 </Link>
