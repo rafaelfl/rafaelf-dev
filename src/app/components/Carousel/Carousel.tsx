@@ -101,7 +101,10 @@ const Carousel = ({
                   key={`image-${m.src}`}
                   href="#"
                   prefetch={false}
-                  onClick={() => onClick(selectedIndex)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onClick(selectedIndex);
+                  }}
                   scroll={false}
                   // necessary to make the active link available for clicking
                   className={carouselLinksStyle({ hidden: selectedIndex !== index })}

@@ -124,7 +124,10 @@ const ProjectItem = ({
                     className="text-base mb-4 text-lightgray hover:underline"
                     href="#"
                     prefetch={false}
-                    onClick={() => setIsVideoLightboxOpen(true)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsVideoLightboxOpen(true);
+                    }}
                     scroll={false}
                   >
                     Video <FontAwesomeIcon icon={faVideo} size="lg" />

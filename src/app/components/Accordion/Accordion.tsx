@@ -38,9 +38,7 @@ const Accordion = ({ title, period, className, children }: AccordionProps) => {
           </svg>
         </span>
       </summary>
-      <div className="text-white font-normal mt-6 ps-2 pe-8 group-open:animate-fadeIn">
-        {children}
-      </div>
+      <div className="text-white font-normal mt-6 px-2 group-open:animate-fadeIn">{children}</div>
     </details>
   );
 };
