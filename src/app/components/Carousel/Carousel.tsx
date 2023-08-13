@@ -121,7 +121,6 @@ const Carousel = ({
                     width={m.width}
                     height={m.height}
                     placeholder="blur"
-                    fill
                   />
                 </Link>
               );
