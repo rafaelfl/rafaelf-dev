@@ -5,8 +5,8 @@ import Animated from "@/app/components/Animated/Animated";
 
 import starImage from "@/app/assets/images/star.svg";
 import communicationImage from "@/app/assets/images/communication.svg";
-import resultsImage from "@/app/assets/images/results.svg";
-import passionImage from "@/app/assets/images/passion.svg";
+import problemSolverImage from "@/app/assets/images/problem-solver.svg";
+import continuousLearningImage from "@/app/assets/images/continuous-learning.svg";
 
 import reactLogo from "@/app/assets/images/stack/react.svg";
 import reactNativeLogo from "@/app/assets/images/stack/react-native.svg";
@@ -43,36 +43,36 @@ const AboutSection = (props: AboutSectionProps) => {
         <h3 className={sectionTitleStyle()}>I am a Senior Software Engineer</h3>
       </Animated>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 items-start max-w-5xl mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start max-w-5xl mb-16">
         <AboutItem
           src={starImage}
           alt="Star"
           caption="Experience"
-          description="More than 20 years of experience developing, testing and maintaining web and mobile software applications"
+          description="With more than 20 years of experience in the software development field, I bring a wealth of practical knowledge to every project. I've successfully delivered a wide range of projects, giving me the insight needed to make informed decisions and anticipate challenges."
           animationDelay={100}
         />
 
         <AboutItem
           src={communicationImage}
           alt="A person with a speech balloon"
-          caption="Communication skills"
-          description="The experience as a professor and the leadership of several software projects improved both verbal and non-verbal communication"
+          caption="Collaboration and Communication"
+          description="I don't just write code: I excel in teamwork and communication. I've worked closely with designers, product managers, and fellow engineers, understanding the value of clear communication and collaboration."
           animationDelay={200}
         />
 
         <AboutItem
-          src={resultsImage}
-          alt="A growing graph"
-          caption="Results driven"
-          description="A clinic eye to identify existing problems, find and develop solutions, seeking to deliver results beyond the minimum requirements"
+          src={problemSolverImage}
+          alt="A hand placing a jigsaw puzzle piece into a light bulb"
+          caption="Problem-Solving Skills"
+          description="I thrive on tackling complex technical challenges. I have a strong analytical mind and a deep understanding of algorithms, data structures and different technologies, allowing me to solve problems efficiently and find innovative solutions that drive project success."
           animationDelay={500}
         />
 
         <AboutItem
-          src={passionImage}
+          src={continuousLearningImage}
           alt="Monitor with a heart"
-          caption="Passion"
-          description="Passionate about my work and proud of my achievements: I believe that technology can make the world a better place"
+          caption="Continuous Learning and Adaptability"
+          description="The tech industry is ever-evolving, and I embrace this by staying current with the latest trends, tools, and best practices. My growth mindset drives me to continuously learn new technologies and adapt my skills to meet the changing needs of projects."
           animationDelay={700}
         />
       </div>
