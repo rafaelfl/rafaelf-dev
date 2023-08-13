@@ -5,8 +5,8 @@ const linkStyle = tv({
   base: "px-2 py-1 rounded-md text-base md:text-xl hover:no-underline active:opacity-80",
   variants: {
     intent: {
-      default: "text-gray hover:text-white font-medium",
-      active: "text-darkyellow hover:text-yellow font-medium",
+      default: "text-gray hover:text-white",
+      active: "text-darkyellow hover:text-yellow",
     },
   },
   defaultVariants: {

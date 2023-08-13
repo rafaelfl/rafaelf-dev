@@ -26,13 +26,13 @@ const ContactSection = (props: ContactSectionProps) => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center w-full mb-12">
         <Link href="https://github.com/rafaelfl" target="_blank" className="w-auto mx-auto">
-          <div className="flex justify-center items-center gap-4 h-12">
+          <div className="flex justify-center items-center gap-4 h-14">
             <Image
               src={github}
               alt="Github logo"
               className="inline-block h-full w-auto object-contain"
             />
-            <p className="inline-block text-3xl font-medium">Github</p>
+            <p className="inline-block text-4xl font-medium">Github</p>
           </div>
         </Link>
 
@@ -41,40 +41,40 @@ const ContactSection = (props: ContactSectionProps) => {
           target="_blank"
           className="w-auto mx-auto"
         >
-          <div className="flex justify-center items-center gap-4 h-12">
+          <div className="flex justify-center items-center gap-4 h-14">
             <Image
               src={linkedin}
               alt="LinkedIn logo"
               className="inline-block h-full w-auto object-contain"
             />
-            <p className="inline-block text-3xl font-medium">LinkedIn</p>
+            <p className="inline-block text-4xl font-medium">LinkedIn</p>
           </div>
         </Link>
 
         <Link href="https://twitter.com/rafaelf_l" target="_blank" className="w-auto mx-auto">
-          <div className="flex justify-center items-center gap-4 h-12">
+          <div className="flex justify-center items-center gap-4 h-14">
             <Image
               src={twitter}
               alt="Twitter logo"
               className="inline-block h-full w-auto object-contain"
             />
-            <p className="inline-block text-3xl font-medium">Twitter</p>
+            <p className="inline-block text-4xl font-medium">Twitter</p>
           </div>
         </Link>
 
         <Link href="mailto:rafael.fernandes@gmail.com" target="_blank" className="w-auto mx-auto">
-          <div className="flex justify-center items-center gap-4 h-12">
+          <div className="flex justify-center items-center gap-4 h-20">
             <Image
               src={email}
               alt="Email logo"
               className="inline-block h-full w-auto object-contain"
             />{" "}
-            <p className="inline-block text-3xl font-medium">Email</p>
+            <p className="inline-block text-4xl font-medium">Email</p>
           </div>
         </Link>
       </div>
 
-      <div className="flex justify-center items-center w-full font-medium mb-6">
+      <div className="flex justify-center items-center w-full font-medium mb-10">
         <p>Developed with 💜 by Rafael Fernandes Lopes. © Copyright 2023, All Rights Reserved.</p>
       </div>
     </section>
