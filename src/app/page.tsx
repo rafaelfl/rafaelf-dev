@@ -1,7 +1,5 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import Image from "next/image";
 import { tv } from "tailwind-variants";
 
 import useScrollSpySection from "@/app/hooks/useScrollSpySection";
@@ -31,10 +29,6 @@ const section = tv({
 
 export default function Home() {
   const activeSection = useScrollSpySection();
-
-  const searchParams = useSearchParams();
-  const modalImage = searchParams.get("modal");
-  const mediaImage = searchParams.get("media") ?? "";
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start">
