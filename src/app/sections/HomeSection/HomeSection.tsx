@@ -6,6 +6,7 @@ import BuildNotebookAnimation from "@/app/components/BuildNotebookAnimation/Buil
 import photo from "@/app/assets/images/photo.webp";
 
 import styles from "./HomeSection.module.scss";
+import { LazyMotion, domAnimation } from "framer-motion";
 
 type HomeSectionProps = ComponentProps<"section">;
 
@@ -37,7 +38,9 @@ const HomeSection = (props: HomeSectionProps) => {
         </div>
       </div>
 
-      <BuildNotebookAnimation />
+      <LazyMotion features={domAnimation}>
+        <BuildNotebookAnimation />
+      </LazyMotion>
     </section>
   );
 };
