@@ -2,17 +2,28 @@ import { useRef, useState } from "react";
 import { Lightbox } from "yet-another-react-lightbox";
 import { Video } from "yet-another-react-lightbox/plugins";
 import Link from "next/link";
+import { tv } from "tailwind-variants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faArrowUpRightFromSquare, faVideo } from "@fortawesome/free-solid-svg-icons";
 
 import { Media } from "@/app/types";
 
 import Animated from "../Animated/Animated";
 import Carousel from "../Carousel/Carousel";
 import NextJsImage from "../NextJsImage/NextJsImage";
+import { faNoteSticky } from "@fortawesome/free-regular-svg-icons";
 
-import styles from "./ProjectItem.module.scss";
+const projectItemStyle = tv({
+  base: "grid grid-cols-1 items-center overflow-hidden lg:min-h-[19rem] xl:min-h-[24rem] 2xl:min-h-[27.25rem] mb-14",
+  variants: {
+    gallery: {
+      true: "lg:grid-cols-2 gap-4",
+    },
+  },
+  defaultVariants: {
+    gallery: false,
+  },
+});
 
 interface VideoProps {
   type: "video";
@@ -26,10 +37,11 @@ interface VideoProps {
 }
 
 interface ProjectItemProps {
-  medias: Array<Media>;
+  medias?: Array<Media>;
   about: string;
   technologies: string;
   sourceCode?: string;
+  documentation?: string;
   livePreview?: string;
   video?: VideoProps;
   ltr?: boolean;
@@ -41,6 +53,7 @@ const ProjectItem = ({
   technologies,
   ltr = true,
   sourceCode,
+  documentation,
   livePreview,
   video,
 }: ProjectItemProps) => {
@@ -54,28 +67,27 @@ const ProjectItem = ({
 
   return (
     <>
-      <div
-        ref={videoPortalRef}
-        className={`grid grid-cols-1 lg:grid-cols-2 gap-4 items-center overflow-hidden lg:min-h-[19rem] xl:min-h-[24rem] 2xl:min-h-[27.25rem] mb-14`}
-      >
-        <Animated
-          animation={ltr ? "lateralLeftFade" : "lateralRightFade"}
-          style={{ transitionDelay: "0.4s" }}
-          className="order-none"
-        >
-          <div ref={imagePortalRef} className="inline-block"></div>
+      <div ref={videoPortalRef} className={projectItemStyle({ gallery: !!medias })}>
+        {medias && (
+          <Animated
+            animation={ltr ? "lateralLeftFade" : "lateralRightFade"}
+            style={{ transitionDelay: "0.4s" }}
+            className="order-none"
+          >
+            <div ref={imagePortalRef} className="inline-block"></div>
 
-          <Carousel
-            medias={medias}
-            className="p-4"
-            onClick={(idx) => {
-              setSelectedIndex(idx);
-              setImageIsLightboxOpen(true);
-            }}
-            selectedIndex={selectedIndex}
-            setSelectedIndex={setSelectedIndex}
-          />
-        </Animated>
+            <Carousel
+              medias={medias}
+              className="p-4"
+              onClick={(idx) => {
+                setSelectedIndex(idx);
+                setImageIsLightboxOpen(true);
+              }}
+              selectedIndex={selectedIndex}
+              setSelectedIndex={setSelectedIndex}
+            />
+          </Animated>
+        )}
 
         <Animated
           animation={ltr ? "lateralRightFade" : "lateralLeftFade"}
@@ -83,15 +95,18 @@ const ProjectItem = ({
           className={`${ltr ? "lg:order-1 " : "lg:-order-1"}`}
         >
           <div className="flex flex-col">
-            <h4 className="text-2xl text-darkblue">About</h4>
+            <h4 className="text-xl text-darkblue">About</h4>
             <p className="text-base mb-4 text-lightgray">{about}</p>
+
+            <h4 className="text-xl text-darkblue">Technologies</h4>
+            <p className="text-base mb-4 text-lightgray">{technologies}</p>
 
             {sourceCode && (
               <>
-                <h4 className="text-2xl text-darkblue">Source code</h4>
-                <div>
+                <h4 className="text-xl text-darkblue">Source code</h4>
+                <div className="mb-4">
                   <Link
-                    className="text-base mb-4 text-lightgray hover:underline"
+                    className="text-base  text-lightgray hover:underline"
                     href={sourceCode}
                     target="_blank"
                   >
@@ -101,30 +116,38 @@ const ProjectItem = ({
               </>
             )}
 
-            {livePreview && (
+            {documentation && (
               <>
-                <h4 className="text-2xl text-darkblue">Live preview</h4>
-                <div>
+                <h4 className="text-xl text-darkblue">Documentation</h4>
+                <div className="mb-4">
                   <Link
-                    className="text-base mb-4 text-lightgray hover:underline"
-                    href={livePreview}
+                    className="text-base text-lightgray hover:underline"
+                    href={documentation}
                     target="_blank"
                   >
-                    {livePreview} <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="lg" />
+                    {documentation} <FontAwesomeIcon icon={faNoteSticky} size="xl" />
                   </Link>
                 </div>
               </>
             )}
 
-            <h4 className="text-2xl text-darkblue">Technologies</h4>
-            <p className="text-base text-lightgray">{technologies}</p>
+            {livePreview && (
+              <div className="mb-5 mt-1">
+                <Link
+                  className="text-base mb-4 text-white bg-darkblue py-3 px-3 rounded-md font-medium"
+                  href={livePreview}
+                  target="_blank"
+                >
+                  Live Preview
+                </Link>
+              </div>
+            )}
 
             {video && (
               <>
-                {/* <h4 className="text-2xl text-darkblue">Demo</h4> */}
-                <div className="mb-5 mt-6">
+                <div className="mb-5">
                   <Link
-                    className="text-base mb-4 text-white bg-darkblue py-3 px-3 rounded-md font-medium"
+                    className="text-base text-white bg-darkblue py-3 px-3 rounded-md font-medium"
                     href="#"
                     prefetch={false}
                     onClick={(e) => {
@@ -157,18 +180,20 @@ const ProjectItem = ({
       </div>
 
       {/* Image lightbox */}
-      <Lightbox
-        open={isImageLightboxOpen}
-        close={() => setImageIsLightboxOpen(false)}
-        index={selectedIndex}
-        slides={medias.map((m) => m.src)}
-        render={{ slide: NextJsImage }}
-        styles={{ container: { backgroundColor: "rgba(0, 0, 0, .8)" } }}
-        on={{ view: ({ index }) => setSelectedIndex(index) }}
-        portal={{
-          root: imagePortalRef.current,
-        }}
-      />
+      {medias && (
+        <Lightbox
+          open={isImageLightboxOpen}
+          close={() => setImageIsLightboxOpen(false)}
+          index={selectedIndex}
+          slides={medias.map((m) => m.src)}
+          render={{ slide: NextJsImage }}
+          styles={{ container: { backgroundColor: "rgba(0, 0, 0, .8)" } }}
+          on={{ view: ({ index }) => setSelectedIndex(index) }}
+          portal={{
+            root: imagePortalRef.current,
+          }}
+        />
+      )}
     </>
   );
 };

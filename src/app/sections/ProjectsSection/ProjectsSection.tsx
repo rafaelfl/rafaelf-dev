@@ -13,6 +13,8 @@ import ImaginaShoppingProject from "./projects/ImaginaShoppingProject";
 import SheldonProject from "./projects/SheldonProject";
 import GitrendProject from "./projects/GitrendProject";
 import ModosProject from "./projects/ModosProject";
+import AuthApiProject from "./projects/AuthApiProject";
+import Web3VulnerabilityDetectorProject from "./projects/Web3VulnerabilityDetectorProject";
 
 type ProjectsSectionProps = ComponentProps<"section">;
 
@@ -78,91 +80,14 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
         <h3 className={sectionTitleStyle()}>Express Node.js Auth API</h3>
       </Animated>
 
-      <Animated animation="lateralLeftFade" style={{ transitionDelay: "0.4s" }} className="mb-20">
-        <div className="flex flex-col">
-          <h4 className="text-2xl text-darkblue">About</h4>
-          <p className="text-base mb-4 text-lightgray">
-            An authentication API that implements a refresh token rotation scheme (based on JWT
-            tokens) and token reuse detection using Node.js, Express, Passport and Typescript. This
-            project has the following functionalities: user registration, sign in/sign out, refresh
-            access tokens, retrieve and update user profiles, admin features (create new accounts,
-            retrieve complete user lists, retrieve and update individual users, delete users), mock
-            protected routes, and retrieve sample data with pagination. It can be used as an
-            starting point for studying about the authentication process by both frontend and
-            backend developers. All data is stored in a MongoDB database and the token invalidation
-            works with Redis database.
-          </p>
-
-          <h4 className="text-2xl text-darkblue">Source code</h4>
-          <Link
-            className="text-base mb-4 text-lightgray hover:underline"
-            href="https://github.com/rafaelfl/express-typescript-auth"
-            target="_blank"
-          >
-            https://github.com/rafaelfl/express-typescript-auth{" "}
-            <FontAwesomeIcon icon={faGithub} size="xl" />
-          </Link>
-
-          <h4 className="text-2xl text-darkblue">Live preview</h4>
-          <Link
-            className="text-base text-lightgray hover:underline"
-            href="https://api.rafaelf.dev/"
-            target="_blank"
-          >
-            https://api.rafaelf.dev/ <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="lg" />
-          </Link>
-
-          <Link
-            className="text-base mb-4 text-lightgray hover:underline"
-            href="https://api.rafaelf.dev/api-docs/"
-            target="_blank"
-          >
-            https://api.rafaelf.dev/api-docs/{" "}
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="lg" />
-          </Link>
-
-          <h4 className="text-2xl text-darkblue">Technologies</h4>
-          <p className="text-base text-lightgray">
-            Node.js, Express, Express Validator, Passport, Swagger, MongoDB, Redis, Docker
-          </p>
-        </div>
-      </Animated>
+      <AuthApiProject />
 
       {/* Web3 Contract Vulnerability Detector API (POC) */}
       <Animated animation="lateralLeftFade" style={{ transitionDelay: "0.4s" }}>
         <h3 className={sectionTitleStyle()}>Web3 Contract Vulnerability Detector API (POC)</h3>
       </Animated>
 
-      <Animated animation="lateralLeftFade" style={{ transitionDelay: "0.4s" }} className="mb-20">
-        <div className="flex flex-col">
-          <h4 className="text-2xl text-darkblue">About</h4>
-          <p className="text-base mb-4 text-lightgray">
-            A simple POC (Proof of Concept) API that uses CLI tools for inspecting and detecting
-            security issues on Web3 Smart Contracts written in Solidity. The API receives a Solidity
-            source code as input and, after running some tools on the received code (currently the
-            Slither and Mythril are used), the API returns the vulnerabilities found by the tools.
-            Since it is just a POC, only two vulnerabilities are supported: Unchecked Call Return
-            Value (SWC-104), and Unprotected SELFDESTRUCT Instruction (SWC-106). This API also
-            includes a suggestions API, that uses OpenAI ChatGPT API to try to find suggestions for
-            improving the security of the input Solidity source codes.
-          </p>
-
-          <h4 className="text-2xl text-darkblue">Source code</h4>
-          <Link
-            className="text-base mb-4 text-lightgray hover:underline"
-            href="https://github.com/rafaelfl/web3-security-contract-detector"
-            target="_blank"
-          >
-            https://github.com/rafaelfl/web3-security-contract-detector{" "}
-            <FontAwesomeIcon icon={faGithub} size="xl" />
-          </Link>
-
-          <h4 className="text-2xl text-darkblue">Technologies</h4>
-          <p className="text-base text-lightgray">
-            Node.js, Express, Swagger, OpenAI ChatGPT API, Docker
-          </p>
-        </div>
-      </Animated>
+      <Web3VulnerabilityDetectorProject />
     </section>
   );
 };
