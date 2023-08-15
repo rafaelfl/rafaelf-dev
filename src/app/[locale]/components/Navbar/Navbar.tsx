@@ -46,13 +46,13 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
               </NavLink>
             ))}
 
-            <LanguageSwitcher icon={locale === "en-US" ? "br" : "en"} />
+            <LanguageSwitcher icon={locale.toLowerCase() === "en-us" ? "br" : "en"} />
           </nav>
         </div>
 
         <div className="flex items-center">
           <div className="me-6 lg:hidden">
-            <LanguageSwitcher icon={locale === "en-US" ? "br" : "en"} />
+            <LanguageSwitcher icon={locale.toLowerCase() === "en-us" ? "br" : "en"} />
           </div>
 
           <button
