@@ -10,7 +10,6 @@ import logo from "@/app/[locale]/assets/images/logo.svg";
 import "./Navbar.scss";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
-import { useRouter } from "next/router";
 
 interface NavbarProps {
   locale: string;

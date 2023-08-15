@@ -16,8 +16,6 @@ const LanguageSwitcher = ({ icon }: LanguageSwitcherProps) => {
   const router = useRouter();
 
   const onSwitchLanguage = () => {
-    console.log(" >>> onSwitchLanguage", pathname, icon);
-
     if (icon === "br") {
       router.replace(pathname, { locale: "pt-BR", scroll: false });
     } else {

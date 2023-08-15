@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import { Fredoka } from "next/font/google";
 
 import "./globals.scss";
-
-const fredoka = Fredoka({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  variable: "--font-fredoka",
-});
 
 export const metadata: Metadata = {
   title: "Rafael Fernandes - Fullstack Software Engineer",
@@ -16,10 +9,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rafaelf.dev"),
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body className={fredoka.className}>{children}</body>
-    </html>
-  );
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return children;
 }
