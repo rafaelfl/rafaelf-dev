@@ -1,13 +1,17 @@
+import { useTranslations } from "next-intl";
+
 import ProjectItem from "@/app/[locale]/components/ProjectItem/ProjectItem";
 import { modosMedias } from "@/app/[locale]/constants";
 
 const ModosProject = () => {
+  const t = useTranslations();
+
   return (
     <ProjectItem
       ltr={false}
       medias={modosMedias}
-      about="Modos is an m-learning platform for building and sharing microlearning tracks. Modos is a mobile application that allows teachers to share different types of media with the students (such as images, videos, audios, and text), composing a learning path to be followed by them."
-      technologies="Flutter, Firebase"
+      about={t("projects.modos.about")}
+      technologies={t("projects.modos.technologies")}
       video={{
         type: "video",
         width: 1080,

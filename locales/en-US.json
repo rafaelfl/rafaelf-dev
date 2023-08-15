@@ -57,6 +57,77 @@
     "andMore": "...and more!"
   },
   "experience": {
-    "title": "Experience"
+    "title": "Experience",
+    "fullstack": {
+      "title": "Senior Software Engineer · Fullstack Labs",
+      "period": "2022 - Present",
+      "description": "Delivering high quality web and mobile software products for our customers, including Fueled and Encyclopaedia Britannica"
+    },
+    "imaginakids": {
+      "title": "CTO & Lead Developer · ImaginaKIDS",
+      "description": "ImaginaKIDS is an EdTech startup which provides tools for students to create their own books. Those stories can be distributed as ebooks or can be printed. Our startup has improved the reading and writing skills of 7k+ students and 100+ teachers. More than 150k pages were created using our platform."
+    },
+    "ufmaifma": {
+      "title": "Professor, Researcher and Tech Lead · Federal University of Maranhão (UFMA) & Federal Institute of Technology of Maranhão (IFMA)",
+      "description": "At UFMA and IFMA I have contributed to the formation of hundreds of students, teaching in undergraduate and post-graduate Computer Science courses, teaching in both basic courses, such as \"Algorithms and Data Structures\" and \"Object Oriented Programming\", and also in technical courses, such as \"Development of Mobile Applications\" and \"Distributed Systems\". Additionally, I have acted as manager, supervisor, consultant and tech lead on several Research, Development & Innovation software projects, using different technologies."
+    },
+    "ufma": {
+      "title": "Web Developer · Federal University of Maranhão (UFMA)",
+      "description": "I have worked at the UFMA's Information Technology Center as a Systems Analyst and Web Developer, supporting the university's website and other web systems"
+    },
+    "fapema": {
+      "title": "Web Developer · Foundation of Research Support of the State of Maranhao - Fapema",
+      "description": "I have worked as a web developer, implementing and maintaining the Fapema's website and a web information management information system"
+    },
+    "viewCv": "View Full Résumé (PDF format)"
+  },
+  "projects": {
+    "title": "Some Projects",
+    "about": "About",
+    "technologies": "Technologies",
+    "sourceCode": "Source code",
+    "documentation": "Documentation",
+    "livePreview": "Live Preview",
+    "viewDemo": "View Demo",
+    "imaginakids": {
+      "about": "ImaginaKIDS is an iOS application, designed specifically for iPads, used by students to create their own digital books. The stories created using the app can be printed, transforming them to real books. The application allows the students to create multiple books, to set their titles, to include customized characters, scenarios, balloons and text boxes.",
+      "technologies": "React Native, Firebase, Native modules (Swift)"
+    },
+    "imaginaweb": {
+      "about": "With the advent of the pandemic, many schools had to stop their activities, making it impossible, for the students, to use the school iPads. A web version of the platform was developed, allowing students to use their personal computers to build their stories. The web version offered the same features as the app version, but with an increased product scalability.",
+      "technologies": "React.js, Firebase (Authentication, Database, Storage), Redux, Bootstrap"
+    },
+    "imaginashopping": {
+      "about": "ImaginaShopping is a responsive web platform that can be used by students' parents to buy different book packs, apply discount codes and make payments with credit card and Pix (a Brazilian automatic payment method). Books purchased through ImaginaShopping are processed and transferred to partner graphical services for printing and shipping.",
+      "technologies": "React.js, Firebase (Authentication, Database, Storage), Cloud Functions, Redux, Bootstrap"
+    },
+    "sheldon": {
+      "about": "In order to simplify the process of generating books and sending them to partner graphic services, SHELDON (Sistema de Hospedagem e Exportação de Livros Digitais ONline - Online Digital Books Export and Hosting System) was developed. This is an internal system, used by the ImaginaKIDS operational team, to generate PDF files of the stories and export them to a file server.",
+      "technologies": "React.js, Bootstrap, Firebase, Node.js, Express, Socket.IO, BullMQ, Redis"
+    },
+    "gitrend": {
+      "about": "GiTrend is a web application that allows to search for trending repositories and users in GitHub. Through this application it is possible to search for trending repositories by text (title, description or readme), and by programming language. It is possible to tag some of the repositories as favorites, or filter only the favorites. A list of trending users is also shown.",
+      "technologies": "React.js, Styled Components, Redux, GitHub API"
+    },
+    "modos": {
+      "about": "Modos is an m-learning platform for building and sharing microlearning tracks. Modos is a mobile application that allows teachers to share different types of media with the students (such as images, videos, audios, and text), composing a learning path to be followed by them.",
+      "technologies": "Flutter, Firebase"
+    },
+    "authApi": {
+      "about": "An authentication API that implements a refresh token rotation scheme (based on JWT tokens) and token reuse detection using Node.js, Express, Passport and Typescript. This project has the following functionalities: user registration, sign in/sign out, refresh access tokens, retrieve and update user profiles, admin features (create new accounts, retrieve complete user lists, retrieve and update individual users, delete users), protected routes, and retrieve sample data with pagination. It can be used as an starting point for studying about the authentication process by both frontend and backend developers. All data is stored in a MongoDB database and the token invalidation works with Redis database.",
+      "technologies": "Node.js, Express, Express Validator, Passport, Swagger, MongoDB, Redis, Docker"
+    },
+    "web3Api": {
+      "about": "A simple POC (Proof of Concept) API that uses CLI tools for inspecting and detecting security issues on Web3 Smart Contracts written in Solidity. The API receives a Solidity source code as input and, after running some tools on the received code (currently the Slither and Mythril are used), the API returns the vulnerabilities found by the tools. Since it is just a POC, only two vulnerabilities are supported: Unchecked Call Return Value (SWC-104), and Unprotected SELFDESTRUCT Instruction (SWC-106). This API also includes a suggestions API, that uses OpenAI ChatGPT API to try to find suggestions for improving the security of the input Solidity source codes.",
+      "technologies": "Node.js, Express, Swagger, OpenAI ChatGPT API, Docker"
+    }
+  },
+  "contact": {
+    "title": "Get in touch",
+    "githubAlt": "Github logo",
+    "linkedinAlt": "LinkedIn logo",
+    "twitterAlt": "Twitter logo",
+    "emailAlt": "Email logo",
+    "copyright": "Developed with 💜 by Rafael Fernandes Lopes. © Copyright 2023, All Rights Reserved."
   }
 }

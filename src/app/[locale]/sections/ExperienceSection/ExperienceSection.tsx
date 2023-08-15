@@ -23,12 +23,9 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
         {t("experience.title")}
       </h2>
 
-      <Accordion title="Senior Software Engineer · Fullstack Labs" period="2022 - Present">
+      <Accordion title={t("experience.fullstack.title")} period={t("experience.fullstack.period")}>
         <div className="flex flex-col justify-start items-start">
-          <p>
-            Delivering high quality web and mobile software products for our customers, including
-            Fueled and Encyclopaedia Britannica
-          </p>
+          <p>{t("experience.fullstack.description")}</p>
           <div className="flex flex-row flex-wrap gap-3 pt-4 pb-2">
             <Chip>React.js</Chip>
             <Chip>Next.js</Chip>
@@ -39,14 +36,9 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
         </div>
       </Accordion>
 
-      <Accordion title="CTO & Lead Developer · ImaginaKIDS" period="2017 - 2022">
+      <Accordion title={t("experience.imaginakids.title")} period="2017 - 2022">
         <div className="flex flex-col justify-start items-start">
-          <p>
-            ImaginaKIDS is an EdTech startup which provides tools for students to create their own
-            books. Those stories can be distributed as ebooks or can be printed. Our startup has
-            improved the reading and writing skills of 7k+ students and 100+ teachers. More than
-            150k pages were created using our platform.
-          </p>
+          <p>{t("experience.imaginakids.description")}</p>
           <div className="flex flex-row flex-wrap gap-3 pt-4 pb-2">
             <Chip>React.js</Chip>
             <Chip>React Native</Chip>
@@ -62,20 +54,9 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
         </div>
       </Accordion>
 
-      <Accordion
-        title="Professor, Researcher and Tech Lead · Federal University of Maranhão (UFMA) & Federal Institute of Technology of Maranhão (IFMA)"
-        period="2006 - 2022"
-      >
+      <Accordion title={t("experience.ufmaifma.title")} period="2006 - 2022">
         <div className="flex flex-col justify-start items-start">
-          <p>
-            At UFMA and IFMA I have contributed to the formation of hundreds of students, teaching
-            in undergraduate and post-graduate Computer Science courses, teaching in both basic
-            courses, such as &ldquo;Algorithms and Data Structures&rdquo; and &ldquo;Object Oriented
-            Programming&rdquo;, and also in technical courses, such as &ldquo;Development of Mobile
-            Applications&rdquo; and &ldquo;Distributed Systems&rdquo;. Additionally, I have acted as
-            manager, supervisor, consultant and tech lead on several Research, Development &
-            Innovation software projects, using different technologies.
-          </p>
+          <p>{t("experience.ufmaifma.description")}</p>
           <div className="flex flex-row flex-wrap gap-3 pt-4 pb-2">
             <Chip>React.js</Chip>
             <Chip>Node.js</Chip>
@@ -91,12 +72,9 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
         </div>
       </Accordion>
 
-      <Accordion title="Web Developer · Federal University of Maranhão (UFMA)" period="2004 - 2006">
+      <Accordion title={t("experience.ufma.title")} period="2004 - 2006">
         <div className="flex flex-col justify-start items-start">
-          <p>
-            I have worked at the UFMA&lsquo;s Information Technology Center as a Systems Analyst and
-            Web Developer, supporting the university&lsquo;s website and other web systems
-          </p>
+          <p>{t("experience.ufma.description")}</p>
           <div className="flex flex-row flex-wrap gap-3 pt-4 pb-2">
             <Chip>PHP</Chip>
             <Chip>J2EE</Chip>
@@ -107,16 +85,9 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
         </div>
       </Accordion>
 
-      <Accordion
-        title="Web Developer · Foundation of Research Support of the State of Maranhao - Fapema"
-        period="2003 - 2005"
-        className="mb-10"
-      >
+      <Accordion title={t("experience.fapema.title")} period="2003 - 2005" className="mb-10">
         <div className="flex flex-col justify-start items-start">
-          <p>
-            I have worked as a web developer, implementing and maintaining the Fapema&lsquo;s
-            website and a web information management information system
-          </p>
+          <p>{t("experience.fapema.description")}</p>
           <div className="flex flex-row flex-wrap gap-3 pt-4 pb-2">
             <Chip>PHP</Chip>
             <Chip>MySQL</Chip>
@@ -129,7 +100,7 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
         target="_blank"
         className="text-2xl underline font-medium mb-10 text-center"
       >
-        View Full Résumé (PDF format) &rarr;
+        {t("experience.viewCv")} &rarr;
       </Link>
     </section>
   );

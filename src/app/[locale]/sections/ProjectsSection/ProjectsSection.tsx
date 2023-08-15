@@ -1,8 +1,5 @@
 import { ComponentProps } from "react";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { useTranslations } from "next-intl";
 
 import { sectionTitleStyle } from "@/app/[locale]/styles/titleStyle";
 import Animated from "@/app/[locale]/components/Animated/Animated";
@@ -19,6 +16,8 @@ import Web3VulnerabilityDetectorProject from "./projects/Web3VulnerabilityDetect
 type ProjectsSectionProps = ComponentProps<"section">;
 
 const ProjectsSection = (props: ProjectsSectionProps) => {
+  const t = useTranslations();
+
   return (
     <section id="projects" {...props}>
       <Animated animation="lateralLeftFade">
@@ -29,7 +28,7 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
             className: "my-8",
           })}
         >
-          Some Projects
+          {t("projects.title")}
         </h2>
       </Animated>
 
@@ -77,7 +76,7 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
 
       {/* Express Auth API */}
       <Animated animation="lateralLeftFade" style={{ transitionDelay: "0.4s" }}>
-        <h3 className={sectionTitleStyle()}>Express Node.js Auth API</h3>
+        <h3 className={sectionTitleStyle()}>Node.js Express Auth API</h3>
       </Animated>
 
       <AuthApiProject />

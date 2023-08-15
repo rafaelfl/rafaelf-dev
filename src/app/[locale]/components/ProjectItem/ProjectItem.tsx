@@ -1,17 +1,18 @@
 import { useRef, useState } from "react";
-import { Lightbox } from "yet-another-react-lightbox";
-import { Video } from "yet-another-react-lightbox/plugins";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { tv } from "tailwind-variants";
+import { Lightbox } from "yet-another-react-lightbox";
+import { Video } from "yet-another-react-lightbox/plugins";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faNoteSticky } from "@fortawesome/free-regular-svg-icons";
 
 import { Media } from "@/app/[locale]/types";
 
 import Animated from "../Animated/Animated";
 import Carousel from "../Carousel/Carousel";
 import NextJsImage from "../NextJsImage/NextJsImage";
-import { faNoteSticky } from "@fortawesome/free-regular-svg-icons";
 
 const projectItemStyle = tv({
   base: "grid grid-cols-1 items-center overflow-hidden lg:min-h-[19rem] xl:min-h-[24rem] 2xl:min-h-[27.25rem] mb-14",
@@ -57,6 +58,8 @@ const ProjectItem = ({
   livePreview,
   video,
 }: ProjectItemProps) => {
+  const t = useTranslations();
+
   const imagePortalRef = useRef<HTMLDivElement>(null);
   const videoPortalRef = useRef<HTMLDivElement>(null);
 
@@ -95,15 +98,15 @@ const ProjectItem = ({
           className={`${ltr ? "lg:order-1 " : "lg:-order-1"}`}
         >
           <div className="flex flex-col">
-            <h4 className="text-xl text-darkblue">About</h4>
+            <h4 className="text-xl text-darkblue">{t("projects.about")}</h4>
             <p className="text-base mb-4 text-lightgray">{about}</p>
 
-            <h4 className="text-xl text-darkblue">Technologies</h4>
+            <h4 className="text-xl text-darkblue">{t("projects.technologies")}</h4>
             <p className="text-base mb-4 text-lightgray">{technologies}</p>
 
             {sourceCode && (
               <>
-                <h4 className="text-xl text-darkblue">Source code</h4>
+                <h4 className="text-xl text-darkblue">{t("projects.sourceCode")}</h4>
                 <div className="mb-4">
                   <Link
                     className="text-base  text-lightgray hover:underline"
@@ -118,7 +121,7 @@ const ProjectItem = ({
 
             {documentation && (
               <>
-                <h4 className="text-xl text-darkblue">Documentation</h4>
+                <h4 className="text-xl text-darkblue">{t("projects.documentation")}</h4>
                 <div className="mb-4">
                   <Link
                     className="text-base text-lightgray hover:underline"
@@ -138,7 +141,7 @@ const ProjectItem = ({
                   href={livePreview}
                   target="_blank"
                 >
-                  Live Preview
+                  {t("projects.livePreview")}
                 </Link>
               </div>
             )}
@@ -156,7 +159,7 @@ const ProjectItem = ({
                     }}
                     scroll={false}
                   >
-                    View Demo
+                    {t("projects.viewDemo")}
                   </Link>
                 </div>
 

@@ -1,16 +1,16 @@
+import { useTranslations } from "next-intl";
+
 import ProjectItem from "@/app/[locale]/components/ProjectItem/ProjectItem";
 import { imaginaKidsMedias } from "@/app/[locale]/constants";
 
 const ImaginaKIDSProject = () => {
+  const t = useTranslations();
+
   return (
     <ProjectItem
       medias={imaginaKidsMedias}
-      about="ImaginaKIDS is an iOS application, designed specifically for iPads, used by students to
-          create their own digital books. The stories created using the app can be printed,
-          transforming them to real books. The application allows the students to create multiple
-          books, to set their titles, to include customized characters, scenarios, balloons and
-          text boxes."
-      technologies="React Native, Firebase, Native modules (Swift)"
+      about={t("projects.imaginakids.about")}
+      technologies={t("projects.imaginakids.technologies")}
       video={{
         type: "video",
         width: 1036,

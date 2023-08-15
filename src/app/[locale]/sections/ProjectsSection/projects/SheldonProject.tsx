@@ -1,13 +1,17 @@
+import { useTranslations } from "next-intl";
+
 import ProjectItem from "@/app/[locale]/components/ProjectItem/ProjectItem";
 import { sheldonMedias } from "@/app/[locale]/constants";
 
 const SheldonProject = () => {
+  const t = useTranslations();
+
   return (
     <ProjectItem
       ltr={false}
       medias={sheldonMedias}
-      about="In order to simplify the process of generating books and sending them to partner graphic services, SHELDON (Sistema de Hospedagem e Exportação de Livros Digitais ONline - Online Digital Books Export and Hosting System) was developed. This is an internal system, used by the ImaginaKIDS operational team, to generate PDF files of the stories and export them to a file server."
-      technologies="React.js, Bootstrap, Firebase, Node.js, Express, Socket.IO, BullMQ, Redis"
+      about={t("projects.sheldon.about")}
+      technologies={t("projects.sheldon.technologies")}
       video={{
         type: "video",
         width: 3012,
