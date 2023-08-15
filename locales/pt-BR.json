@@ -17,7 +17,11 @@
     "experience": "Experiência",
     "projects": "Projetos",
     "contact": "Contato",
-    "menu-button": "Abrir Menu"
+    "menu-button": "Abrir Menu",
+    "usLanguageLabel": "Mudar língua para Inglês dos E.U.A.",
+    "usAlt": "Bandeira dos E.U.A.",
+    "brLanguageLabel": "Mudar língua para Português do Brasil",
+    "brAlt": "Bandeira do Brazil"
   },
   "about": {
     "title": "Sobre",

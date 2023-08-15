@@ -17,7 +17,11 @@
     "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact",
-    "menu-button": "Open Menu"
+    "menu-button": "Open Menu",
+    "usLanguageLabel": "Switch language to English U.S.",
+    "usAlt": "U.S. flag",
+    "brLanguageLabel": "Switch language to Portuguese Brazil",
+    "brAlt": "Brazil flag"
   },
   "about": {
     "title": "About",

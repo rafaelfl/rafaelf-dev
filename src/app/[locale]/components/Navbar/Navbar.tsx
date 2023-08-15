@@ -9,12 +9,15 @@ import logo from "@/app/[locale]/assets/images/logo.svg";
 
 import "./Navbar.scss";
 import { useTranslations } from "next-intl";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import { useRouter } from "next/router";
 
 interface NavbarProps {
+  locale: string;
   activeSection?: string;
 }
 
-export default function Navbar({ activeSection }: NavbarProps) {
+export default function Navbar({ activeSection, locale }: NavbarProps) {
   const t = useTranslations();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -32,7 +35,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
         <div className="flex flex-1 justify-between items-center space-x-3.5">
           <Image src={logo} alt={t("logo.alt")} className="h-12 w-auto" width={192} priority />
 
-          <nav className="hidden lg:flex gap-3">
+          <nav className="hidden lg:flex items-center gap-3">
             {links.map((link) => (
               <NavLink
                 key={link.href}
@@ -42,12 +45,18 @@ export default function Navbar({ activeSection }: NavbarProps) {
                 {link.title}
               </NavLink>
             ))}
+
+            <LanguageSwitcher icon={locale === "en-US" ? "br" : "en"} />
           </nav>
         </div>
 
         <div className="flex items-center">
+          <div className="me-6 lg:hidden">
+            <LanguageSwitcher icon={locale === "en-US" ? "br" : "en"} />
+          </div>
+
           <button
-            className="text-lg text-white flex lg:hidden"
+            className="text-lg text-white flex lg:hidden w-5"
             aria-label={t("navbar.menu-button")}
             onClick={isOpen ? onClose : onOpen}
           >

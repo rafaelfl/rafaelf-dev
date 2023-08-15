@@ -9,6 +9,7 @@ import AboutSection from "./sections/AboutSection/AboutSection";
 import ExperienceSection from "./sections/ExperienceSection/ExperienceSection";
 import ProjectsSection from "./sections/ProjectsSection/ProjectsSection";
 import ContactSection from "./sections/ContactSection/ContactSection";
+import { useEffect } from "react";
 
 const section = tv({
   base: "flex flex-col justify-start items-center gap-4 px-8 md:px-20 w-full pt-6 pb-0",
@@ -27,12 +28,12 @@ const section = tv({
   },
 });
 
-export default function Home() {
+export default function Home({ params: { locale } }: { params: { locale: string } }) {
   const activeSection = useScrollSpySection();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start">
-      <Navbar activeSection={activeSection} />
+      <Navbar activeSection={activeSection} locale={locale} />
 
       <HomeSection className={section({ bg: "darkblue" })} />
 
