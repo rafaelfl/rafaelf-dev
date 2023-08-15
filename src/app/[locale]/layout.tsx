@@ -37,7 +37,7 @@ export async function generateMetadata({ params: { locale } }: LocaleLayoutProps
 }
 
 export function generateStaticParams() {
-  return [{ locale: "en-US" }, { locale: "pt-BR" }];
+  return [{ locale: "en-us" }, { locale: "pt-br" }];
 }
 
 export default async function LocaleLayout({ children, params: { locale } }: LocaleLayoutProps) {
