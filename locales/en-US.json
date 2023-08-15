@@ -1,0 +1,62 @@
+{
+  "Metadata": {
+    "title": "Rafael Fernandes - Fullstack Software Engineer",
+    "description": "Developer devoted to build solid, scalable, accessible and responsive digital experiences for the web"
+  },
+  "title": "Hi! I am",
+  "subtitle": "I build solid, scalable, accessible and responsive digital experiences for the web",
+  "logo": {
+    "alt": "Rafael Fernandes site logo"
+  },
+  "myphoto": {
+    "alt": "Rafael Fernandes photo"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "menu-button": "Open Menu"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "I am a Senior Software Engineer",
+    "experience": {
+      "title": "Experience",
+      "description": "With more than 20 years of experience in the software development field, I bring a wealth of practical knowledge to every project.",
+      "iconAlt": "Star"
+    },
+    "communication": {
+      "title": "Collaboration and Communication",
+      "description": "I don't just write code: I excel in teamwork and communication. I've worked closely with designers, product managers, and fellow engineers, understanding the value of clear communication and collaboration.",
+      "iconAlt": "A person with a speech balloon"
+    },
+    "problemSolving": {
+      "title": "Problem-Solving Skills",
+      "description": "I thrive on tackling complex technical challenges. I have a strong analytical mind and a deep understanding of algorithms, data structures and different technologies, allowing me to solve problems efficiently and find innovative solutions.",
+      "iconAlt": "A hand placing a jigsaw puzzle piece into a light bulb"
+    },
+    "continuousLearning": {
+      "title": "Continuous Learning and Adaptability",
+      "description": "The tech industry is ever-evolving, and I embrace this by staying current with the latest trends, tools, and best practices. My mindset drives me to continuously learn new technologies and adapt my skills.",
+      "iconAlt": "A book on an arrow loop"
+    },
+    "techStack": {
+      "react": "React.js logo",
+      "reactnative": "React native logo",
+      "next": "Next.js logo",
+      "node": "Node.js logo",
+      "flutter": "Flutter logo",
+      "typescript": "Typescript logo",
+      "javascript": "Javascript logo",
+      "sass": "Sass logo",
+      "mongo": "MongoDB logo",
+      "firebase": "Firebase logo"
+    },
+    "andMore": "...and more!"
+  },
+  "experience": {
+    "title": "Experience"
+  }
+}

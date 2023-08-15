@@ -1,0 +1,62 @@
+{
+  "Metadata": {
+    "title": "Rafael Fernandes - Engenheiro de Software Fullstack",
+    "description": "Desenvolvedor dedicado a construir experiências digitais sólidas, escaláveis, acessíveis e responsivas para a web"
+  },
+  "title": "Oi! Eu me chamo",
+  "subtitle": "Eu construo experiências digitais sólidas, escaláveis, acessíveis e responsivas para a web",
+  "logo": {
+    "alt": "Logo do site de Rafael Fernandes"
+  },
+  "myphoto": {
+    "alt": "Foto de Rafael Fernandes"
+  },
+  "navbar": {
+    "home": "Principal",
+    "about": "Sobre",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "menu-button": "Abrir Menu"
+  },
+  "about": {
+    "title": "Sobre",
+    "subtitle": "Eu sou um Engenheiro de Software Sênior",
+    "experience": {
+      "title": "Experiência",
+      "description": "Com mais de 20 anos de experiência na área de desenvolvimento de software, trago uma riqueza de conhecimento prático para cada projeto.",
+      "iconAlt": "Estrela"
+    },
+    "communication": {
+      "title": "Colaboração e Comunicação",
+      "description": "Eu não apenas escrevo código: eu me destaco no trabalho em equipe e na comunicação. Trabalhei de perto com designers, gerentes de produto e outros engenheiros, entendendo o valor da comunicação e colaboração claras.",
+      "iconAlt": "Uma pessoa com um balão de fala"
+    },
+    "problemSolving": {
+      "title": "Habilidades de resolução de problemas",
+      "description": "Eu prospero ao enfrentar desafios técnicos complexos. Tenho uma forte mente analítica e um profundo conhecimento de algoritmos, estruturas de dados e diferentes tecnologias, permitindo-me resolver problemas de forma eficiente e encontrar soluções inovadoras.",
+      "iconAlt": "Uma mão colocando uma peça de quebra-cabeça em uma lâmpada"
+    },
+    "continuousLearning": {
+      "title": "Aprendizagem Contínua e Adaptabilidade",
+      "description": "A indústria de tecnologia está em constante evolução, e eu abraço isso mantendo-me atualizado com as últimas tendências, ferramentas e práticas recomendadas. Minha mentalidade me leva a aprender continuamente novas tecnologias e adaptar minhas habilidades.",
+      "iconAlt": "Um livro em um ciclo de setas"
+    },
+    "techStack": {
+      "react": "Logo React.js",
+      "reactnative": "Logo React native",
+      "next": "Logo Next.js",
+      "node": "Logo Node.js",
+      "flutter": "Logo Flutter",
+      "typescript": "Logo Typescript",
+      "javascript": "Logo Javascript",
+      "sass": "Logo Sass",
+      "mongo": "Logo MongoDB",
+      "firebase": "Logo Firebase"
+    },
+    "andMore": "...e mais!"
+  },
+  "experience": {
+    "title": "Experiência"
+  }
+}
