@@ -18,7 +18,7 @@ const fredoka = Fredoka({
 
 async function getMessages(locale: string) {
   try {
-    return (await import(`../../../locales/${locale}.json`)).default;
+    return (await import(`../../../locales/${locale.toLowerCase()}.json`)).default;
   } catch (error) {
     notFound();
   }
