@@ -5,6 +5,8 @@ import { usePathname, useRouter } from "next-intl/client";
 import usFlag from "@/app/[locale]/assets/images/flags/us.svg";
 import brFlag from "@/app/[locale]/assets/images/flags/br.svg";
 
+import "./LanguageSwitcher.scss";
+
 interface LanguageSwitcherProps {
   icon: string;
 }
@@ -24,29 +26,17 @@ const LanguageSwitcher = ({ icon }: LanguageSwitcherProps) => {
   };
 
   return (
-    <button
-      className="relative rounded-full border-0 overflow-hidden w-8 h-8"
-      aria-label={icon === "br" ? t("navbar.brLanguageLabel") : t("navbar.usLanguageLabel")}
-      onClick={onSwitchLanguage}
-    >
-      {icon === "br" ? (
-        <Image
-          src={brFlag}
-          alt={t("navbar.brAlt")}
-          width={32}
-          height={32}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full object-cover"
-        />
-      ) : (
-        <Image
-          src={usFlag}
-          alt={t("navbar.usAlt")}
-          width={32}
-          height={32}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full object-cover"
-        />
-      )}
-    </button>
+    <div className="switch">
+      <input
+        id="language-toggle"
+        className="check-toggle check-toggle-round-flat"
+        type="checkbox"
+        checked={icon === "en"}
+        onChange={onSwitchLanguage}
+      />
+      <label htmlFor="language-toggle"></label>
+      {icon === "en" ? <span className="left">PT</span> : <span className="right">EN</span>}
+    </div>
   );
 };
 
