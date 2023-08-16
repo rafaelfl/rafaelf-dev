@@ -33,7 +33,7 @@ const AboutSection = (props: AboutSectionProps) => {
       <Animated animation="lateralLeftFade">
         <h2
           className={sectionTitleStyle({
-            decoration: "underline",
+            underline: "default",
             size: "large",
             className: "mt-8 mb-6",
           })}

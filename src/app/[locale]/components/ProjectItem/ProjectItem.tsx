@@ -15,7 +15,7 @@ import Carousel from "../Carousel/Carousel";
 import NextJsImage from "../NextJsImage/NextJsImage";
 
 const projectItemStyle = tv({
-  base: "grid grid-cols-1 items-center overflow-hidden lg:min-h-[19rem] xl:min-h-[24rem] 2xl:min-h-[27.25rem] mb-14",
+  base: "grid grid-cols-1 items-center overflow-hidden lg:min-h-[19rem] xl:min-h-[24rem] 2xl:min-h-[27.25rem] mb-14 max-w-7xl",
   variants: {
     gallery: {
       true: "lg:grid-cols-2 gap-4",
@@ -97,7 +97,7 @@ const ProjectItem = ({
           style={{ transitionDelay: "0.4s" }}
           className={`${ltr ? "lg:order-1 " : "lg:-order-1"}`}
         >
-          <div className="flex flex-col">
+          <div className="flex flex-col px-6">
             <h4 className="text-xl text-darkblue">{t("projects.about")}</h4>
             <p className="text-base mb-4 text-lightgray">{about}</p>
 

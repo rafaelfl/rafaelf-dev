@@ -3,11 +3,11 @@ import { tv } from "tailwind-variants";
 export const sectionTitleStyle = tv({
   base: "text-darkblue font-semibold tracking-wide text-center",
   variants: {
-    decoration: {
-      default: "",
-      underline:
+    underline: {
+      none: "",
+      default:
         "relative after:content-[''] after:absolute after:-bottom-2 after:border after:w-2/3 after:left-1/2 after:translate-x-[-50%] after:text-darkblue",
-      underlineWhite:
+      white:
         "relative after:content-[''] after:absolute after:-bottom-2 after:border after:w-2/3 after:left-1/2 after:translate-x-[-50%] after:text-white after: text-white",
     },
     size: {
@@ -22,7 +22,7 @@ export const sectionTitleStyle = tv({
     },
   },
   defaultVariants: {
-    decoration: "default",
+    underline: "none",
     size: "normal",
     fontWeight: "semibold",
   },

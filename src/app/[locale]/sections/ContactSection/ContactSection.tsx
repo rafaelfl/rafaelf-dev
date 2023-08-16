@@ -19,7 +19,7 @@ const ContactSection = (props: ContactSectionProps) => {
     <section id="contact" {...props}>
       <h2
         className={sectionTitleStyle({
-          decoration: "underlineWhite",
+          underline: "white",
           size: "large",
           className: "mt-8 mb-12",
         })}
@@ -27,7 +27,7 @@ const ContactSection = (props: ContactSectionProps) => {
         {t("contact.title")}
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full mb-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full mb-12 max-w-5xl">
         <Link href="https://github.com/rafaelfl" target="_blank" className="w-auto">
           <div className="flex justify-center items-center gap-4 h-10">
             <Image

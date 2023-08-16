@@ -23,7 +23,7 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
       <Animated animation="lateralLeftFade">
         <h2
           className={sectionTitleStyle({
-            decoration: "underline",
+            underline: "default",
             size: "large",
             className: "my-8",
           })}

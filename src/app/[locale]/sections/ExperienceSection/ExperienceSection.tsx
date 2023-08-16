@@ -15,7 +15,7 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
     <section id="experience" {...props}>
       <h2
         className={sectionTitleStyle({
-          decoration: "underline",
+          underline: "default",
           size: "large",
           className: "mt-8 mb-6",
         })}

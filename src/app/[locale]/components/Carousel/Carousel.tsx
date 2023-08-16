@@ -118,7 +118,7 @@ const Carousel = ({
                     alt={m.alt ?? ""}
                     className={mediaGalleryStyle({
                       presentation: selectedIndex === index ? "show" : "hide",
-                      className: "object-contain w-full max-w-[33rem]",
+                      className: "object-contain w-full max-w-[32rem]",
                     })}
                     width={m.width}
                     height={m.height}
