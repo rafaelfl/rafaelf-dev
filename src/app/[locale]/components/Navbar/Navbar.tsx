@@ -50,13 +50,6 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
         </div>
 
         <div className="flex items-center">
-          <div className="me-2 sm:me-6 lg:hidden flex items-center">
-            <LanguageSwitcher
-              isMobileSwitcher
-              icon={locale.toLowerCase() === "en-us" ? "br" : "en"}
-            />
-          </div>
-
           <button
             className="text-lg text-white flex lg:hidden w-5"
             aria-label={t("navbar.menu-button")}
@@ -73,7 +66,7 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
 
       {isOpen ? (
         <div className="lg:hidden pb-4">
-          <nav className="flex flex-col gap-4">
+          <nav className="relative flex flex-col gap-4">
             {links.map((link) => (
               <NavLink
                 key={link.href}
@@ -83,6 +76,13 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
                 {link.title}
               </NavLink>
             ))}
+
+            <div className="absolute top-0 right-0 lg:hidden flex items-center">
+              <LanguageSwitcher
+                isMobileSwitcher
+                icon={locale.toLowerCase() === "en-us" ? "br" : "en"}
+              />
+            </div>
           </nav>
         </div>
       ) : null}
