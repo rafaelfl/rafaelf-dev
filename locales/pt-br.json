@@ -21,7 +21,8 @@
     "usLanguageLabel": "Mudar língua para Inglês dos E.U.A.",
     "usAlt": "Bandeira dos E.U.A.",
     "brLanguageLabel": "Mudar língua para Português do Brasil",
-    "brAlt": "Bandeira do Brazil"
+    "brAlt": "Bandeira do Brazil",
+    "languageToggle": "Alternar idioma"
   },
   "about": {
     "title": "Sobre",

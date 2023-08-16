@@ -35,9 +35,9 @@ const ContactSection = (props: ContactSectionProps) => {
               alt={t("contact.githubAlt")}
               className="inline-block h-full w-auto object-contain"
             />
-            <p className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
+            <h3 className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
               Github
-            </p>
+            </h3>
           </div>
         </Link>
 
@@ -52,9 +52,9 @@ const ContactSection = (props: ContactSectionProps) => {
               alt={t("contact.linkedinAlt")}
               className="inline-block h-full w-auto object-contain"
             />
-            <p className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
+            <h3 className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
               LinkedIn
-            </p>
+            </h3>
           </div>
         </Link>
 
@@ -65,9 +65,9 @@ const ContactSection = (props: ContactSectionProps) => {
               alt={t("contact.twitterAlt")}
               className="inline-block h-full w-auto object-contain"
             />
-            <p className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
+            <h3 className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
               Twitter
-            </p>
+            </h3>
           </div>
         </Link>
 
@@ -78,9 +78,9 @@ const ContactSection = (props: ContactSectionProps) => {
               alt={t("contact.emailAlt")}
               className="inline-block h-full w-auto object-contain"
             />{" "}
-            <p className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
+            <h3 className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
               E-mail
-            </p>
+            </h3>
           </div>
         </Link>
       </div>

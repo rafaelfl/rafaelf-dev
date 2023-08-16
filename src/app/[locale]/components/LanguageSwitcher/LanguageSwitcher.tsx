@@ -1,21 +1,20 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next-intl/client";
-
-import usFlag from "@/app/[locale]/assets/images/flags/us.svg";
-import brFlag from "@/app/[locale]/assets/images/flags/br.svg";
 
 import "./LanguageSwitcher.scss";
 
 interface LanguageSwitcherProps {
   icon: string;
+  isMobileSwitcher?: boolean;
 }
 
-const LanguageSwitcher = ({ icon }: LanguageSwitcherProps) => {
+const LanguageSwitcher = ({ icon, isMobileSwitcher = false }: LanguageSwitcherProps) => {
   const t = useTranslations();
 
   const pathname = usePathname();
   const router = useRouter();
+
+  const randomNumber = Math.floor(Math.random() * 1000) + 1;
 
   const onSwitchLanguage = () => {
     if (icon === "br") {
@@ -28,13 +27,15 @@ const LanguageSwitcher = ({ icon }: LanguageSwitcherProps) => {
   return (
     <div className="switch">
       <input
-        id="language-toggle"
+        id={`language-toggle-${isMobileSwitcher ? "mobile" : "desktop"}`}
         className="check-toggle check-toggle-round-flat"
         type="checkbox"
         checked={icon === "en"}
         onChange={onSwitchLanguage}
       />
-      <label htmlFor="language-toggle"></label>
+      <label htmlFor={`language-toggle-${isMobileSwitcher ? "mobile" : "desktop"}`}>
+        <p className="sr-only">{t("navbar.languageToggle")}</p>
+      </label>
       {icon === "en" ? <span className="left">PT</span> : <span className="right">EN</span>}
     </div>
   );

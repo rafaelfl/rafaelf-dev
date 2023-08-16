@@ -21,7 +21,8 @@
     "usLanguageLabel": "Switch language to English U.S.",
     "usAlt": "U.S. flag",
     "brLanguageLabel": "Switch language to Portuguese Brazil",
-    "brAlt": "Brazil flag"
+    "brAlt": "Brazil flag",
+    "languageToggle": "Language toggle"
   },
   "about": {
     "title": "About",
