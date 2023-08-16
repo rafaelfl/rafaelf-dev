@@ -14,8 +14,6 @@ const LanguageSwitcher = ({ icon, isMobileSwitcher = false }: LanguageSwitcherPr
   const pathname = usePathname();
   const router = useRouter();
 
-  const randomNumber = Math.floor(Math.random() * 1000) + 1;
-
   const onSwitchLanguage = () => {
     if (icon === "br") {
       router.replace(pathname, { locale: "pt-br", scroll: false });
