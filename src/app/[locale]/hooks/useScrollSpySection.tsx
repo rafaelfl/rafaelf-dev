@@ -8,7 +8,7 @@ interface useScrollSpySectionProps {
 
 const useScrollSpySection = (props?: useScrollSpySectionProps) => {
   const sectionSelector = props?.sectionSelector ?? "section";
-  const percentageVisible = props?.percentageVisible ?? 0.8;
+  const percentageVisible = props?.percentageVisible ?? 0.7;
 
   const [activeSection, setActiveSection] = useState<string | undefined>();
   const sections = useRef<Array<HTMLElement>>([]);

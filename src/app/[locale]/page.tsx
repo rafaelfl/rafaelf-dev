@@ -37,11 +37,11 @@ export default function Home({ params: { locale } }: { params: { locale: string 
 
       <HomeSection className={section({ bg: "darkblue" })} />
 
-      <AboutSection className={section({ minHeight: "fullPage" })} />
+      <AboutSection className={section({ minHeight: "fullPage", bg: "white" })} />
 
       <ExperienceSection className={section({ bg: "yellow" })} />
 
-      <ProjectsSection className={section()} />
+      <ProjectsSection className={section({ bg: "white" })} />
 
       <ContactSection className={section({ bg: "darkblue" })} />
     </main>

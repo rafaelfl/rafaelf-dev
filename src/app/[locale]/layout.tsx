@@ -45,7 +45,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Loc
 
   return (
     <html lang={locale}>
-      <body className={fredoka.className}>
+      <body className={`${fredoka.className} bg-darkblue`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
