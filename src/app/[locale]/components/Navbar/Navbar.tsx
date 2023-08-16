@@ -50,7 +50,7 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
         </div>
 
         <div className="flex items-center">
-          <div className="me-6 lg:hidden flex items-center">
+          <div className="me-2 sm:me-6 lg:hidden flex items-center">
             <LanguageSwitcher
               isMobileSwitcher
               icon={locale.toLowerCase() === "en-us" ? "br" : "en"}
