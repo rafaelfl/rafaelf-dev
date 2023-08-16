@@ -2,7 +2,7 @@ import Link from "next/link";
 import { VariantProps, tv } from "tailwind-variants";
 
 const linkStyle = tv({
-  base: "px-2 py-1 rounded-md text-base md:text-xl hover:no-underline active:opacity-80 font-medium",
+  base: "px-2 py-1 rounded-md text-base md:text-xl hover:no-underline active:opacity-80 font-medium w-min",
   variants: {
     intent: {
       default: "text-gray hover:text-white",

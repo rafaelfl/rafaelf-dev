@@ -32,7 +32,7 @@ export default function Home({ params: { locale } }: { params: { locale: string 
   const activeSection = useScrollSpySection();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start">
+    <main className="flex min-h-screen flex-col items-center justify-start pt-20">
       <Navbar activeSection={activeSection} locale={locale} />
 
       <HomeSection className={section({ bg: "darkblue" })} />
