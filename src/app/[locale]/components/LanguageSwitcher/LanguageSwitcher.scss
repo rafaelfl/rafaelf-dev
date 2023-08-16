@@ -1,10 +1,9 @@
 .switch {
-    position: relative;
-    display: inline-block;
-    margin: 0;
-  }
-  
-  .switch > span {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+
+  & > span {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -17,24 +16,25 @@
     text-align: center;
     color: #2C3144;
     background-color: #D7D7D8;
+
+    &.left {
+      left: 10%;
+      padding-left: 2px;
+    }
+    
+    &.right {
+      right: 10%;
+      padding-right: 2px;
+    }
   }
+}
   
-  .switch > span.left {
-    left: 10%;
-    padding-left: 2px;
-  }
-  
-  .switch > span.right {
-    right: 10%;
-    padding-right: 2px;
-  }
-  
-  .check-toggle {
-    position: absolute;
-    margin-left: -9999px;
-    visibility: hidden;
-  }
-  .check-toggle + label {
+.check-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+
+  & + label {
     display: block;
     position: relative;
     cursor: pointer;
@@ -44,26 +44,26 @@
     -ms-user-select: none;
     user-select: none;
   }
-  
-  input.check-toggle-round-flat + label {
-    padding: 2px;
-    width: 76px;
-    height: 36px;
-    background-color: #D7D7D8;
-    -webkit-border-radius: 60px;
-    -moz-border-radius: 60px;
-    -ms-border-radius: 60px;
-    -o-border-radius: 60px;
-    border-radius: 60px;
-  }
+}
 
-  input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
+input.check-toggle-round-flat + label {
+  padding: 2px;
+  width: 76px;
+  height: 36px;
+  background-color: #D7D7D8;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+
+  &:before, &:after {
     display: block;
     position: absolute;
     content: "";
   }
-  
-  input.check-toggle-round-flat + label:before {
+
+  &:before {
     top: 2px;
     left: 2px;
     bottom: 2px;
@@ -76,7 +76,7 @@
     border-radius: 60px;
   }
 
-  input.check-toggle-round-flat + label:after {
+  &:after {
     top: 4px;
     left: 4px;
     bottom: 4px;
@@ -97,8 +97,9 @@
     -o-transition: margin 0.2s;
     transition: margin 0.2s;
   }
-  
-  input.check-toggle-round-flat:checked + label:after {
-    margin-left: 40px;
-    background-image: url('/br.svg');
-  }
+}
+
+input.check-toggle-round-flat:checked + label:after {
+  margin-left: 40px;
+  background-image: url('/br.svg');
+}
