@@ -23,13 +23,29 @@ const LanguageSwitcher = ({ icon, isMobileSwitcher = false }: LanguageSwitcherPr
   };
 
   return (
-    <div className="switch">
+    <div
+      className="switch"
+      tabIndex={0}
+      role="switch"
+      aria-checked={icon === "en"}
+      onClick={(e) => {
+        e.preventDefault();
+        onSwitchLanguage();
+      }}
+      onKeyDown={(e) => {
+        const keyDown = e.key;
+        if (keyDown === "Enter" || ["Spacebar", " "].indexOf(keyDown) >= 0) {
+          e.preventDefault();
+          onSwitchLanguage();
+        }
+      }}
+    >
       <input
         id={`language-toggle-${isMobileSwitcher ? "mobile" : "desktop"}`}
         className="check-toggle check-toggle-round-flat"
         type="checkbox"
         checked={icon === "en"}
-        onChange={onSwitchLanguage}
+        onChange={() => false}
       />
       <label htmlFor={`language-toggle-${isMobileSwitcher ? "mobile" : "desktop"}`}>
         <p className="sr-only">{t("navbar.languageToggle")}</p>

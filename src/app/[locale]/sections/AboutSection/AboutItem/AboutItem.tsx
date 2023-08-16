@@ -14,7 +14,7 @@ const AboutItem = ({ src, alt, caption, description, animationDelay = 0 }: About
     <figure className="flex flex-col justify-center items-center">
       <Animated animation="flipFade" animationDelay={animationDelay}>
         <div className="bg-cyan p-4 rounded-full w-[100px] h-[100px] overflow-hidden flex justify-center items-center">
-          <Image src={src} alt={alt} />
+          <Image src={src} alt={alt} aria-hidden />
         </div>
       </Animated>
       <Animated animation="fadeIn" animationDelay={animationDelay} className="text-center">
