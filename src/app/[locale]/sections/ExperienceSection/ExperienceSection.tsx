@@ -95,13 +95,13 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
         </div>
       </Accordion>
 
-      <Link
+      <a
         href="/cv.pdf"
         target="_blank"
         className="text-2xl underline font-medium mb-10 text-center"
       >
         {t("experience.viewCv")} &rarr;
-      </Link>
+      </a>
     </section>
   );
 };
