@@ -29,9 +29,11 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
           <div className="flex flex-row flex-wrap gap-3 pt-4 pb-2">
             <Chip>React.js</Chip>
             <Chip>Next.js</Chip>
+            <Chip>Node.js</Chip>
             <Chip>Javascript</Chip>
             <Chip>Typescript</Chip>
-            <Chip>SCSS</Chip>
+            <Chip>Sass</Chip>
+            <Chip>Python</Chip>
           </div>
         </div>
       </Accordion>
