@@ -24,6 +24,7 @@ const BuildNotebookAnimation = forwardRef<SVGSVGElement>(function Animation(_pro
         width="100%"
         height="100%"
         fill="none"
+        aria-hidden
       >
         <mask
           id="a"

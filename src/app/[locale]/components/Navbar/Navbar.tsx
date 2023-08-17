@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -32,7 +33,9 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
     <header className="bg-darkblue px-8 md:px-16 w-full fixed top-0 z-10">
       <div className="flex justify-between items-center h-20 max-w-7xl mx-auto">
         <div className="flex flex-1 justify-between items-center space-x-3.5">
-          <Image src={logo} alt={t("logo.alt")} className="h-12 w-auto" width={192} priority />
+          <Link href="/">
+            <Image src={logo} alt={t("logo.alt")} className="h-12 w-auto" width={192} priority />
+          </Link>
 
           <nav className="hidden lg:flex items-center gap-3">
             {links.map((link) => (
