@@ -27,7 +27,7 @@ const ContactSection = (props: ContactSectionProps) => {
         {t("contact.title")}
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full mb-12 max-w-5xl">
+      <div className="flex justify-center items-center gap-10 w-full mb-12 max-w-5xl">
         <Link href="https://github.com/rafaelfl" target="_blank" className="w-auto">
           <div className="flex justify-center items-center gap-4 h-10">
             <Image
@@ -35,9 +35,6 @@ const ContactSection = (props: ContactSectionProps) => {
               alt={t("contact.githubAlt")}
               className="inline-block h-full w-auto object-contain"
             />
-            <h3 className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
-              Github
-            </h3>
           </div>
         </Link>
 
@@ -52,22 +49,16 @@ const ContactSection = (props: ContactSectionProps) => {
               alt={t("contact.linkedinAlt")}
               className="inline-block h-full w-auto object-contain"
             />
-            <h3 className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
-              LinkedIn
-            </h3>
           </div>
         </Link>
 
-        <Link href="https://twitter.com/rafaelf_l" target="_blank" className="w-auto">
+        <Link href="https://x.com/rafaelf_l" target="_blank" className="w-auto">
           <div className="flex justify-center items-center gap-4 h-10">
             <Image
               src={twitter}
               alt={t("contact.twitterAlt")}
               className="inline-block h-full w-auto object-contain"
             />
-            <h3 className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
-              Twitter
-            </h3>
           </div>
         </Link>
 
@@ -77,10 +68,7 @@ const ContactSection = (props: ContactSectionProps) => {
               src={email}
               alt={t("contact.emailAlt")}
               className="inline-block h-full w-auto object-contain"
-            />{" "}
-            <h3 className="inline-block text-xl md:text-2xl lg:text-3xl font-medium whitespace-nowrap">
-              E-mail
-            </h3>
+            />
           </div>
         </Link>
       </div>
