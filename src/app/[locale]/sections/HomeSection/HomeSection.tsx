@@ -17,7 +17,7 @@ const HomeSection = (props: HomeSectionProps) => {
   return (
     <section id="home" {...props}>
       <div className="container max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="flex flex-1 flex-col justify-center items-start h-full">
+        <div className="flex flex-1 flex-col justify-center items-start">
           <h1 className="text-6xl lg:text-responsive-title leading-none font-medium tracking-wide">
             {t("title")}{" "}
             <span className="block text-darkyellow font-semibold">
