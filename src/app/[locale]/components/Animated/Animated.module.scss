@@ -3,6 +3,7 @@
 }
 
 .flipYAxis {
+  opacity: 0;
   animation-name: flipY;
   animation-duration: 0.75s;
   animation-timing-function: ease;
