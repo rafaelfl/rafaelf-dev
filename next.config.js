@@ -2,7 +2,7 @@
 const nextConfig = {
     images: {
         dangerouslyAllowSVG: true,
-        domains: ['tailwindui.com', 'flowbite.com'],
+        domains: ['rafaelf.dev'],
     },
 }
 
