@@ -30,7 +30,7 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
   ];
 
   return (
-    <header className="bg-darkblue px-8 md:px-16 w-full fixed top-0 z-10">
+    <header className="bg-darkblue px-8 md:px-16 w-full fixed top-0 z-10 yarl__no_scroll_padding">
       <div className="flex justify-between items-center h-20 max-w-7xl mx-auto">
         <div className="flex flex-1 justify-between items-center space-x-3.5">
           <Link href="/">
