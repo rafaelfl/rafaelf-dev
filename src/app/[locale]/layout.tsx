@@ -1,8 +1,9 @@
+import { ReactNode, Suspense } from "react";
 import { NextIntlClientProvider, createTranslator } from "next-intl";
 import { notFound } from "next/navigation";
 import { Fredoka } from "next/font/google";
-import { ReactNode } from "react";
 
+import Analytics from "./components/Analytics/Analytics";
 import "../globals.scss";
 
 interface LocaleLayoutProps {
@@ -46,6 +47,10 @@ export default async function LocaleLayout({ children, params: { locale } }: Loc
   return (
     <html lang={locale}>
       <body className={`${fredoka.className} bg-darkblue`}>
+        <Suspense>
+          <Analytics />
+        </Suspense>
+
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
