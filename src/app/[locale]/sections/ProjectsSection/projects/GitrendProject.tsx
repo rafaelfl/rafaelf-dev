@@ -12,7 +12,7 @@ const GitrendProject = () => {
       about={t("projects.gitrend.about")}
       technologies={t("projects.gitrend.technologies")}
       sourceCode="https://github.com/rafaelfl/gitrend"
-      livePreview="https://gitrend.netlify.app/"
+      livePreview="https://gitrend.rafaelf.dev/"
     />
   );
 };
