@@ -7,7 +7,9 @@ const AuthApiProject = () => {
 
   return (
     <ProjectItem
-      about={t("projects.authApi.about")}
+      about={t.rich("projects.authApi.about", {
+        note: (chunks) => <span className="italic">{chunks}</span>,
+      })}
       technologies={t("projects.authApi.technologies")}
       sourceCode="https://github.com/rafaelfl/express-typescript-auth"
       documentation="https://api.rafaelf.dev/api-docs/"

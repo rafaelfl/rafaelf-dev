@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { tv } from "tailwind-variants";
@@ -39,7 +39,7 @@ interface VideoProps {
 
 interface ProjectItemProps {
   medias?: Array<Media>;
-  about: string;
+  about: string | ReactNode;
   technologies: string;
   sourceCode?: string;
   documentation?: string;
