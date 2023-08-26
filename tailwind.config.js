@@ -24,9 +24,12 @@ module.exports = {
         gray: '#D7D7D8',
         lightgray: '#767676',
         darkGray: '#9da4b0',
+        darkDarkGray: '#6B6B6B',
         white: '#FFFFFF',
       },
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

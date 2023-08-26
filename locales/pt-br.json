@@ -134,5 +134,8 @@
     "twitterAlt": "Logo Twitter",
     "emailAlt": "Logo Email",
     "copyright": "Desenvolvido com 💜 por Rafael Fernandes Lopes. © Copyright 2023, Todos os direitos reservados."
+  },
+  "blog": {
+    "backToPosts": "Retornar às Publicações"
   }
 }

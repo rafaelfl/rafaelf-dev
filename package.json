@@ -21,12 +21,15 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "framer-motion": "^10.15.0",
+    "gray-matter": "^4.0.3",
+    "markdown-to-jsx": "^7.3.2",
     "negotiator": "^0.6.3",
     "next": "13.4.12",
     "next-intl": "^2.19.1",
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-syntax-highlighter": "^15.5.0",
     "sass": "^1.64.1",
     "sharp": "^0.32.4",
     "tailwind-variants": "^0.1.13",
@@ -35,6 +38,8 @@
     "yet-another-react-lightbox": "^3.12.0"
   },
   "devDependencies": {
-    "@types/negotiator": "^0.6.1"
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/negotiator": "^0.6.1",
+    "@types/react-syntax-highlighter": "^15.5.7"
   }
 }

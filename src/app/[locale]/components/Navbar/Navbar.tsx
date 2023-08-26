@@ -1,23 +1,25 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-import { NavLink } from "./NavLink/NavLink";
-import useDisclosure from "@/app/[locale]/hooks/useDisclosure";
-
 import logo from "@/app/[locale]/assets/images/logo.svg";
+import useDisclosure from "@/app/[locale]/hooks/useDisclosure";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import { NavLink } from "./NavLink/NavLink";
 
 import "./Navbar.scss";
-import { useTranslations } from "next-intl";
-import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
 interface NavbarProps {
   locale: string;
   activeSection?: string;
+  showLinks?: boolean;
 }
 
-export default function Navbar({ activeSection, locale }: NavbarProps) {
+export default function Navbar({ activeSection, locale, showLinks = true }: NavbarProps) {
   const t = useTranslations();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -38,15 +40,16 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-3">
-            {links.map((link) => (
-              <NavLink
-                key={link.href}
-                href={link.href}
-                intent={activeSection === link.href.substring(1) ? "active" : "default"}
-              >
-                {link.title}
-              </NavLink>
-            ))}
+            {showLinks === true &&
+              links.map((link) => (
+                <NavLink
+                  key={link.href}
+                  href={link.href}
+                  intent={activeSection === link.href.substring(1) ? "active" : "default"}
+                >
+                  {link.title}
+                </NavLink>
+              ))}
 
             <LanguageSwitcher icon={locale.toLowerCase() === "en-us" ? "br" : "en"} />
           </nav>
