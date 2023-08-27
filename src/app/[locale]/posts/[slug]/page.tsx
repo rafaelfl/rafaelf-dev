@@ -46,8 +46,10 @@ const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
 
   return (
     <div className="px-6 max-w-full md:max-w-4xl lg:max-w-7xl pt-6">
-      <div className="flex justify-start w-full mb-6 underline">
-        <Link href="/posts">&lt;&lt; {t("blog.backToPosts")}</Link>
+      <div className="flex justify-start w-full mb-6 hover:underline">
+        <Link href="/posts" className="font-bold text-violet-600 hover:underline">
+          &lt;&lt; {t("blog.backToPosts")}
+        </Link>
       </div>
 
       <h1 className="text-3xl md:text-4xl font-bold">{header.title}</h1>

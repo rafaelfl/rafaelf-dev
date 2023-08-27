@@ -16,10 +16,9 @@ import "./Navbar.scss";
 interface NavbarProps {
   locale: string;
   activeSection?: string;
-  showLinks?: boolean;
 }
 
-export default function Navbar({ activeSection, locale, showLinks = true }: NavbarProps) {
+export default function Navbar({ activeSection, locale }: NavbarProps) {
   const t = useTranslations();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -40,16 +39,15 @@ export default function Navbar({ activeSection, locale, showLinks = true }: Navb
           </Link>
 
           <nav className="hidden lg:flex items-center gap-3">
-            {showLinks === true &&
-              links.map((link) => (
-                <NavLink
-                  key={link.href}
-                  href={link.href}
-                  intent={activeSection === link.href.substring(1) ? "active" : "default"}
-                >
-                  {link.title}
-                </NavLink>
-              ))}
+            {links.map((link) => (
+              <NavLink
+                key={link.href}
+                href={link.href}
+                intent={activeSection === link.href.substring(1) ? "active" : "default"}
+              >
+                {link.title}
+              </NavLink>
+            ))}
 
             <LanguageSwitcher icon={locale.toLowerCase() === "en-us" ? "br" : "en"} />
           </nav>

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Inter } from "next/font/google";
 
-import Navbar from "../../components/Navbar/Navbar";
+import BlogNavbar from "../components/Navbar/BlogNavbar";
 
 interface PostsLayoutProps {
   children: ReactNode;
@@ -19,7 +19,7 @@ export default async function PostsLayout({ children, params: { locale } }: Post
     <main
       className={`${inter.className} flex min-h-screen flex-col items-center justify-start pt-24 pb-12 bg-white`}
     >
-      <Navbar locale={locale} showLinks={false} />
+      <BlogNavbar locale={locale} />
 
       {children}
     </main>

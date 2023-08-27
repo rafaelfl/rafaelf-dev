@@ -136,6 +136,7 @@
     "copyright": "Desenvolvido com 💜 por Rafael Fernandes Lopes. © Copyright 2023, Todos os direitos reservados."
   },
   "blog": {
-    "backToPosts": "Retornar às Publicações"
+    "backToPosts": "Retornar às Publicações",
+    "blogPosts": "Publicações do blog"
   }
 }
