@@ -16,11 +16,12 @@ const linkStyle = tv({
 interface NavLinkProps extends VariantProps<typeof linkStyle> {
   href: string;
   children: React.ReactNode;
+  className?: string;
 }
 
-export const NavLink = ({ href, children, intent, ...rest }: NavLinkProps) => {
+export const NavLink = ({ href, children, intent, className, ...rest }: NavLinkProps) => {
   return (
-    <a href={href} className={linkStyle({ intent })} {...rest}>
+    <a href={href} className={linkStyle({ intent, className })} {...rest}>
       {children}
     </a>
   );

@@ -49,6 +49,10 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
               </NavLink>
             ))}
 
+            <div className={`divider ${locale}`}>
+              <NavLink href="/posts">{t("blog.link")}</NavLink>
+            </div>
+
             <LanguageSwitcher icon={locale.toLowerCase() === "en-us" ? "br" : "en"} />
           </nav>
         </div>
@@ -80,6 +84,8 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
                 {link.title}
               </NavLink>
             ))}
+
+            <NavLink href="/posts">{t("blog.link")}</NavLink>
 
             <div className="absolute top-0 right-0 lg:hidden flex items-center">
               <LanguageSwitcher
