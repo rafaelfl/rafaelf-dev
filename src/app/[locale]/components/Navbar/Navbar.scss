@@ -3,22 +3,3 @@
     color: #F5B600 !important;
     font-weight: bold !important;
 }
-
-nav > div {
-    position: relative;
-
-    &.divider::before {
-        content: "";
-        height: 1.8rem;
-        width: 0.12rem;
-        border-radius: 0.5rem;
-        background: #fff;
-        position: absolute;
-        top: 0;
-        left: -10%;
-    }
-
-    &.divider.pt-br::before {
-        left: -13%;
-    }
-}

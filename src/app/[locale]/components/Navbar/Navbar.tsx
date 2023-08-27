@@ -49,9 +49,7 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
               </NavLink>
             ))}
 
-            <div className={`divider ${locale}`}>
-              <NavLink href="/posts">{t("blog.link")}</NavLink>
-            </div>
+            <NavLink href="/posts">{t("blog.link")}</NavLink>
 
             <LanguageSwitcher icon={locale.toLowerCase() === "en-us" ? "br" : "en"} />
           </nav>
