@@ -1,12 +1,11 @@
-import Link from "next/link";
-import { createTranslator, createFormatter } from "next-intl";
+import { createTranslator } from "next-intl";
 import fs from "fs";
-import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
+
+import PostPreview from "../components/PostPreview/PostPreview";
 
 import enMessages from "@/../locales/en-us.json";
 import ptMessages from "@/../locales/pt-br.json";
-import PostPreview from "../components/PostPreview/PostPreview";
 
 const getPostMetadata = (locale: string) => {
   const dir = `posts/${locale}`;
@@ -58,10 +57,10 @@ const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
   const postPreviews = postMetadata.map((post) => <PostPreview key={post.slug} {...post} />);
 
   return (
-    <div className="px-6 max-w-full md:max-w-4xl lg:max-w-7xl pt-6">
+    <section className="px-6 max-w-full md:max-w-4xl lg:max-w-7xl pt-6">
       <h1 className="text-2xl text-darkblue font-bold">{t("blog.blogPosts")}</h1>
-      {postPreviews}
-    </div>
+      <div className="grid grid-cols-2 gap-x-12">{postPreviews}</div>
+    </section>
   );
 };
 

@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { createFormatter } from "next-intl";
+import { createFormatter, createTranslator } from "next-intl";
+
+import enMessages from "@/../locales/en-us.json";
+import ptMessages from "@/../locales/pt-br.json";
 
 interface PostPreviewProps {
   locale: string;
@@ -10,6 +13,12 @@ interface PostPreviewProps {
 }
 
 const PostPreview = (post: PostPreviewProps) => {
+  const tEn = createTranslator({ locale: "en-us", messages: enMessages });
+  const tPt = createTranslator({ locale: "pt-br", messages: ptMessages });
+
+  const locale = post.locale;
+  const t = locale === "pt-br" ? tPt : tEn;
+
   const generatePublishedDate = (locale: string, strDate: string) => {
     // format: yyyy-mm-dd
     const year = parseInt(strDate.substring(0, 4));
@@ -24,11 +33,18 @@ const PostPreview = (post: PostPreviewProps) => {
 
   return (
     <article className="my-8">
-      <Link href={`/posts/${post.slug}`}>
-        <h2 className="font-bold text-violet-600 hover:underline text-lg">{post.title}</h2>
-      </Link>
       <p className="text-sm text-slate-400">{generatePublishedDate(post.locale, post.date)}</p>
-      <p className="text-slate-700">{post.subtitle}</p>
+
+      <Link href={`/posts/${post.slug}`}>
+        <h2 className="font-bold text-blueblog hover:underline text-lg mb-2">{post.title}</h2>
+      </Link>
+      <p className="text-slate-700 mb-4">{post.subtitle}</p>
+      <Link
+        href={`/posts/${post.slug}`}
+        className={`transition-all duration-500 border border-blueblog text-blueblog hover:bg-blueblog hover:text-white font-semibold text-sm px-4 py-3`}
+      >
+        <span>{t("blog.readMore")} &gt;&gt;</span>
+      </Link>
     </article>
   );
 };

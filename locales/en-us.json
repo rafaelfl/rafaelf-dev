@@ -137,6 +137,7 @@
   },
   "blog": {
     "link": "Blog",
+    "readMore": "Read more",
     "backToPosts": "Back to Posts",
     "blogPosts": "Blog posts"
   }

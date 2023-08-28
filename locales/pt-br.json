@@ -137,6 +137,7 @@
   },
   "blog": {
     "link": "Blog",
+    "readMore": "Leia mais",
     "backToPosts": "Retornar às Publicações",
     "blogPosts": "Publicações do blog"
   }
