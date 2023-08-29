@@ -38,6 +38,7 @@ const PostPreview = (post: PostPreviewProps) => {
       {post.thumb && (
         <Link href={`/posts/${post.slug}`}>
           <figure className="w-full bg-slate-100 rounded-md px-5 py-8 my-6">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={post.thumb}
               alt={post.title}
