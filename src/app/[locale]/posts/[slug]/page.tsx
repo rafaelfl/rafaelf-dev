@@ -20,6 +20,16 @@ export const generateStaticParams = () => {
   return [
     { slug: "aws-quickstart", locale: "en-us" },
     { slug: "aws-quickstart", locale: "pt-br" },
+    { slug: "gpt-3-generated-poetry", locale: "en-us" },
+    { slug: "gpt-3-generated-poetry", locale: "pt-br" },
+    { slug: "qr-code-micro-app", locale: "en-us" },
+    { slug: "qr-code-micro-app", locale: "pt-br" },
+    { slug: "retro-games-with-pico-8", locale: "en-us" },
+    { slug: "retro-games-with-pico-8", locale: "pt-br" },
+    { slug: "saas-starter-app", locale: "en-us" },
+    { slug: "saas-starter-app", locale: "pt-br" },
+    { slug: "wolfhunter", locale: "en-us" },
+    { slug: "wolfhunter", locale: "pt-br" },
   ];
 };
 
