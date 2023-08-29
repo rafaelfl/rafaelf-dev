@@ -1,9 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { createFormatter, createTranslator } from "next-intl";
 
 import enMessages from "@/../locales/en-us.json";
 import ptMessages from "@/../locales/pt-br.json";
-import Image from "next/image";
 
 interface PostPreviewProps {
   locale: string;
