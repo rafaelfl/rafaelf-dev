@@ -38,11 +38,9 @@ const PostPreview = (post: PostPreviewProps) => {
       {post.thumb && (
         <Link href={`/posts/${post.slug}`}>
           <figure className="w-full bg-slate-100 rounded-md px-5 py-8 my-6">
-            <Image
+            <img
               src={post.thumb}
               alt={post.title}
-              width={500}
-              height={500}
               className="w-7/12 max-h-36 object-contain mx-auto"
             />
           </figure>
@@ -57,7 +55,7 @@ const PostPreview = (post: PostPreviewProps) => {
       <p className="text-slate-700 mb-4">{post.subtitle}</p>
       <Link
         href={`/posts/${post.slug}`}
-        className={`transition-all duration-500 border border-blueblog text-blueblog hover:bg-blueblog hover:text-white font-semibold text-sm px-4 py-3`}
+        className={`transition-color duration-500 border border-blueblog text-blueblog hover:bg-blueblog hover:text-white font-semibold text-sm px-4 py-3`}
       >
         <span>{t("blog.readMore")} &gt;&gt;</span>
       </Link>
