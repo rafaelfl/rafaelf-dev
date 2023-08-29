@@ -2,7 +2,7 @@
 const nextConfig = {
     images: {
         dangerouslyAllowSVG: true,
-        domains: ['rafaelf.dev'],
+        domains: ['rafaelf.dev', 'upload.wikimedia.org', 'img.freepik.com'],
     },
 }
 

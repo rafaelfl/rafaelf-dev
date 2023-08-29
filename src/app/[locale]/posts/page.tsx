@@ -21,6 +21,7 @@ const getPostMetadata = (locale: string) => {
       title: matterResult.data.title,
       date: matterResult.data.date,
       subtitle: matterResult.data.subtitle,
+      thumb: matterResult.data.thumb,
       slug: filename.replace(".md", ""),
       locale,
     };
@@ -59,7 +60,7 @@ const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
   return (
     <section className="px-6 max-w-full md:max-w-4xl lg:max-w-7xl pt-6">
       <h1 className="text-2xl text-darkblue font-bold">{t("blog.blogPosts")}</h1>
-      <div className="grid grid-cols-2 gap-x-12">{postPreviews}</div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12">{postPreviews}</div>
     </section>
   );
 };

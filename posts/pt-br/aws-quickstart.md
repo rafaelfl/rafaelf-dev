@@ -2,6 +2,7 @@
 title: "Iniciando com a AWS"
 subtitle: "Create an AWS account and set up CLI/SDK access."
 date: "2020-12-27"
+thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png"
 ---
 
 "Cloud computing" plays a vital role in the creation of software products and services. It's also one of the most highly sought-after skills in the tech industry.

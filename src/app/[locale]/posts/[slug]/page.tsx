@@ -45,36 +45,49 @@ const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
   const publishedDate = format.dateTime(new Date(year, month - 1, day), { dateStyle: "long" });
 
   return (
-    <div className="px-6 max-w-full md:max-w-4xl lg:max-w-7xl pt-6">
-      <div className="flex justify-start w-full mb-6 hover:underline">
-        <Link href="/posts" className="font-bold text-blueblog hover:underline">
-          &lt;&lt; {t("blog.backToPosts")}
-        </Link>
-      </div>
+    <>
+      {header.thumb && (
+        <div
+          className={`bg-slate-200 px-8 md:px-16 -my-[1.125rem] h-52 w-full bg-fixed bg-contain bg-no-repeat`}
+          style={{
+            backgroundImage: `url('${header.thumb}')`,
+            backgroundPosition: "center 15%",
+            backgroundSize: "auto 20%",
+          }}
+        />
+      )}
 
-      <h1 className="text-3xl md:text-4xl font-bold">{header.title}</h1>
-      <h2 className="text-xl md:text-2xl text-darkDarkGray">{header.subtitle}</h2>
-      <h2 className="pb-10">{publishedDate}</h2>
+      <div className="px-6 max-w-full md:max-w-4xl lg:max-w-7xl pt-6">
+        <div className="flex justify-start w-full mb-6 hover:underline">
+          <Link href="/posts" className="font-bold text-blueblog hover:underline">
+            &lt;&lt; {t("blog.backToPosts")}
+          </Link>
+        </div>
 
-      <article className="prose lg:prose-lg">
-        <Markdown
-          options={{
-            overrides: {
-              pre: {
-                component: PreBlock,
-              },
-              img: {
-                props: {
-                  className: "max-w-full mx-auto mt-6 mb-2",
+        <h1 className="text-3xl md:text-4xl font-bold">{header.title}</h1>
+        <h2 className="text-xl md:text-2xl text-darkDarkGray">{header.subtitle}</h2>
+        <h2 className="pb-10">{publishedDate}</h2>
+
+        <article className="prose lg:prose-lg">
+          <Markdown
+            options={{
+              overrides: {
+                pre: {
+                  component: PreBlock,
+                },
+                img: {
+                  props: {
+                    className: "max-w-full mx-auto mt-6 mb-2",
+                  },
                 },
               },
-            },
-          }}
-        >
-          {content}
-        </Markdown>
-      </article>
-    </div>
+            }}
+          >
+            {content}
+          </Markdown>
+        </article>
+      </div>
+    </>
   );
 };
 

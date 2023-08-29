@@ -3,6 +3,7 @@ import { createFormatter, createTranslator } from "next-intl";
 
 import enMessages from "@/../locales/en-us.json";
 import ptMessages from "@/../locales/pt-br.json";
+import Image from "next/image";
 
 interface PostPreviewProps {
   locale: string;
@@ -10,6 +11,7 @@ interface PostPreviewProps {
   title: string;
   subtitle: string;
   date: string;
+  thumb: string;
 }
 
 const PostPreview = (post: PostPreviewProps) => {
@@ -33,6 +35,20 @@ const PostPreview = (post: PostPreviewProps) => {
 
   return (
     <article className="my-8">
+      {post.thumb && (
+        <Link href={`/posts/${post.slug}`}>
+          <figure className="w-full bg-slate-100 rounded-md px-5 py-8 my-6">
+            <Image
+              src={post.thumb}
+              alt={post.title}
+              width={500}
+              height={500}
+              className="w-7/12 max-h-36 object-contain mx-auto"
+            />
+          </figure>
+        </Link>
+      )}
+
       <p className="text-sm text-slate-400">{generatePublishedDate(post.locale, post.date)}</p>
 
       <Link href={`/posts/${post.slug}`}>
