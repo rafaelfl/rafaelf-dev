@@ -20,8 +20,22 @@ Markdown is a plain text format that's easy to write and easy to read, making it
 Start by creating a new Next.js project. If you haven't already installed Node.js and npm (Node Package Manager), you'll need them.
 
 ```bash
-npx create-next-app my-static-blog
+yarn create next-app
 ```
+
+You will then be asked the following prompts:
+
+```bash
+What is your project named?  my-static-blog
+Would you like to use TypeScript?  Yes
+Would you like to use ESLint?  Yes
+Would you like to use Tailwind CSS?  Yes
+Would you like to use `src/` directory?  Yes
+Would you like to use App Router? (recommended)  Yes
+Would you like to customize the default import alias? No / Yes
+```
+
+Once you've answered the prompts, a new project will be created with the correct configuration depending on your answers.
 
 2. **Navigating to the Project Directory**
 
@@ -35,7 +49,7 @@ cd my-static-blog
 
 1. **Creating a "posts" Directory**
 
-In the root of your project, create a directory named "posts." This is where you'll store your Markdown files, each representing a blog post.
+In the root of your project, create a directory named "posts". This is where you'll store your Markdown files, each representing a blog post.
 
 2. **Writing Markdown Blog Posts**
 
@@ -43,8 +57,10 @@ Inside the "posts" directory, create Markdown files for each blog post. A simple
 
 ```bash
 ---
-title: Your Blog Post Title
-date: 2023-08-30
+title: "Your Blog Post Title"
+subtitle: "Your Blog Post Subtitle"
+date: "2023-08-30"
+thumb: "https://rafaelf.dev/images/blog-nextjs-thumb.png"
 ---
 
 # Your Blog Post Title
@@ -52,7 +68,7 @@ date: 2023-08-30
 Your content goes here.
 ```
 
-The section between the "---" lines is called frontmatter, where you can define metadata for your blog post.
+The section between the "---" lines is called frontmatter, where you can define metadata for your blog post. Save the file with any name you want but with the ".md" extension (e.g., `first-article.md`).
 
 ## Rendering Markdown Content with Next.js
 
@@ -117,9 +133,10 @@ const PostPage = () => {
 export default PostPage;
 ```
 
-This page is processed in the server side, and reads all `.md` files present in the `posts/` directory. The `gray-matter` package is used to read the files metadata and show them using the `PostPreview` component.
+This page is processed in the server side, and reads all `.md` files present in the `posts/` directory. The `gray-matter` package is used to read the files metadata and show them using the `PostPreview` component (which should be saved in the `posts/` folder as `PostPreview.tsx`).
 
 ```jsx
+import Image from "next/image";
 import Link from "next/link";
 
 interface PostPreviewProps {
@@ -245,7 +262,7 @@ export default PostPage;
 
 The `gray-matter` package is used to read the metadata details from an specific file. The markdown filename is determined by the URL slug. By default, this page process the markdown dynamically on the server side. To make this process more efficient, we can use Next.js SSG (Server Side Generation) to pre-build the page. To do that, we need to include the article slug in the `generateStaticParams` return object.
 
-The `Markdown` tag (from `markdown-to-jsx`) allows to customize the article output styling. In the code above, the `pre` tag is replaced by the `PreBlock` component, improving the source code styling (including a highlighter) in the articles:
+The `Markdown` tag (from `markdown-to-jsx`) allows to customize the article output styling. In the code above, the `pre` tag is replaced by the `PreBlock` component, improving the source code styling (including a highlighter) in the articles. So, save the following code in `posts/[slug]/PreBlock.tsx`:
 
 ```jsx
 "use client";
@@ -276,7 +293,34 @@ const PreBlock = ({ children, ...rest }: { children: JSX.Element }) => {
 export default PreBlock;
 ```
 
-Finally, you need to add the `@tailwindcss/typography` package to your `tailwind.config.js`. The official Tailwind CSS Typography plugin provides a set of prose classes you can use to add beautiful typographic defaults to any vanilla HTML you don’t control, like HTML rendered from Markdown, or pulled from a CMS.
+You also need to add the `@tailwindcss/typography` package to your `tailwind.config.js`, as follows:
+
+```js
+/** @type {import('tailwindcss').Config} */
+
+module.exports = {
+  ...,
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+}
+```
+
+The official Tailwind CSS Typography plugin provides a set of prose classes you can use to add beautiful typographic defaults to any vanilla HTML you don’t control, like HTML rendered from Markdown, or pulled from a CMS.
+
+Finally, to ensure that your project will be able to access the blog thumb from https://rafaelf.dev/, you need to add this to your `next.config.js` file:
+
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    ...,
+    images: {
+        domains: ['rafaelf.dev'],
+    },
+}
+
+module.exports = nextConfig
+```
 
 ## Running Your Static Blog
 
@@ -286,7 +330,8 @@ With everything set up, you can now run your static blog locally:
 yarn dev
 ```
 
-Visit http://localhost:3000 in your browser to see your blog in action.
+Visit http://localhost:3000/posts in your browser to see your blog in action. Your first article will be listed with a link pointing to the article, with the same slug as the markdown filename (i.e., http://localhost:3000/posts/first-article).
 
-Conclusion
+## Conclusion
+
 Creating a static blog using Markdown files and Next.js combines the simplicity of Markdown with the power of a modern web framework. This approach results in a fast and SEO-friendly blog that's easy to manage and maintain. By following this tutorial, you've gained the knowledge to create your own static blog and can further enhance it with additional features and customizations. Happy blogging!
