@@ -56,7 +56,7 @@ const PostPreview = (post: PostPreviewProps) => {
       <p className="text-slate-700 mb-4">{post.subtitle}</p>
       <Link
         href={`/posts/${post.slug}`}
-        className={`border border-blueblog text-blueblog hover:bg-blueblog hover:text-white font-semibold text-sm px-4 py-3 transition-color duration-500`}
+        className={`border border-blueblog text-blueblog hover:bg-blueblog hover:text-white font-semibold text-sm px-4 py-3 hover:transition-color duration-500`}
       >
         <span>{t("blog.readMore")} &gt;&gt;</span>
       </Link>
