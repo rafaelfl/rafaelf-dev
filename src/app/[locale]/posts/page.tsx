@@ -41,7 +41,23 @@ const PostPage = ({ params }: { params: { locale: string } }) => {
   const locale = params.locale;
   const t = locale === "pt-br" ? tPt : tEn;
 
-  const postMetadata = getPostMetadata(locale);
+  const postMetadata = getPostMetadata(locale).sort((a, b) => {
+    const strDate1 = a.date;
+    const strDate2 = b.date;
+
+    const year1 = parseInt(strDate1.substring(0, 4));
+    const month1 = parseInt(strDate1.substring(5, 7));
+    const day1 = parseInt(strDate1.substring(8, 10));
+
+    const year2 = parseInt(strDate2.substring(0, 4));
+    const month2 = parseInt(strDate2.substring(5, 7));
+    const day2 = parseInt(strDate2.substring(8, 10));
+
+    const date1 = new Date(year1, month1 - 1, day1);
+    const date2 = new Date(year2, month2 - 1, day2);
+
+    return date2.getTime() - date1.getTime();
+  });
   const postPreviews = postMetadata.map((post) => <PostPreview key={post.slug} {...post} />);
 
   return (

@@ -18,18 +18,8 @@ const getPostContent = (slug: string, locale: string) => {
 
 export const generateStaticParams = () => {
   return [
-    { slug: "aws-quickstart", locale: "en-us" },
-    { slug: "aws-quickstart", locale: "pt-br" },
-    { slug: "gpt-3-generated-poetry", locale: "en-us" },
-    { slug: "gpt-3-generated-poetry", locale: "pt-br" },
-    { slug: "qr-code-micro-app", locale: "en-us" },
-    { slug: "qr-code-micro-app", locale: "pt-br" },
-    { slug: "retro-games-with-pico-8", locale: "en-us" },
-    { slug: "retro-games-with-pico-8", locale: "pt-br" },
-    { slug: "saas-starter-app", locale: "en-us" },
-    { slug: "saas-starter-app", locale: "pt-br" },
-    { slug: "wolfhunter", locale: "en-us" },
-    { slug: "wolfhunter", locale: "pt-br" },
+    { slug: "creating-a-blog-with-nextjs", locale: "en-us" },
+    { slug: "creating-a-blog-with-nextjs", locale: "pt-br" },
   ];
 };
 
@@ -61,8 +51,8 @@ const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
           className={`bg-slate-200 px-8 md:px-16 -my-[1.125rem] h-52 w-full bg-fixed bg-contain bg-no-repeat`}
           style={{
             backgroundImage: `url('${header.thumb}')`,
-            backgroundPosition: "center 15%",
-            backgroundSize: "auto 20%",
+            backgroundPosition: "center 90px",
+            backgroundSize: "auto 180px",
           }}
         />
       )}
@@ -75,7 +65,7 @@ const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
         </div>
 
         <h1 className="text-3xl md:text-4xl font-bold">{header.title}</h1>
-        <h2 className="text-xl md:text-2xl text-darkDarkGray">{header.subtitle}</h2>
+        <h2 className="text-xl text-darkDarkGray my-1">{header.subtitle}</h2>
         <h2 className="pb-10">{publishedDate}</h2>
 
         <article className="prose lg:prose-lg">

@@ -9,7 +9,7 @@ const CodeBlock = ({ className, children }: { className: string; children: strin
     lang = className.replace("lang-", "");
   }
   return (
-    <SyntaxHighlighter language="text" style={CodeStyle}>
+    <SyntaxHighlighter language="javascript" style={CodeStyle}>
       {children}
     </SyntaxHighlighter>
   );

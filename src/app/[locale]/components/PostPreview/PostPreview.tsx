@@ -41,7 +41,7 @@ const PostPreview = (post: PostPreviewProps) => {
             <img
               src={post.thumb}
               alt={post.title}
-              className="w-7/12 max-h-36 object-contain mx-auto"
+              className="w-7/12 max-h-40 object-contain mx-auto"
             />
           </figure>
         </Link>
