@@ -1,29 +1,29 @@
 ---
-title: "Creating a static blog with Next.js 13"
-subtitle: "Create a static blog from markdown files using Next.js 13"
+title: "Building a blog with Next.js 13"
+subtitle: "Create a blog from markdown files using Next.js 13"
 date: "2023-08-30"
 thumb: "/images/blog-nextjs-thumb.png"
 ---
 
-In the modern age of web development, creating a blog has never been easier. With the right tools and frameworks, you can have a dynamic and stylish blog up and running in no time. One such powerful combination is using Markdown files and Next.js.
+Na era moderna do desenvolvimento web, criar um blog nunca foi tão fácil. Com as ferramentas e estruturas certas, você pode ter um blog dinâmico e elegante instalado e funcionando rapidamente. Uma dessas combinações poderosas é usar arquivos Markdown e Next.js.
 
-Markdown is a lightweight markup language that's easy to write and understand, while Next.js is a popular React framework that allows you to build static and server-rendered applications with ease. In this tutorial, we'll guide you through the process of creating a static blog using Markdown files and Next.js.
+Markdown é uma linguagem de marcação leve, fácil de escrever e entender, enquanto Next.js é um *framework* React popular que permite criar aplicativos estáticos e renderizados pelo servidor com facilidade. Neste tutorial, orientarei você no processo de criação de um blog estático usando arquivos Markdown e Next.js.
 
-## Why Markdown?
+## Por que Markdown?
 
-Markdown is a plain text format that's easy to write and easy to read, making it a favorite among content creators. With Markdown, you can focus on the content itself, rather than getting bogged down in complex HTML tags.
+Markdown é um formato de texto simples fácil de escrever e ler, o que o torna um favorito entre os criadores de conteúdo. Com o Markdown, você pode se concentrar no conteúdo em si, em vez de ficar preso em tags HTML complexas.
 
-## Setting Up Your Next.js Project
+## Configurando seu projeto Next.js
 
-1. **Creating a New Next.js Project**
+1. **Criando um novo projeto Next.js**
 
-Start by creating a new Next.js project. If you haven't already installed Node.js and npm (Node Package Manager), you'll need them.
+Comece criando um novo projeto Next.js. Se você ainda não instalou o Node.js e o npm (Node Package Manager), você precisará deles.
 
 ```bash
 yarn create next-app
 ```
 
-You will then be asked the following prompts:
+Em seguida, serão solicitados os seguintes prompts (responda conforme o indicado):
 
 ```bash
 What is your project named?  my-static-blog
@@ -35,60 +35,60 @@ Would you like to use App Router? (recommended)  Yes
 Would you like to customize the default import alias? No / Yes
 ```
 
-Once you've answered the prompts, a new project will be created with the correct configuration depending on your answers.
+Depois de responder às solicitações, um novo projeto será criado com a configuração correta de acordo com suas respostas.
 
-2. **Navigating to the Project Directory**
+2. **Navegando até o diretório do projeto**
 
-Move into the newly created project directory:
+Vá para o diretório do projeto recém-criado:
 
 ```bash
 cd my-static-blog
 ```
 
-## Structuring Your Blog Content
+## Estruturando o conteúdo do seu blog
 
-1. **Creating a "posts" Directory**
+1. **Criando um diretório "posts"**
 
-In the root of your project, create a directory named "posts". This is where you'll store your Markdown files, each representing a blog post.
+Na raiz do seu projeto, crie um diretório chamado “posts”. É aqui que você armazenará seus arquivos Markdown, cada um representando uma postagem no blog.
 
-2. **Writing Markdown Blog Posts**
+2. **Escrevendo postagens de blog Markdown**
 
-Inside the "posts" directory, create Markdown files for each blog post. A simple structure for a Markdown file might look like this:
+Dentro do diretório “posts”, crie arquivos Markdown para cada postagem do blog. Uma estrutura simples para um arquivo Markdown pode ser assim:
 
 ```bash
 ---
-title: "Your Blog Post Title"
-subtitle: "Your Blog Post Subtitle"
-date: "2023-08-30"
-thumb: "https://rafaelf.dev/images/blog-nextjs-thumb.png"
+título: "Título da postagem do seu blog"
+subtítulo: "Subtítulo da postagem do seu blog"
+data: "2023-08-30"
+polegar: "https://rafaelf.dev/images/blog-nextjs-thumb.png"
 ---
 
-# Your Blog Post Title
+# Título da postagem do seu blog
 
-Your content goes here.
+Seu conteúdo vai aqui.
 ```
 
-The section between the "---" lines is called frontmatter, where you can define metadata for your blog post. Save the file with any name you want but with the ".md" extension (e.g., `first-article.md`).
+A seção entre as linhas “---” é chamada frontmatter, onde você pode definir metadados para sua postagem no blog. Salve o arquivo com o nome que desejar, mas com a extensão ".md" (por exemplo, `first-article.md`).
 
-## Rendering Markdown Content with Next.js
+## Renderizando conteúdo Markdown com Next.js
 
-1. **Parsing Markdown**
+1. **Analisando Markdown**
 
-To render Markdown content, we'll use the <a href="https://www.npmjs.com/package/markdown-to-jsx" target="_blank">markdown-to-jsx</a>, <a href="https://www.npmjs.com/package/gray-matter" target="_blank">gray-matter</a> and <a href="https://www.npmjs.com/package/react-syntax-highlighter" target="_blank">react-syntax-highlighter</a> libraries. Install them in your project:
+Para renderizar o conteúdo Markdown, usaremos os pacotes <a href="https://www.npmjs.com/package/markdown-to-jsx" target="_blank">markdown-to-jsx</a>, <a href="https://www.npmjs.com/package/gray-matter" target="_blank">gray-matter</a> e <a href="https://www.npmjs.com/package /react-syntax-highlighter" target="_blank">react-syntax-highlighter</a>. Instale-os em seu projeto:
 
 ```bash
 yarn add markdown-to-jsx gray-matter react-syntax-highlighter
 ```
 
-Also you need to add the following development dependencies:
+Além disso, você precisa adicionar as seguintes dependências de desenvolvimento:
 
 ```bash
 yarn add -D @tailwindcss/typography @types/react-syntax-highlighter
 ```
 
-2. **Creating a Blog Posts Listing Page**
+2. **Criando uma página de listagem de postagens do blog**
 
-In the app folder, create a `posts` directory with a `page.tsx` file. You can use the following code to read the existing markdown files.
+Na pasta do aplicativo, crie um diretório `posts` com um arquivo `page.tsx`. Você pode usar o código a seguir para ler os arquivos markdown existentes.
 
 ```jsx
 import fs from "fs";
@@ -133,7 +133,7 @@ const PostPage = () => {
 export default PostPage;
 ```
 
-This page is processed in the server side, and reads all `.md` files present in the `posts/` directory. The `gray-matter` package is used to read the files metadata and show them using the `PostPreview` component (which should be saved in the `posts/` folder as `PostPreview.tsx`).
+Esta página é processada do lado do servidor e lê todos os arquivos `.md` presentes no diretório `posts/`. O pacote `gray-matter` é usado para ler os metadados dos arquivos e mostrá-los usando o componente `PostPreview` (que deve ser salvo no diretório `posts/` como `PostPreview.tsx`).
 
 ```jsx
 import Image from "next/image";
@@ -177,11 +177,11 @@ const PostPreview = (post: PostPreviewProps) => {
 export default PostPreview;
 ```
 
-The `PostPreview` component receives the post properties and render a link to the blog post. The thumb image is optionally rendered, as well as the post title, subtitle and date.
+O componente `PostPreview` recebe as propriedades da postagem e renderiza um link para a postagem do blog. Uma imagem é opcionalmente renderizada, bem como o título, subtítulo e data da postagem.
 
-3. **Creating a Component to Render Markdown**
+3. **Criando um componente para renderizar Markdown**
 
-In the `posts` directory, create a new subdirectory `[slug]` with a `page.tsx` file. In this file, we need to set up a page to render the markdown:
+No diretório `posts`, crie um novo subdiretório `[slug]` com um arquivo `page.tsx`. Neste arquivo, precisamos configurar uma página para renderizar o markdown:
 
 ```jsx
 import Link from "next/link";
@@ -260,9 +260,9 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
 export default PostPage;
 ```
 
-The `gray-matter` package is used to read the metadata details from an specific file. The markdown filename is determined by the URL slug. By default, this page process the markdown dynamically on the server side. To make this process more efficient, we can use Next.js SSG (Server Side Generation) to pre-build the page. To do that, we need to include the article slug in the `generateStaticParams` return object.
+O pacote `gray-matter` é usado para ler os detalhes dos metadados de um arquivo específico. O nome do arquivo markdown é determinado pelo slug da URL. Por padrão, esta página processa o markdown dinamicamente no lado do servidor. Para tornar esse processo mais eficiente, podemos usar o Next.js SSG (Server Side Generation) para pré-construir a página. Para fazer isso, precisamos incluir o slug do artigo no objeto de retorno de `generateStaticParams`.
 
-The `Markdown` tag (from `markdown-to-jsx`) allows to customize the article output styling. In the code above, the `pre` tag is replaced by the `PreBlock` component, improving the source code styling (including a highlighter) in the articles. So, save the following code in `posts/[slug]/PreBlock.tsx`:
+A tag `Markdown` (de `markdown-to-jsx`) permite personalizar o estilo de saída do artigo. No código acima, a tag `pre` é substituída pelo componente `PreBlock`, melhorando o estilo do código-fonte (incluindo um marcador) nos artigos. Portanto, salve o seguinte código em `posts/[slug]/PreBlock.tsx`:
 
 ```jsx
 "use client";
@@ -293,7 +293,7 @@ const PreBlock = ({ children, ...rest }: { children: JSX.Element }) => {
 export default PreBlock;
 ```
 
-You also need to add the `@tailwindcss/typography` package to your `tailwind.config.js`, as follows:
+Você também precisa adicionar o pacote `@tailwindcss/typography` ao seu `tailwind.config.js`, como segue:
 
 ```js
 /** @type {import('tailwindcss').Config} */
@@ -306,9 +306,9 @@ module.exports = {
 }
 ```
 
-The official Tailwind CSS Typography plugin provides a set of prose classes you can use to add beautiful typographic defaults to any vanilla HTML you don’t control, like HTML rendered from Markdown, or pulled from a CMS.
+O plugin oficial "Tailwind CSS Typography" fornece um conjunto de classes que você pode usar para adicionar belos padrões tipográficos a qualquer HTML básico que você não controla, como HTML renderizado de Markdown ou extraído de um CMS.
 
-Finally, to ensure that your project will be able to access the blog thumb from https://rafaelf.dev/, you need to add this to your `next.config.js` file:
+Finalmente, para garantir que seu projeto será capaz de acessar a miniatura do blog em https://rafaelf.dev/, você precisa adicionar isto ao seu arquivo `next.config.js`:
 
 ```js
 /** @type {import('next').NextConfig} */
@@ -322,16 +322,16 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
-## Running Your Static Blog
+## Executando seu blog estático
 
-With everything set up, you can now run your static blog locally:
+Com tudo configurado, agora você pode executar seu blog localmente:
 
 ```bash
 yarn dev
 ```
 
-Visit http://localhost:3000/posts in your browser to see your blog in action. Your first article will be listed with a link pointing to the article, with the same slug as the markdown filename (i.e., http://localhost:3000/posts/first-article).
+Visite http://localhost:3000/posts no seu navegador para ver seu blog em ação. Seu primeiro artigo será listado com um link apontando para o artigo, com o mesmo slug do nome do arquivo markdown - mas sem a extensão `.md` (ou seja, http://localhost:3000/posts/first-article).
 
-## Conclusion
+## Conclusões
 
-Creating a static blog using Markdown files and Next.js combines the simplicity of Markdown with the power of a modern web framework. This approach results in a fast and SEO-friendly blog that's easy to manage and maintain. By following this tutorial, you've gained the knowledge to create your own static blog and can further enhance it with additional features and customizations. Happy blogging!
+A criação de um blog usando arquivos Markdown e Next.js combina a simplicidade do Markdown com o poder de uma estrutura web moderna. Essa abordagem resulta em um blog rápido e otimizado para SEO, fácil de gerenciar e manter. Seguindo este tutorial, você adquiriu o conhecimento necessário para criar seu próprio blog e pode aprimorá-lo ainda mais com recursos e personalizações adicionais. Feliz blogging!

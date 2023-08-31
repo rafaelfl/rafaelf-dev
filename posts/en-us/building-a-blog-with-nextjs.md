@@ -1,6 +1,6 @@
 ---
-title: "Creating a static blog with Next.js 13"
-subtitle: "Create a static blog from markdown files using Next.js 13"
+title: "Building a blog with Next.js 13"
+subtitle: "Create a blog from markdown files using Next.js 13"
 date: "2023-08-30"
 thumb: "/images/blog-nextjs-thumb.png"
 ---
@@ -23,7 +23,7 @@ Start by creating a new Next.js project. If you haven't already installed Node.j
 yarn create next-app
 ```
 
-You will then be asked the following prompts:
+You will then be asked the following prompts (answer as indicated):
 
 ```bash
 What is your project named?  my-static-blog
@@ -133,7 +133,7 @@ const PostPage = () => {
 export default PostPage;
 ```
 
-This page is processed in the server side, and reads all `.md` files present in the `posts/` directory. The `gray-matter` package is used to read the files metadata and show them using the `PostPreview` component (which should be saved in the `posts/` folder as `PostPreview.tsx`).
+This page is processed in the server side, and reads all `.md` files present in the `posts/` directory. The `gray-matter` package is used to read the files metadata and show them using the `PostPreview` component (which should be saved in the `posts/` directory as `PostPreview.tsx`).
 
 ```jsx
 import Image from "next/image";

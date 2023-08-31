@@ -18,8 +18,8 @@ const getPostContent = (slug: string, locale: string) => {
 
 export const generateStaticParams = () => {
   return [
-    { slug: "creating-a-blog-with-nextjs", locale: "en-us" },
-    { slug: "creating-a-blog-with-nextjs", locale: "pt-br" },
+    { slug: "building-a-blog-with-nextjs", locale: "en-us" },
+    { slug: "building-a-blog-with-nextjs", locale: "pt-br" },
   ];
 };
 
