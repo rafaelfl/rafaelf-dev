@@ -1,6 +1,6 @@
 ---
-title: "Building a blog with Next.js 13"
-subtitle: "Create a blog from markdown files using Next.js 13"
+title: "Construindo um blog com Next.js 13"
+subtitle: "Crie um blog a partir de arquivos markdown usando Next.js 13"
 date: "2023-08-30"
 thumb: "/images/blog-nextjs-thumb.png"
 ---
