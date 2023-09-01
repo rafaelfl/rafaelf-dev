@@ -34,6 +34,23 @@ export const generateStaticParams = () => {
   return [{ locale: "en-us" }, { locale: "pt-br" }];
 };
 
+export async function generateMetadata({
+  params: { locale, slug },
+}: {
+  params: { locale: string; slug: string };
+}) {
+  const tEn = createTranslator({ locale: "en-us", messages: enMessages });
+  const tPt = createTranslator({ locale: "pt-br", messages: ptMessages });
+
+  const t = locale === "pt-br" ? tPt : tEn;
+
+  return {
+    title: t("blog.metadataTitle"),
+    description: t("blog.metadataDescription"),
+    metadataBase: new URL("https://rafaelf.dev"),
+  };
+}
+
 const PostPage = ({ params }: { params: { locale: string } }) => {
   const tEn = createTranslator({ locale: "en-us", messages: enMessages });
   const tPt = createTranslator({ locale: "pt-br", messages: ptMessages });

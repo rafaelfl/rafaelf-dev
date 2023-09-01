@@ -139,6 +139,8 @@
     "link": "Blog",
     "readMore": "Read more",
     "backToPosts": "Back to Posts",
-    "blogPosts": "Blog posts"
+    "blogPosts": "Blog posts",
+    "metadataTitle": "Rafael's Posts",
+    "metadataDescription": "Blog section from Rafael Fernandes personal website"
   }
 }
