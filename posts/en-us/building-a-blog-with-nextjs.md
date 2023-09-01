@@ -118,6 +118,15 @@ const getPostMetadata = () => {
   return posts;
 };
 
+export const generateStaticParams = () => {
+  return [{ locale: "en-us" }, { locale: "pt-br" }];
+};
+
+export const metadata: Metadata = {
+  title:  "Posts Page",
+  description: "Posts Page Description",
+}
+
 const PostPage = () => {
   const postMetadata = getPostMetadata();
   const postPreviews = postMetadata.map((post) => <PostPreview key={post.slug} {...post} />);
@@ -133,7 +142,9 @@ const PostPage = () => {
 export default PostPage;
 ```
 
-This page is processed in the server side, and reads all `.md` files present in the `posts/` directory. The `gray-matter` package is used to read the files metadata and show them using the `PostPreview` component (which should be saved in the `posts/` directory as `PostPreview.tsx`).
+This page is processed in the server side, and reads all `.md` files present in the `posts/` directory. The metadata information is provided to improve the page SEO, and the `generateStaticParams` function is provided to force Next.js to use  (Server Side Generation) for that page.
+
+The `gray-matter` package is used to read the files metadata and show them using the `PostPreview` component (which should be saved in the `posts/` directory as `PostPreview.tsx`).
 
 ```jsx
 import Image from "next/image";
@@ -204,6 +215,28 @@ export const generateStaticParams = () => {
   ];
 };
 
+export async function generateMetadata({
+  params: { locale, slug },
+}: {
+  params: { locale: string; slug: string };
+}) {
+  const { header } = getPostContent(slug, locale);
+
+  return {
+    title: header.title,
+    description: header.subtitle,
+    openGraph: {
+      images: [
+        {
+          url: header.thumb,
+          width: 800,
+          height: 600,
+        },
+      ],
+    },
+  };
+}
+
 const PostPage = ({ params }: { params: { slug: string } }) => {
   const slug = params.slug;
 
@@ -260,7 +293,7 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
 export default PostPage;
 ```
 
-The `gray-matter` package is used to read the metadata details from an specific file. The markdown filename is determined by the URL slug. By default, this page process the markdown dynamically on the server side. To make this process more efficient, we can use Next.js SSG (Server Side Generation) to pre-build the page. To do that, we need to include the article slug in the `generateStaticParams` return object.
+The `gray-matter` package is used to read the metadata details from an specific file. The markdown filename is determined by the URL slug. By default, this page process the markdown dynamically on the server side. To make this process more efficient, we have used SSG to pre-build the page. To do that, we need to include the article slug in the `generateStaticParams` return object. Based on that information, the `generateMetadata` function is used to provide some dynamic metadata information for the page, improving the page SEO.
 
 The `Markdown` tag (from `markdown-to-jsx`) allows to customize the article output styling. In the code above, the `pre` tag is replaced by the `PreBlock` component, improving the source code styling (including a highlighter) in the articles. So, save the following code in `posts/[slug]/PreBlock.tsx`:
 
