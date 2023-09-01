@@ -23,6 +23,29 @@ export const generateStaticParams = () => {
   ];
 };
 
+export async function generateMetadata({
+  params: { locale, slug },
+}: {
+  params: { locale: string; slug: string };
+}) {
+  const { header } = getPostContent(slug, locale);
+
+  return {
+    title: header.title,
+    description: header.subtitle,
+    metadataBase: new URL("https://rafaelf.dev"),
+    openGraph: {
+      images: [
+        {
+          url: header.thumb,
+          width: 800,
+          height: 600,
+        },
+      ],
+    },
+  };
+}
+
 const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
   const tEn = createTranslator({ locale: "en-us", messages: enMessages });
   const tPt = createTranslator({ locale: "pt-br", messages: ptMessages });
