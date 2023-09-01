@@ -16,9 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     ...staticParams.map((param) => {
-      const locale = param.locale === "pt-br" ? "/pt-br/" : "/";
+      const locale = param.locale === "pt-br" ? "/pt-br" : "";
 
-      return { url: `${baseURL}/posts${locale}${param.slug}`, lastModified: new Date() };
+      return { url: `${baseURL}${locale}/posts/${param.slug}`, lastModified: new Date() };
     }),
   ];
 }
