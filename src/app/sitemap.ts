@@ -3,6 +3,7 @@ import { MetadataRoute } from "next";
 import fs from "fs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseURL = "https://rafaelf.dev";
   const locales = ["en-us", "pt-br"];
 
   const enUS: Array<string> = [];
@@ -24,19 +25,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: "https://rafaelf.dev",
+      url: baseURL,
       lastModified: new Date(),
     },
     {
-      url: "https://rafaelf.dev/posts",
+      url: `${baseURL}/posts`,
       lastModified: new Date(),
     },
     ...enUS.map((slug) => ({
-      url: `https://rafaelf.dev/posts/${slug.replace(".md", "")}`,
+      url: `${baseURL}/posts/${slug.replace(".md", "")}`,
       lastModified: new Date(),
     })),
     ...ptBR.map((slug) => ({
-      url: `https://rafaelf.dev/pt-br/posts/${slug.replace(".md", "")}`,
+      url: `${baseURL}/pt-br/posts/${slug.replace(".md", "")}`,
       lastModified: new Date(),
     })),
   ];
