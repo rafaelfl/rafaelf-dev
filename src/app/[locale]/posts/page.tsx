@@ -34,11 +34,7 @@ export const generateStaticParams = () => {
   return [{ locale: "en-us" }, { locale: "pt-br" }];
 };
 
-export async function generateMetadata({
-  params: { locale, slug },
-}: {
-  params: { locale: string; slug: string };
-}) {
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
   const tEn = createTranslator({ locale: "en-us", messages: enMessages });
   const tPt = createTranslator({ locale: "pt-br", messages: ptMessages });
 

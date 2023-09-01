@@ -1,9 +1,10 @@
 import { MetadataRoute } from "next";
-import { getPostsFilenames } from "./[locale]/lib/utils";
+import { generateStaticParams } from "./[locale]/posts/[slug]/page";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseURL = "https://rafaelf.dev";
-  const { enUS, ptBR } = getPostsFilenames();
+
+  const staticParams = generateStaticParams();
 
   return [
     {
@@ -14,13 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseURL}/posts`,
       lastModified: new Date(),
     },
-    ...enUS.map((slug) => ({
-      url: `${baseURL}/posts/${slug.replace(".md", "")}`,
-      lastModified: new Date(),
-    })),
-    ...ptBR.map((slug) => ({
-      url: `${baseURL}/pt-br/posts/${slug.replace(".md", "")}`,
-      lastModified: new Date(),
-    })),
+    ...staticParams.map((param) => {
+      const locale = param.locale === "pt-br" ? "/pt-br/" : "/";
+
+      return { url: `${baseURL}/posts${locale}${param.slug}`, lastModified: new Date() };
+    }),
   ];
 }
