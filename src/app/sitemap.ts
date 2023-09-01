@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 
 import fs from "fs";
+import path from "path";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseURL = "https://rafaelf.dev";
@@ -10,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const ptBR: Array<string> = [];
 
   locales.forEach((locale) => {
+    console.log(" >>>> DIR ", path.resolve(__dirname, "."));
+
     const dir = `posts/${locale}`;
     const files = fs.readdirSync(dir);
     const markdownPosts = files.filter((file) => file.endsWith(".md"));
