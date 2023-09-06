@@ -1,6 +1,7 @@
-import Link from "next/link";
-import { createTranslator, createFormatter } from "next-intl";
 import fs from "fs";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { createTranslator, createFormatter } from "next-intl";
 import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
 
@@ -10,10 +11,15 @@ import enMessages from "@/../locales/en-us.json";
 import ptMessages from "@/../locales/pt-br.json";
 
 const getPostContent = (slug: string, locale: string) => {
-  const file = `posts/${locale}/${slug}.md`;
-  const content = fs.readFileSync(file, "utf-8");
-  const matterResult = matter(content);
-  return { content: matterResult.content, header: matterResult.data };
+  try {
+    const file = `posts/${locale}/${slug}.md`;
+    const content = fs.readFileSync(file, "utf-8");
+    const matterResult = matter(content);
+
+    return { content: matterResult.content, header: matterResult.data };
+  } catch (err) {
+    return { content: null, header: null };
+  }
 };
 
 export const generateStaticParams = () => {
@@ -29,6 +35,10 @@ export async function generateMetadata({
   params: { locale: string; slug: string };
 }) {
   const { header } = getPostContent(slug, locale);
+
+  if (!header) {
+    return null;
+  }
 
   return {
     title: header.title,
@@ -56,6 +66,10 @@ const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
   const t = locale === "pt-br" ? tPt : tEn;
 
   const { content, header } = getPostContent(slug, locale);
+
+  if (!content) {
+    notFound();
+  }
 
   const strDate = header.date;
 
