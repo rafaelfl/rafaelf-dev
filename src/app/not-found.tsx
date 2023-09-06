@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Metadata } from "next";
 import { Fredoka } from "next/font/google";
 
 import notFound404Image from "@/app/[locale]/assets/images/404.svg";
 
 import styles from "./notFoundStyles.module.scss";
-import Link from "next/link";
 
 const fredoka = Fredoka({
   weight: ["400", "500", "700"],
@@ -16,7 +17,12 @@ export function generateStaticParams() {
   return [{ locale: "en-us" }, { locale: "pt-br" }];
 }
 
-const NotFoundBlog = () => {
+export const metadata: Metadata = {
+  title: "404 Not found page",
+  metadataBase: new URL("https://rafaelf.dev"),
+};
+
+const NotFoundPage = () => {
   return (
     <body className={`${fredoka.className} ${styles.mainContainer}`}>
       <main className="container p-6">
@@ -49,4 +55,4 @@ const NotFoundBlog = () => {
   );
 };
 
-export default NotFoundBlog;
+export default NotFoundPage;
