@@ -23,8 +23,7 @@ const getPostContent = (slug: string, locale: string) => {
 
     return { content: matterResult.content, header: matterResult.data };
   } catch (err) {
-    console.error(err);
-    return { content: null, header: null };
+    notFound();
   }
 };
 
@@ -41,10 +40,6 @@ export async function generateMetadata({
   params: { locale: string; slug: string };
 }) {
   const { header } = getPostContent(slug, locale);
-
-  if (!header) {
-    return null;
-  }
 
   return {
     title: header.title,
@@ -72,10 +67,6 @@ const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
   const t = locale === "pt-br" ? tPt : tEn;
 
   const { content, header } = getPostContent(slug, locale);
-
-  if (!content) {
-    notFound();
-  }
 
   const strDate = header.date;
 

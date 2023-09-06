@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-css-tags */
 "use client";
 
 import Image from "next/image";
@@ -5,29 +6,12 @@ import Link from "next/link";
 
 import notFound404Image from "@/app/[locale]/assets/images/404.svg";
 
-import styles from "./notFoundStyles.module.scss";
-import { useEffect, useState } from "react";
-
-const NotFoundPage = () => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null; // return this null to avoid hydration errors
-  }
-
+export default function NotFound() {
   return (
-    <main className={`${styles.mainContainer}`}>
+    <main className="flex justify-center items-center bg-slate-100 min-h-screen">
       <div className="container p-6">
         <div className="flex flex-col items-center gap-8">
-          <Image
-            className={`w-full ${styles.image404}`}
-            src={notFound404Image}
-            alt="404 not found"
-          />
+          <Image className="w-full image404" src={notFound404Image} alt="404 not found" />
           <div className="flex flex-1 flex-col justify-center gap-1 max-w-screen-md">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl mx-4 font-semibold text-center mb-2 text-darkblue">
               UH OH! You&apos;re lost.
@@ -49,6 +33,4 @@ const NotFoundPage = () => {
       </div>
     </main>
   );
-};
-
-export default NotFoundPage;
+}
