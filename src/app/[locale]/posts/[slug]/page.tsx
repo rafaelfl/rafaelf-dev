@@ -13,11 +13,17 @@ import ptMessages from "@/../locales/pt-br.json";
 const getPostContent = (slug: string, locale: string) => {
   try {
     const file = `posts/${locale}/${slug}.md`;
+
+    if (!fs.existsSync(file)) {
+      throw new Error("Error loading post");
+    }
+
     const content = fs.readFileSync(file, "utf-8");
     const matterResult = matter(content);
 
     return { content: matterResult.content, header: matterResult.data };
   } catch (err) {
+    console.error(err);
     return { content: null, header: null };
   }
 };
