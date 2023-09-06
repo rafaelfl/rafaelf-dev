@@ -13,10 +13,6 @@ const fredoka = Fredoka({
   variable: "--font-fredoka",
 });
 
-export function generateStaticParams() {
-  return [{ locale: "en-us" }, { locale: "pt-br" }];
-}
-
 export const metadata: Metadata = {
   title: "404 Not found page",
   metadataBase: new URL("https://rafaelf.dev"),
