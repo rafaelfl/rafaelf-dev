@@ -1,11 +1,24 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import notFound404Image from "@/app/[locale]/assets/images/404.svg";
 
 import styles from "./notFoundStyles.module.scss";
+import { useEffect, useState } from "react";
 
 const NotFoundPage = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null; // return this null to avoid hydration errors
+  }
+
   return (
     <main className={`${styles.mainContainer}`}>
       <div className="container p-6">
