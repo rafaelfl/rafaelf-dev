@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,6 +31,7 @@ details > summary::-webkit-details-marker {
   justify-content: center;
   min-height: 100vh;
   background-color: rgb(241, 245, 249);
+  font-family: "Fredoka";
 }
 
 .image404 {

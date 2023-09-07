@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-css-tags */
 "use client";
 
 import Image from "next/image";
@@ -38,7 +37,7 @@ export default function NotFound() {
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
         <meta name="next-size-adjust" />
       </head>
-      <body>
+      <body className="mainContainer">
         <main className="flex justify-center items-center bg-slate-100 min-h-screen">
           <div className="container p-6">
             <div className="flex flex-col items-center gap-8">

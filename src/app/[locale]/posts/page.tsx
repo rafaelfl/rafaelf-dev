@@ -1,5 +1,5 @@
-import { createTranslator } from "next-intl";
 import fs from "fs";
+import { createTranslator } from "next-intl";
 import matter from "gray-matter";
 
 import PostPreview from "../components/PostPreview/PostPreview";
