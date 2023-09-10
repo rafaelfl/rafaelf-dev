@@ -28,10 +28,18 @@ const getPostContent = (slug: string, locale: string) => {
 };
 
 export const generateStaticParams = () => {
-  return [
-    { slug: "building-a-blog-with-nextjs", locale: "en-us" },
-    { slug: "building-a-blog-with-nextjs", locale: "pt-br" },
-  ];
+  const languages = ["en-us", "pt-br"];
+  const slugPosts = ["building-a-blog-with-nextjs", "10-micro-saas-ideas-in-2023"];
+
+  const staticParams: Array<{ slug: string; locale: string }> = [];
+
+  languages.forEach((locale) => {
+    slugPosts.forEach((slug) => {
+      staticParams.push({ slug, locale });
+    });
+  });
+
+  return staticParams;
 };
 
 export async function generateMetadata({
