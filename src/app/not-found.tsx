@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,7 +8,7 @@ import notFound404Image from "@/app/[locale]/assets/images/404.svg";
 export default function NotFound() {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <link
           rel="stylesheet"
           href={`/_next/static/css/app/layout.css?v=${Math.floor(
@@ -34,7 +36,7 @@ export default function NotFound() {
 
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
         <meta name="next-size-adjust" />
-      </head>
+      </head> */}
       <body className="mainContainer">
         <main className="flex justify-center items-center bg-slate-100 min-h-screen">
           <div className="container p-6">
