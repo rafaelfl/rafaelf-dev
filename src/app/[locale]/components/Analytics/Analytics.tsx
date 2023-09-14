@@ -15,7 +15,7 @@ export default function Analytics() {
     }
   }, [pathname, searchParams]);
 
-  if (process.env.NEXT_PUBLIC_NETLIFY_ENV !== "production") {
+  if (process.env.NEXT_PUBLIC_ENV !== "production") {
     return null;
   }
 
