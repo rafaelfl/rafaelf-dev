@@ -62,7 +62,7 @@ const ContactSection = (props: ContactSectionProps) => {
           </div>
         </Link>
 
-        <Link href="mailto:rafael.fernandes@gmail.com" target="_blank" className="w-auto">
+        <Link href="mailto:ola@rafaelf.dev" target="_blank" className="w-auto">
           <div className="flex justify-center items-center gap-4 h-10">
             <Image
               src={email}
