@@ -1,6 +1,6 @@
 import { useCallback } from "react";
-import Link from "next/link";
-import Image, { ImageLoaderProps } from "next/image";
+import Link from "next-intl/link";
+import Image from "next/image";
 import { tv } from "tailwind-variants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

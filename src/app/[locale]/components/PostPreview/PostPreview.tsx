@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next-intl/link";
 import { createFormatter, createTranslator } from "next-intl";
 
 import enMessages from "@/../locales/en-us.json";
@@ -27,7 +27,9 @@ const PostPreview = (post: PostPreviewProps) => {
     const day = parseInt(strDate.substring(8, 10));
 
     const format = createFormatter({ locale });
-    const publishedDate = format.dateTime(new Date(year, month - 1, day), { dateStyle: "long" });
+    const publishedDate = format.dateTime(new Date(year, month - 1, day), {
+      dateStyle: "long",
+    });
 
     return publishedDate;
   };
@@ -47,10 +49,14 @@ const PostPreview = (post: PostPreviewProps) => {
         </Link>
       )}
 
-      <p className="text-sm text-slate-400">{generatePublishedDate(post.locale, post.date)}</p>
+      <p className="text-sm text-slate-400">
+        {generatePublishedDate(post.locale, post.date)}
+      </p>
 
       <Link href={`/posts/${post.slug}`}>
-        <h2 className="font-bold text-blueblog hover:underline text-lg mb-2">{post.title}</h2>
+        <h2 className="font-bold text-blueblog hover:underline text-lg mb-2">
+          {post.title}
+        </h2>
       </Link>
       <p className="text-slate-700 mb-4">{post.subtitle}</p>
       <Link

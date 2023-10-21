@@ -1,6 +1,6 @@
 import { ReactNode, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import Link from "next-intl/link";
 import { tv } from "tailwind-variants";
 import { Lightbox } from "yet-another-react-lightbox";
 import { Video } from "yet-another-react-lightbox/plugins";

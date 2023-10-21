@@ -1,5 +1,5 @@
 import fs from "fs";
-import Link from "next/link";
+import Link from "next-intl/link";
 import { notFound } from "next/navigation";
 import { createTranslator, createFormatter } from "next-intl";
 import Markdown from "markdown-to-jsx";
@@ -29,7 +29,10 @@ const getPostContent = (slug: string, locale: string) => {
 
 export const generateStaticParams = () => {
   const languages = ["en-us", "pt-br"];
-  const slugPosts = ["building-a-blog-with-nextjs", "10-micro-saas-ideas-in-2023"];
+  const slugPosts = [
+    "building-a-blog-with-nextjs",
+    "10-micro-saas-ideas-in-2023",
+  ];
 
   const staticParams: Array<{ slug: string; locale: string }> = [];
 
@@ -84,7 +87,9 @@ const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
   const day = parseInt(strDate.substring(8, 10));
 
   const format = createFormatter({ locale });
-  const publishedDate = format.dateTime(new Date(year, month - 1, day), { dateStyle: "long" });
+  const publishedDate = format.dateTime(new Date(year, month - 1, day), {
+    dateStyle: "long",
+  });
 
   return (
     <>
@@ -101,7 +106,10 @@ const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
 
       <div className="px-6 max-w-full md:max-w-4xl lg:max-w-7xl pt-6">
         <div className="flex justify-start w-full mb-6 hover:underline">
-          <Link href="/posts" className="font-bold text-blueblog hover:underline mt-6">
+          <Link
+            href="/posts"
+            className="font-bold text-blueblog hover:underline mt-6"
+          >
             &lt;&lt; {t("blog.backToPosts")}
           </Link>
         </div>

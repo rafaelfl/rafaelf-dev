@@ -14,7 +14,10 @@ const getPostMetadata = (locale: string) => {
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
   const posts = markdownPosts.map((filename) => {
-    const fileContents = fs.readFileSync(`posts/${locale}/${filename}`, "utf-8");
+    const fileContents = fs.readFileSync(
+      `posts/${locale}/${filename}`,
+      "utf-8"
+    );
     const matterResult = matter(fileContents);
 
     return {
@@ -34,7 +37,11 @@ export const generateStaticParams = () => {
   return [{ locale: "en-us" }, { locale: "pt-br" }];
 };
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
   const tEn = createTranslator({ locale: "en-us", messages: enMessages });
   const tPt = createTranslator({ locale: "pt-br", messages: ptMessages });
 
@@ -71,12 +78,18 @@ const PostPage = ({ params }: { params: { locale: string } }) => {
 
     return date2.getTime() - date1.getTime();
   });
-  const postPreviews = postMetadata.map((post) => <PostPreview key={post.slug} {...post} />);
+  const postPreviews = postMetadata.map((post) => (
+    <PostPreview key={post.slug} {...post} />
+  ));
 
   return (
-    <section className="px-6 max-w-full md:max-w-4xl lg:max-w-7xl pt-6">
-      <h1 className="text-2xl text-darkblue font-bold">{t("blog.blogPosts")}</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12">{postPreviews}</div>
+    <section className="px-6 max-w-full md:max-w-4xl pt-6">
+      <h1 className="text-2xl text-darkblue font-bold">
+        {t("blog.blogPosts")}
+      </h1>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12">
+        {postPreviews}
+      </div>
     </section>
   );
 };

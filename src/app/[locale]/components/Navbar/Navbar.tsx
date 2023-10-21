@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "next-intl/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,7 +35,13 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
       <div className="flex justify-between items-center h-20 max-w-7xl mx-auto">
         <div className="flex flex-1 justify-between items-center space-x-3.5">
           <Link href="/">
-            <Image src={logo} alt={t("logo.alt")} className="h-12 w-auto" width={192} priority />
+            <Image
+              src={logo}
+              alt={t("logo.alt")}
+              className="h-12 w-auto"
+              width={192}
+              priority
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-3">
@@ -43,7 +49,11 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
               <NavLink
                 key={link.href}
                 href={link.href}
-                intent={activeSection === link.href.substring(1) ? "active" : "default"}
+                intent={
+                  activeSection === link.href.substring(1)
+                    ? "active"
+                    : "default"
+                }
               >
                 {link.title}
               </NavLink>
@@ -51,7 +61,9 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
 
             <NavLink href="/posts">{t("blog.link")}</NavLink>
 
-            <LanguageSwitcher icon={locale.toLowerCase() === "en-us" ? "br" : "en"} />
+            <LanguageSwitcher
+              icon={locale.toLowerCase() === "en-us" ? "br" : "en"}
+            />
           </nav>
         </div>
 
@@ -77,7 +89,11 @@ export default function Navbar({ activeSection, locale }: NavbarProps) {
               <NavLink
                 key={link.href}
                 href={link.href}
-                intent={activeSection === link.href.substring(1) ? "active" : "default"}
+                intent={
+                  activeSection === link.href.substring(1)
+                    ? "active"
+                    : "default"
+                }
               >
                 {link.title}
               </NavLink>

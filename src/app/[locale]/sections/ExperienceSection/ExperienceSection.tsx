@@ -1,6 +1,5 @@
 import { ComponentProps } from "react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
 import { sectionTitleStyle } from "@/app/[locale]/styles/titleStyle";
 import Accordion from "@/app/[locale]/components/Accordion/Accordion";

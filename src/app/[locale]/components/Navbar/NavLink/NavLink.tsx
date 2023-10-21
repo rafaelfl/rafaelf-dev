@@ -1,3 +1,4 @@
+import Link from "next-intl/link";
 import { VariantProps, tv } from "tailwind-variants";
 
 const linkStyle = tv({
@@ -19,10 +20,16 @@ interface NavLinkProps extends VariantProps<typeof linkStyle> {
   className?: string;
 }
 
-export const NavLink = ({ href, children, intent, className, ...rest }: NavLinkProps) => {
+export const NavLink = ({
+  href,
+  children,
+  intent,
+  className,
+  ...rest
+}: NavLinkProps) => {
   return (
-    <a href={href} className={linkStyle({ intent, className })} {...rest}>
+    <Link href={href} className={linkStyle({ intent, className })} {...rest}>
       {children}
-    </a>
+    </Link>
   );
 };

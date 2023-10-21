@@ -1,15 +1,11 @@
 "use client";
 
-import Link from "next/link";
+import Link from "next-intl/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import logo from "@/app/[locale]/assets/images/logo.svg";
-import useDisclosure from "@/app/[locale]/hooks/useDisclosure";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
-import { NavLink } from "./NavLink/NavLink";
 
 import "./Navbar.scss";
 
@@ -25,11 +21,19 @@ export default function BlogNavbar({ locale }: BlogNavbarProps) {
       <div className="flex justify-between items-center h-20 max-w-7xl mx-auto">
         <div className="flex flex-1 justify-between items-center space-x-3.5">
           <Link href="/">
-            <Image src={logo} alt={t("logo.alt")} className="h-12 w-auto" width={192} priority />
+            <Image
+              src={logo}
+              alt={t("logo.alt")}
+              className="h-12 w-auto"
+              width={192}
+              priority
+            />
           </Link>
 
           <nav className="flex items-center gap-3">
-            <LanguageSwitcher icon={locale.toLowerCase() === "en-us" ? "br" : "en"} />
+            <LanguageSwitcher
+              icon={locale.toLowerCase() === "en-us" ? "br" : "en"}
+            />
           </nav>
         </div>
       </div>
