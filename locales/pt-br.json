@@ -56,8 +56,13 @@
       "typescript": "Logo Typescript",
       "javascript": "Logo Javascript",
       "sass": "Logo Sass",
+      "python": "Logo Python",
+      "django": "Logo Django",
       "mongo": "Logo MongoDB",
-      "firebase": "Logo Firebase"
+      "postgresql": "Logo PostgreSQL",
+      "firebase": "Logo Firebase",
+      "gcp": "Logo Google Cloud Platform",
+      "aws": "Logo AWS"
     },
     "andMore": "...e mais!"
   },
@@ -103,12 +108,16 @@
       "technologies": "React.js, Firebase (Authentication, Database, Storage), Redux, Bootstrap"
     },
     "imaginashopping": {
-      "about": "O ImaginaShopping é uma plataforma web responsiva que pode ser usada pelos pais dos alunos para comprar diferentes pacotes de livros, aplicar códigos de desconto e efetuar pagamentos com cartão de crédito e Pix. Os livros adquiridos através do ImaginaShopping são processados e transferidos para gráficas parceiras para impressão e envio.",
+      "about": "O ImaginaShopping é uma plataforma web de e-commerce responsiva que pode ser usada pelos pais dos alunos para comprar diferentes pacotes de livros, aplicar códigos de desconto e efetuar pagamentos com cartão de crédito e Pix. Os livros adquiridos através do ImaginaShopping são processados e transferidos para gráficas parceiras para impressão e envio.",
       "technologies": "React.js, Firebase (Authentication, Database, Storage), Cloud Functions, Redux, Bootstrap"
     },
     "sheldon": {
       "about": "Com o objetivo de simplificar o processo de geração de livros e envio para as gráficas parceiras, foi desenvolvido o SHELDON (Sistema de Hospedagem e Exportação de Livros Digitais ONline). Trata-se de um sistema interno, utilizado pela equipa operacional da ImaginaKIDS, para gerar arquivos PDF das histórias e exportá-los para um servidor de arquivos das gráficas.",
       "technologies": "React.js, Bootstrap, Firebase, Node.js, Express, Socket.IO, BullMQ, Redis"
+    },
+    "leonard": {
+      "about": "Após gerar os arquivos do livro em formato PDF, o próximo passo é enviá-los para impressão. Para agilizar esse processo, é essencial exportar metadados contendo detalhes completos sobre os livros. Isso inclui informações como títulos de livros programados para impressão, quantidade de impressões desejadas, formato, tipo de papel, bem como informações de entrega e faturamento. LEONARD (Logística Eletrônica para Organização, Navegação, Aprovação, Remessa e Distribuição de livros) é a plataforma que integra dados provenientes de alguns serviços externos (em formato CSV) e os arquivos de livros gerados pelo SHELDON. Em seguida, LEONARD facilita a criação dos metadados dos livros no formato JSON, organizando e renomeando todos os arquivos antes de carregá-los no serviço gráfico. Desse modo, LEONARD é a companhia perfeita para SHELDON! 😁",
+      "technologies": "Python, Django, SQLite, JQuery, Bootstrap"
     },
     "gitrend": {
       "about": "GiTrend é uma aplicação web que permite pesquisar repositórios e usuários em alta no GitHub. Por meio dessa aplicação é possível pesquisar repositórios em alta por texto (título, descrição ou leia-me) e por linguagem de programação. É possível marcar alguns dos repositórios como favoritos ou filtrar apenas os favoritos. Uma lista de usuários em alta também é exibida.",
@@ -119,7 +128,7 @@
       "technologies": "Flutter, Firebase"
     },
     "authApi": {
-      "about": "Uma API de autenticação que implementa um esquema de rotação de tokens de atualização (baseado em tokens JWT) e detecção da reutilização de tokens usando Node.js, Express, Passport e Typescript. Este projeto tem as seguintes funcionalidades: registro de usuários, login/logout, atualizar tokens de acesso, recuperar e atualizar perfis de usuários, recursos administrativos (criar novas contas, recuperar listas completas de usuários, recuperar e atualizar usuários individuais, excluir usuários), proteção de rotas e recuperação de dados de exemplo com paginação. Ele pode ser usado como ponto de partida para estudar sobre o processo de autenticação por desenvolvedores de front-end e back-end. Todos os dados são armazenados em um banco de dados MongoDB e a invalidação do token funciona com o banco de dados Redis.  <note>Importante: a API está hospedada no Render, uma plataforma que impõe uma interrupção de serviço a cada 15 minutos. Consequentemente, o acesso ao serviço pode envolver algum tempo de espera, pois o serviço precisa ser reiniciado durante essas interrupções.</note>",
+      "about": "Uma API de autenticação de código-livre que implementa um esquema de rotação de tokens de atualização (baseado em tokens JWT) e detecção da reutilização de tokens usando Node.js, Express, Passport e Typescript. Este projeto tem as seguintes funcionalidades: registro de usuários, login/logout, atualizar tokens de acesso, recuperar e atualizar perfis de usuários, recursos administrativos (criar novas contas, recuperar listas completas de usuários, recuperar e atualizar usuários individuais, excluir usuários), proteção de rotas e recuperação de dados de exemplo com paginação. Ele pode ser usado como ponto de partida para estudar sobre o processo de autenticação por desenvolvedores de front-end e back-end. Todos os dados são armazenados em um banco de dados MongoDB e a invalidação do token funciona com o banco de dados Redis.  <note>Importante: a API está hospedada no Render, uma plataforma que impõe uma interrupção de serviço a cada 15 minutos. Consequentemente, o acesso ao serviço pode envolver algum tempo de espera, pois o serviço precisa ser reiniciado durante essas interrupções.</note>",
       "technologies": "Node.js, Express, Express Validator, Passport, Swagger, MongoDB, Redis, Docker"
     },
     "web3Api": {

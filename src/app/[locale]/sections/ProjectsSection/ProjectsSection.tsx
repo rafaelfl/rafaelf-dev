@@ -8,6 +8,7 @@ import ImaginaKIDSProject from "./projects/ImaginaKIDSProject";
 import ImaginaWebProject from "./projects/ImaginaWebProject";
 import ImaginaShoppingProject from "./projects/ImaginaShoppingProject";
 import SheldonProject from "./projects/SheldonProject";
+import LeonardProject from "./projects/LeonardProject";
 import GitrendProject from "./projects/GitrendProject";
 import ModosProject from "./projects/ModosProject";
 import AuthApiProject from "./projects/AuthApiProject";
@@ -60,6 +61,13 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
 
       <SheldonProject />
 
+      {/* Leonard */}
+      <Animated animation="lateralLeftFade" style={{ transitionDelay: "0.4s" }}>
+        <h3 className={sectionTitleStyle()}>LEONARD</h3>
+      </Animated>
+
+      <LeonardProject />
+
       {/* GiTrend */}
       <Animated animation="lateralLeftFade" style={{ transitionDelay: "0.4s" }}>
         <h3 className={sectionTitleStyle()}>GiTrend</h3>
@@ -83,7 +91,9 @@ const ProjectsSection = (props: ProjectsSectionProps) => {
 
       {/* Web3 Contract Vulnerability Detector API (POC) */}
       <Animated animation="lateralLeftFade" style={{ transitionDelay: "0.4s" }}>
-        <h3 className={sectionTitleStyle()}>Web3 Contract Vulnerability Detector API (POC)</h3>
+        <h3 className={sectionTitleStyle()}>
+          Web3 Contract Vulnerability Detector API (POC)
+        </h3>
       </Animated>
 
       <Web3VulnerabilityDetectorProject />

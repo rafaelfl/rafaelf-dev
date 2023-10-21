@@ -8,6 +8,7 @@ const GitrendProject = () => {
 
   return (
     <ProjectItem
+      ltr={false}
       medias={gitrendMedias}
       about={t("projects.gitrend.about")}
       technologies={t("projects.gitrend.technologies")}

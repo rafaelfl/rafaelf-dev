@@ -70,7 +70,10 @@ const ProjectItem = ({
 
   return (
     <>
-      <div ref={videoPortalRef} className={projectItemStyle({ gallery: !!medias })}>
+      <div
+        ref={videoPortalRef}
+        className={projectItemStyle({ gallery: !!medias })}
+      >
         {medias && (
           <Animated
             animation={ltr ? "lateralLeftFade" : "lateralRightFade"}
@@ -101,12 +104,16 @@ const ProjectItem = ({
             <h4 className="text-xl text-darkblue">{t("projects.about")}</h4>
             <p className="text-base mb-4 text-lightgray">{about}</p>
 
-            <h4 className="text-xl text-darkblue">{t("projects.technologies")}</h4>
+            <h4 className="text-xl text-darkblue">
+              {t("projects.technologies")}
+            </h4>
             <p className="text-base mb-4 text-lightgray">{technologies}</p>
 
             {sourceCode && (
               <>
-                <h4 className="text-xl text-darkblue">{t("projects.sourceCode")}</h4>
+                <h4 className="text-xl text-darkblue">
+                  {t("projects.sourceCode")}
+                </h4>
                 <div className="mb-4">
                   <Link
                     className="text-base  text-lightgray hover:underline"
@@ -121,14 +128,17 @@ const ProjectItem = ({
 
             {documentation && (
               <>
-                <h4 className="text-xl text-darkblue">{t("projects.documentation")}</h4>
+                <h4 className="text-xl text-darkblue">
+                  {t("projects.documentation")}
+                </h4>
                 <div className="mb-4">
                   <Link
                     className="text-base text-lightgray hover:underline"
                     href={documentation}
                     target="_blank"
                   >
-                    {documentation} <FontAwesomeIcon icon={faNoteSticky} size="xl" />
+                    {documentation}{" "}
+                    <FontAwesomeIcon icon={faNoteSticky} size="xl" />
                   </Link>
                 </div>
               </>

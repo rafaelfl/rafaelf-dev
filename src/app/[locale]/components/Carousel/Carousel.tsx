@@ -3,7 +3,10 @@ import Link from "next/link";
 import Image, { ImageLoaderProps } from "next/image";
 import { tv } from "tailwind-variants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 import { Media } from "@/app/[locale]/types";
 
@@ -76,7 +79,10 @@ const Carousel = ({
     [medias.length]
   );
 
-  const nextImage = useCallback((val: number) => (val + 1) % medias.length, [medias.length]);
+  const nextImage = useCallback(
+    (val: number) => (val + 1) % medias.length,
+    [medias.length]
+  );
 
   return (
     <>
@@ -85,11 +91,17 @@ const Carousel = ({
           {/* Previous button */}
           <button
             type="button"
-            className={imageNavigationButtonStyle({ disabled: medias.length < 2 })}
+            className={imageNavigationButtonStyle({
+              disabled: medias.length < 2,
+            })}
             disabled={medias.length < 2}
             onClick={() => setSelectedIndex(previousImage)}
           >
-            <FontAwesomeIcon icon={faChevronLeft} size="2xl" className="text-darkblue w-5" />
+            <FontAwesomeIcon
+              icon={faChevronLeft}
+              size="2xl"
+              className="text-darkblue w-5"
+            />
             <p className="sr-only">Show previous image</p>
           </button>
 
@@ -109,7 +121,9 @@ const Carousel = ({
                   }}
                   scroll={false}
                   // necessary to make the active link available for clicking
-                  className={carouselLinksStyle({ hidden: selectedIndex !== index })}
+                  className={carouselLinksStyle({
+                    hidden: selectedIndex !== index,
+                  })}
                   tabIndex={selectedIndex !== index ? -1 : 0}
                   aria-hidden={selectedIndex !== index}
                 >
@@ -133,11 +147,17 @@ const Carousel = ({
           {/* Next button */}
           <button
             type="button"
-            className={imageNavigationButtonStyle({ disabled: medias.length < 2 })}
+            className={imageNavigationButtonStyle({
+              disabled: medias.length < 2,
+            })}
             disabled={medias.length < 2}
             onClick={() => setSelectedIndex(nextImage)}
           >
-            <FontAwesomeIcon icon={faChevronRight} size="2xl" className="text-darkblue w-5" />
+            <FontAwesomeIcon
+              icon={faChevronRight}
+              size="2xl"
+              className="text-darkblue w-5"
+            />
             <p className="sr-only">Show next image</p>
           </button>
         </div>
@@ -148,7 +168,9 @@ const Carousel = ({
             <button
               key={`button-${m.alt}`}
               type="button"
-              className={`w-3 h-3 rounded-full ${selectedIndex === index ? "bg-black" : "bg-gray"}`}
+              className={`w-3 h-3 rounded-full ${
+                selectedIndex === index ? "bg-black" : "bg-gray"
+              }`}
               aria-current={selectedIndex === index}
               aria-label={`Select image ${index + 1}`}
               onClick={() => setSelectedIndex(index)}

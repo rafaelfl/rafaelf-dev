@@ -6,4 +6,5 @@ export interface Media {
   width: number;
   height: number;
   alt?: string;
+  altBr?: string;
 }

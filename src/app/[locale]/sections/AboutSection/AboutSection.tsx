@@ -17,8 +17,13 @@ import flutterLogo from "@/app/[locale]/assets/images/stack/flutter.svg";
 import typescriptLogo from "@/app/[locale]/assets/images/stack/typescript.svg";
 import javascriptLogo from "@/app/[locale]/assets/images/stack/javascript.svg";
 import sassLogo from "@/app/[locale]/assets/images/stack/sass.svg";
+import pythonLogo from "@/app/[locale]/assets/images/stack/python.svg";
+import djangoLogo from "@/app/[locale]/assets/images/stack/django.svg";
 import mongoLogo from "@/app/[locale]/assets/images/stack/mongodb.svg";
+import postgresqlLogo from "@/app/[locale]/assets/images/stack/postgresql.svg";
 import firebaseLogo from "@/app/[locale]/assets/images/stack/firebase.svg";
+import gcpLogo from "@/app/[locale]/assets/images/stack/gcp.svg";
+import awsLogo from "@/app/[locale]/assets/images/stack/aws.svg";
 import { sectionTitleStyle } from "@/app/[locale]/styles/titleStyle";
 
 import AboutItem from "./AboutItem/AboutItem";
@@ -42,7 +47,11 @@ const AboutSection = (props: AboutSectionProps) => {
         </h2>
       </Animated>
 
-      <Animated animation="lateralLeftFade" className="mb-6" style={{ transitionDelay: "0.4s" }}>
+      <Animated
+        animation="lateralLeftFade"
+        className="mb-6"
+        style={{ transitionDelay: "0.4s" }}
+      >
         <h3 className={sectionTitleStyle()}>{t("about.subtitle")}</h3>
       </Animated>
 
@@ -92,8 +101,13 @@ const AboutSection = (props: AboutSectionProps) => {
         <Image src={typescriptLogo} alt={t("about.techStack.typescript")} />
         <Image src={javascriptLogo} alt={t("about.techStack.javascript")} />
         <Image src={sassLogo} alt={t("about.techStack.sass")} />
+        <Image src={pythonLogo} alt={t("about.techStack.python")} />
+        <Image src={djangoLogo} alt={t("about.techStack.django")} />
         <Image src={mongoLogo} alt={t("about.techStack.mongo")} />
+        <Image src={postgresqlLogo} alt={t("about.techStack.postgresql")} />
         <Image src={firebaseLogo} alt={t("about.techStack.firebase")} />
+        <Image src={gcpLogo} alt={t("about.techStack.gcp")} />
+        <Image src={awsLogo} alt={t("about.techStack.aws")} />
 
         <p className="col-span-2 lg:col-span-5 text-white text-center text-xl">
           {t("about.andMore")}

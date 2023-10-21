@@ -23,7 +23,10 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
         {t("experience.title")}
       </h2>
 
-      <Accordion title={t("experience.fullstack.title")} period={t("experience.fullstack.period")}>
+      <Accordion
+        title={t("experience.fullstack.title")}
+        period={t("experience.fullstack.period")}
+      >
         <div className="flex flex-col justify-start items-start">
           <p>{t("experience.fullstack.description")}</p>
           <div className="flex flex-row flex-wrap gap-3 pt-4 pb-2">
@@ -32,8 +35,13 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
             <Chip>Node.js</Chip>
             <Chip>Javascript</Chip>
             <Chip>Typescript</Chip>
+            <Chip>Jest</Chip>
             <Chip>Sass</Chip>
+            <Chip>Bootstrap</Chip>
             <Chip>Python</Chip>
+            <Chip>AWS Lambda</Chip>
+            <Chip>Serverless</Chip>
+            <Chip>PostgreSQL</Chip>
           </div>
         </div>
       </Accordion>
@@ -47,11 +55,15 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
             <Chip>Node.js</Chip>
             <Chip>Javascript</Chip>
             <Chip>Typescript</Chip>
+            <Chip>Jest</Chip>
             <Chip>Express</Chip>
             <Chip>Firebase</Chip>
             <Chip>Swift</Chip>
             <Chip>Redis</Chip>
             <Chip>Socket.IO</Chip>
+            <Chip>Python</Chip>
+            <Chip>Django</Chip>
+            <Chip>GCP</Chip>
           </div>
         </div>
       </Accordion>
@@ -87,7 +99,11 @@ const ExperienceSection = (props: ExperienceSectionProps) => {
         </div>
       </Accordion>
 
-      <Accordion title={t("experience.fapema.title")} period="2003 - 2005" className="mb-10">
+      <Accordion
+        title={t("experience.fapema.title")}
+        period="2003 - 2005"
+        className="mb-10"
+      >
         <div className="flex flex-col justify-start items-start">
           <p>{t("experience.fapema.description")}</p>
           <div className="flex flex-row flex-wrap gap-3 pt-4 pb-2">

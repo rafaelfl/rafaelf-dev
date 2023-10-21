@@ -8,7 +8,7 @@ const ModosProject = () => {
 
   return (
     <ProjectItem
-      ltr={false}
+      ltr={true}
       medias={modosMedias}
       about={t("projects.modos.about")}
       technologies={t("projects.modos.technologies")}

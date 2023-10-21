@@ -24,11 +24,16 @@ import modos5 from "@/app/[locale]/assets/images/screenshot/modos/phone5.webp";
 
 import sheldonMain from "@/app/[locale]/assets/images/screenshot/sheldon/1-main.webp";
 
+import leonardLogin from "@/app/[locale]/assets/images/screenshot/leonard/1-login.webp";
+import leonardMain from "@/app/[locale]/assets/images/screenshot/leonard/2-main.webp";
+import leonardResult from "@/app/[locale]/assets/images/screenshot/leonard/3-process-result.webp";
+
 export const gitrendMedias: Array<Media> = [
   {
     type: "image",
     src: gitrendMain,
     alt: "GiTrend main screen",
+    altBr: "Tela principal do GiTrend",
     width: 640,
     height: 311,
   },
@@ -39,6 +44,7 @@ export const imaginaKidsMedias: Array<Media> = [
     type: "image",
     src: imaginaKidsBooks,
     alt: "Book slot selection main screen from ImaginaKIDS",
+    altBr: "Tela principal de seleção de slot de livro do ImaginaKIDS",
     width: 640,
     height: 445,
   },
@@ -46,6 +52,7 @@ export const imaginaKidsMedias: Array<Media> = [
     type: "image",
     src: imaginaKidsPage,
     alt: "Story page containing a penguin and a girl saying 'Hello'",
+    altBr: "Página de história contendo um pinguim e uma garota dizendo 'Olá'",
     width: 640,
     height: 445,
   },
@@ -53,6 +60,8 @@ export const imaginaKidsMedias: Array<Media> = [
     type: "image",
     src: imaginaKidsCharacter,
     alt: "Screenshot of the ImaginaKIDS character builder screen",
+    altBr:
+      "Captura de tela da tela do construtor de personagens da ImaginaKIDS",
     width: 640,
     height: 445,
   },
@@ -165,5 +174,29 @@ export const sheldonMedias: Array<Media> = [
     alt: "Sheldon main screen showing a list of students, and buttons to generate different book types",
     width: 640,
     height: 311,
+  },
+];
+
+export const leonardMedias: Array<Media> = [
+  {
+    type: "image",
+    src: leonardLogin,
+    alt: "Leonard login screen",
+    width: 640,
+    height: 351,
+  },
+  {
+    type: "image",
+    src: leonardMain,
+    alt: "Leonard main screen illustrating that the user can load a CSV file, match it to the current available PDF files and submit for processing",
+    width: 640,
+    height: 351,
+  },
+  {
+    type: "image",
+    src: leonardResult,
+    alt: "Leonard process result screen, showing the resulting JSON file used as input metadata for printing the books",
+    width: 640,
+    height: 351,
   },
 ];
