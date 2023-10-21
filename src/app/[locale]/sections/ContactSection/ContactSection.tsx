@@ -28,7 +28,11 @@ const ContactSection = (props: ContactSectionProps) => {
       </h2>
 
       <div className="flex justify-center items-center gap-10 w-full mb-12 max-w-5xl">
-        <Link href="https://github.com/rafaelfl" target="_blank" className="w-auto">
+        <Link
+          href="https://github.com/rafaelfl"
+          target="_blank"
+          className="w-auto"
+        >
           <div className="flex justify-center items-center gap-4 h-10">
             <Image
               src={github}
@@ -62,7 +66,11 @@ const ContactSection = (props: ContactSectionProps) => {
           </div>
         </Link>
 
-        <Link href="mailto:ola@rafaelf.dev" target="_blank" className="w-auto">
+        <Link
+          href="mailto:hello@rafaelf.dev"
+          target="_blank"
+          className="w-auto"
+        >
           <div className="flex justify-center items-center gap-4 h-10">
             <Image
               src={email}
