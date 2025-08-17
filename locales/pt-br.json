@@ -104,7 +104,7 @@
       "technologies": "React Native, Firebase, Módulos nativos (Swift)"
     },
     "imaginaweb": {
-      "about": "Com o advento da pandemia, muitas escolas tiveram que interromper suas atividades, impossibilitando, aos alunos, o uso dos iPads escolares. Foi desenvolvida uma versão web da plataforma, permitindo que os alunos usem seus computadores pessoais para construir suas histórias. A versão web oferece os mesmos recursos da versão app, mas com maior escalabilidade do produto.",
+      "about": "Foi desenvolvida uma versão web da plataforma, permitindo que os alunos usem seus computadores pessoais para construir suas histórias. A versão web oferece os mesmos recursos da versão app, mas com maior escalabilidade do produto.",
       "technologies": "React.js, Firebase (Authentication, Database, Storage), Redux, Bootstrap"
     },
     "imaginashopping": {
