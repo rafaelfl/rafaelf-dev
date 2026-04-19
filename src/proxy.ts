@@ -5,5 +5,5 @@ export default createMiddleware(routing);
 
 export const config = {
   // Exclude Next metadata routes (no file extension — otherwise next-intl runs and breaks OG/Twitter fetches).
-  matcher: ["/((?!api|_next|_vercel|opengraph-image|twitter-image|.*\\..*).*)"],
+  matcher: ["/((?!api|_next|_vercel|opengraph-image|.*\\..*).*)"],
 };

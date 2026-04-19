@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 const defaultSiteUrl = "https://rafaelf.dev";
 
-/** Ensures file-based `opengraph-image` / `twitter-image` resolve to absolute URLs. */
+/** Ensures file-based `opengraph-image` resolves to absolute URLs when merged. */
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? defaultSiteUrl),
 };

@@ -42,8 +42,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const site = new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? defaultSiteUrl,
   );
-  const ogImage = new URL("/opengraph-image", site).href;
-  const twitterImage = new URL("/twitter-image", site).href;
+  /** Same asset for OG and Twitter — avoids a second URL that crawlers may fail to fetch. */
+  const socialImage = {
+    url: new URL("/opengraph-image", site).href,
+    width: 1200,
+    height: 630,
+    alt: t("title"),
+  };
 
   return {
     metadataBase: site,
@@ -60,20 +65,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Rafael Fernandes",
       title: t("title"),
       description: t("description"),
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: t("title"),
-        },
-      ],
+      images: [socialImage],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [twitterImage],
+      images: [socialImage],
     },
   };
 }
