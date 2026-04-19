@@ -84,7 +84,7 @@ export function Projects() {
                   <>
                     <Image
                       src={project.image}
-                      alt=""
+                      alt={project.name}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover object-top transition duration-300 group-hover:scale-[1.03]"
@@ -186,9 +186,9 @@ export function Projects() {
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between border-b border-[var(--color-border)] px-4 py-3 sm:px-6">
-              <h3 className="font-display text-sm font-bold text-[var(--color-text)] sm:text-base">
+              <p className="font-display text-sm font-bold text-[var(--color-text)] sm:text-base">
                 {activeDemo.name}
-              </h3>
+              </p>
               <button
                 type="button"
                 onClick={() => setActiveDemo(null)}

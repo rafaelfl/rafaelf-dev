@@ -1,12 +1,11 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { getAllSlugs } from "@/lib/posts";
-
-const defaultSiteUrl = "https://rafaelf.dev";
+import { DEFAULT_SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseURL =
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? defaultSiteUrl;
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? DEFAULT_SITE_URL;
   const lastModified = new Date();
 
   const urls: MetadataRoute.Sitemap = [

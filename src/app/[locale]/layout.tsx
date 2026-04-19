@@ -4,6 +4,7 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { DM_Sans, Inter, Syne } from "next/font/google";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { DEFAULT_SITE_URL } from "@/lib/site";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -34,13 +35,11 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const defaultSiteUrl = "https://rafaelf.dev";
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
   const site = new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? defaultSiteUrl,
+    process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL,
   );
   /** Same asset for OG and Twitter — avoids a second URL that crawlers may fail to fetch. */
   const socialImage = {
@@ -57,6 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     icons: {
       icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
       shortcut: "/icon.svg",
+      apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
     },
     openGraph: {
       type: "website",

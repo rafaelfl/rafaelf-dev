@@ -27,7 +27,7 @@
     "subtitle": "Sou um Engenheiro de Software Sênior",
     "cards": {
       "experience": {
-        "title": "Experiência",
+        "title": "Trajetória profissional",
         "body": "Com mais de 20 anos de experiência em desenvolvimento de software, levo conhecimento prático profundo para cada projeto."
       },
       "collaboration": {
@@ -46,6 +46,7 @@
     "more": "...e muito mais!"
   },
   "techMarquee": {
+    "section_heading": "Tecnologias",
     "items": [
       { "slug": "react", "label": "React.js" },
       { "slug": "reactoriginal", "label": "React Native" },
@@ -259,13 +260,25 @@
   },
   "footer": {
     "credits": "Desenvolvido com 💜 por Rafael Fernandes Lopes.",
-    "copyright": "© Copyright 2023, Todos os direitos reservados."
+    "copyright": "© Copyright 2026, Todos os direitos reservados.",
+    "link_home": "Voltar ao início",
+    "link_about": "Sobre mim",
+    "link_experience": "Experiência profissional",
+    "link_projects": "Portfólio",
+    "link_contact": "Fale comigo",
+    "link_blog": "Artigos"
   },
   "blog": {
     "title": "Blog",
     "list_title": "Postagens de Rafael",
     "list_description": "Seção de blog do site pessoal de Rafael Fernandes",
     "read_more": "Ler mais",
-    "back_to_posts": "Voltar às postagens"
+    "back_to_posts": "Voltar às postagens",
+    "share_heading": "Compartilhar este post",
+    "share_site_heading": "Compartilhar este site",
+    "share_x": "Compartilhar no X",
+    "share_linkedin": "Compartilhar no LinkedIn",
+    "share_copy": "Copiar link",
+    "share_copied": "Copiado"
   }
 }

@@ -6,7 +6,6 @@ import { routing } from "@/i18n/routing";
 
 export function Footer() {
   const t = useTranslations("footer");
-  const tNav = useTranslations("nav");
   const locale = useLocale();
 
   const hash = (id: string) =>
@@ -20,31 +19,31 @@ export function Footer() {
           aria-label="Footer"
         >
           <a href={hash("home")} className="hover:text-[var(--color-primary)]">
-            {tNav("home")}
+            {t("link_home")}
           </a>
           <a href={hash("about")} className="hover:text-[var(--color-primary)]">
-            {tNav("about")}
+            {t("link_about")}
           </a>
           <a
             href={hash("experience")}
             className="hover:text-[var(--color-primary)]"
           >
-            {tNav("experience")}
+            {t("link_experience")}
           </a>
           <a
             href={hash("projects")}
             className="hover:text-[var(--color-primary)]"
           >
-            {tNav("projects")}
+            {t("link_projects")}
           </a>
           <a
             href={hash("contact")}
             className="hover:text-[var(--color-primary)]"
           >
-            {tNav("contact")}
+            {t("link_contact")}
           </a>
           <Link href="/posts" className="hover:text-[var(--color-primary)]">
-            {tNav("blog")}
+            {t("link_blog")}
           </Link>
         </nav>
         <p className="max-w-xl text-xs leading-relaxed text-[var(--color-muted)]">

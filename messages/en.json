@@ -27,7 +27,7 @@
     "subtitle": "I am a Senior Software Engineer",
     "cards": {
       "experience": {
-        "title": "Experience",
+        "title": "Professional background",
         "body": "With more than 20 years of experience in the software development field, I bring a wealth of practical knowledge to every project."
       },
       "collaboration": {
@@ -46,6 +46,7 @@
     "more": "...and more!"
   },
   "techMarquee": {
+    "section_heading": "Technologies",
     "items": [
       { "slug": "react", "label": "React.js" },
       { "slug": "reactoriginal", "label": "React Native" },
@@ -259,13 +260,25 @@
   },
   "footer": {
     "credits": "Developed with 💜 by Rafael Fernandes Lopes.",
-    "copyright": "© Copyright 2023, All Rights Reserved."
+    "copyright": "© Copyright 2026, All Rights Reserved.",
+    "link_home": "Back to top",
+    "link_about": "About me",
+    "link_experience": "Work experience",
+    "link_projects": "Portfolio",
+    "link_contact": "Contact me",
+    "link_blog": "Articles"
   },
   "blog": {
     "title": "Blog",
     "list_title": "Rafael's Posts",
     "list_description": "Blog section from Rafael Fernandes personal website",
     "read_more": "Read more",
-    "back_to_posts": "Back to posts"
+    "back_to_posts": "Back to posts",
+    "share_heading": "Share this post",
+    "share_site_heading": "Share this site",
+    "share_x": "Share on X",
+    "share_linkedin": "Share on LinkedIn",
+    "share_copy": "Copy link",
+    "share_copied": "Copied"
   }
 }

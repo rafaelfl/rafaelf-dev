@@ -51,7 +51,7 @@ export function TechMarquee() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={src}
-                  alt=""
+                  alt={label}
                   className={
                     isAws
                       ? `max-h-10 w-auto max-w-[7rem] object-contain object-center opacity-90 ${iconTone}`.trim()
@@ -62,7 +62,10 @@ export function TechMarquee() {
             ) : (
               <div className="h-10 w-10 rounded bg-[var(--color-border)]" />
             )}
-            <span className="text-center text-[11px] font-medium text-[var(--color-muted)]">
+            <span
+              className="text-center text-[11px] font-medium text-[var(--color-muted)]"
+              aria-hidden
+            >
               {label}
             </span>
           </div>
@@ -72,7 +75,13 @@ export function TechMarquee() {
   );
 
   return (
-    <div className="border-y border-[var(--color-border)] bg-[rgba(17,24,39,0.35)] py-8">
+    <section
+      className="border-y border-[var(--color-border)] bg-[rgba(17,24,39,0.35)] py-8"
+      aria-labelledby="tech-marquee-heading"
+    >
+      <h2 id="tech-marquee-heading" className="sr-only">
+        {t("section_heading")}
+      </h2>
       <div className="relative overflow-hidden">
         <div
           className={`${styles.track} gap-10`}
@@ -82,6 +91,6 @@ export function TechMarquee() {
           {row}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

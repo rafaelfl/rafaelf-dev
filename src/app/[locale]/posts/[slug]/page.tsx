@@ -8,12 +8,13 @@ import { PageTransition } from "@/components/PageTransition";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { CursorDot } from "@/components/CursorDot";
 import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
+import { ShareLinks } from "@/components/blog/ShareLinks";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getAllPostStaticParams, getPostBySlug } from "@/lib/posts";
+import { DEFAULT_SITE_URL } from "@/lib/site";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rafaelf.dev";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL;
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -34,10 +35,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ogImage = frontmatter.thumb
     ? new URL(frontmatter.thumb, siteUrl).toString()
     : undefined;
+  const pathPrefix = locale === routing.defaultLocale ? "" : `/${locale}`;
+  const canonical = new URL(`${pathPrefix}/posts/${slug}`, siteUrl).href;
   return {
     title: frontmatter.title,
     description: frontmatter.subtitle,
+    alternates: { canonical },
     openGraph: {
+      url: canonical,
       title: frontmatter.title,
       description: frontmatter.subtitle,
       type: "article",
@@ -64,6 +69,8 @@ export default async function BlogPostPage({ params }: Props) {
   }
   const t = await getTranslations("blog");
   const { frontmatter, content } = post;
+  const pathPrefix = locale === routing.defaultLocale ? "" : `/${locale}`;
+  const postUrl = new URL(`${pathPrefix}/posts/${slug}`, siteUrl).href;
   const formatted = new Intl.DateTimeFormat(locale === "pt" ? "pt-BR" : "en-US", {
     year: "numeric",
     month: "long",
@@ -110,6 +117,8 @@ export default async function BlogPostPage({ params }: Props) {
           <article className="blog-prose prose prose-invert prose-lg mt-12 max-w-none">
             <BlogMarkdown content={content} />
           </article>
+
+          <ShareLinks url={postUrl} title={frontmatter.title} />
         </main>
         <Footer />
       </PageTransition>
