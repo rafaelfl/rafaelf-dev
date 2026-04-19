@@ -1,144 +1,118 @@
-import fs from "fs";
-import Link from "next-intl/link";
+import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { createTranslator, createFormatter } from "next-intl";
-import Markdown from "markdown-to-jsx";
-import matter from "gray-matter";
+import { getTranslations } from "next-intl/server";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { PageTransition } from "@/components/PageTransition";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { CursorDot } from "@/components/CursorDot";
+import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
+import { Link } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
+import { getAllPostStaticParams, getPostBySlug } from "@/lib/posts";
 
-import PreBlock from "./PreBlock";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rafaelf.dev";
 
-import enMessages from "@/../locales/en-us.json";
-import ptMessages from "@/../locales/pt-br.json";
+type Props = {
+  params: Promise<{ locale: string; slug: string }>;
+};
 
-const getPostContent = (slug: string, locale: string) => {
-  try {
-    const file = `posts/${locale}/${slug}.md`;
+export function generateStaticParams() {
+  return getAllPostStaticParams();
+}
 
-    if (!fs.existsSync(file)) {
-      throw new Error("Error loading post");
-    }
-
-    const content = fs.readFileSync(file, "utf-8");
-    const matterResult = matter(content);
-
-    return { content: matterResult.content, header: matterResult.data };
-  } catch (err) {
-    notFound();
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;
+  if (!routing.locales.includes(locale as "en" | "pt")) {
+    return {};
   }
-};
-
-export const generateStaticParams = () => {
-  const languages = ["en-us", "pt-br"];
-  const slugPosts = [
-    "building-a-blog-with-nextjs",
-    "10-micro-saas-ideas-in-2023",
-  ];
-
-  const staticParams: Array<{ slug: string; locale: string }> = [];
-
-  languages.forEach((locale) => {
-    slugPosts.forEach((slug) => {
-      staticParams.push({ slug, locale });
-    });
-  });
-
-  return staticParams;
-};
-
-export async function generateMetadata({
-  params: { locale, slug },
-}: {
-  params: { locale: string; slug: string };
-}) {
-  const { header } = getPostContent(slug, locale);
-
+  const post = getPostBySlug(locale, slug);
+  if (!post) return {};
+  const { frontmatter } = post;
+  const ogImage = frontmatter.thumb
+    ? new URL(frontmatter.thumb, siteUrl).toString()
+    : undefined;
   return {
-    title: header.title,
-    description: header.subtitle,
-    metadataBase: new URL("https://rafaelf.dev"),
+    title: frontmatter.title,
+    description: frontmatter.subtitle,
     openGraph: {
-      images: [
-        {
-          url: header.thumb,
-          width: 800,
-          height: 600,
-        },
-      ],
+      title: frontmatter.title,
+      description: frontmatter.subtitle,
+      type: "article",
+      publishedTime: frontmatter.date,
+      ...(ogImage ? { images: [{ url: ogImage }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: frontmatter.title,
+      description: frontmatter.subtitle,
+      ...(ogImage ? { images: [ogImage] } : {}),
     },
   };
 }
 
-const PostPage = ({ params }: { params: { slug: string; locale: string } }) => {
-  const tEn = createTranslator({ locale: "en-us", messages: enMessages });
-  const tPt = createTranslator({ locale: "pt-br", messages: ptMessages });
-
-  const slug = params.slug;
-  const locale = params.locale;
-
-  const t = locale === "pt-br" ? tPt : tEn;
-
-  const { content, header } = getPostContent(slug, locale);
-
-  const strDate = header.date;
-
-  // format: yyyy-mm-dd
-  const year = parseInt(strDate.substring(0, 4));
-  const month = parseInt(strDate.substring(5, 7));
-  const day = parseInt(strDate.substring(8, 10));
-
-  const format = createFormatter({ locale });
-  const publishedDate = format.dateTime(new Date(year, month - 1, day), {
-    dateStyle: "long",
-  });
+export default async function BlogPostPage({ params }: Props) {
+  const { locale, slug } = await params;
+  if (!routing.locales.includes(locale as "en" | "pt")) {
+    notFound();
+  }
+  const post = getPostBySlug(locale, slug);
+  if (!post) {
+    notFound();
+  }
+  const t = await getTranslations("blog");
+  const { frontmatter, content } = post;
+  const formatted = new Intl.DateTimeFormat(locale === "pt" ? "pt-BR" : "en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(new Date(frontmatter.date));
 
   return (
     <>
-      {header.thumb && (
-        <div
-          className={`bg-slate-200 px-8 md:px-16 -my-[1.125rem] h-52 w-full bg-fixed bg-contain bg-no-repeat`}
-          style={{
-            backgroundImage: `url('${header.thumb}')`,
-            backgroundPosition: "center 90px",
-            backgroundSize: "auto 180px",
-          }}
-        />
-      )}
-
-      <div className="px-6 max-w-full md:max-w-4xl lg:max-w-7xl pt-6">
-        <div className="flex justify-start w-full mb-6 hover:underline">
+      <ScrollProgress />
+      <CursorDot />
+      <Navbar />
+      <PageTransition>
+        <main className="mx-auto max-w-3xl px-6 pb-24 pt-32 sm:px-8">
           <Link
             href="/posts"
-            className="font-bold text-blueblog hover:underline mt-6"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)] transition-opacity hover:opacity-90"
           >
-            &lt;&lt; {t("blog.backToPosts")}
+            <span aria-hidden>←</span>
+            {t("back_to_posts")}
           </Link>
-        </div>
 
-        <h1 className="text-3xl md:text-4xl font-bold">{header.title}</h1>
-        <h2 className="text-xl text-darkDarkGray my-1">{header.subtitle}</h2>
-        <h2 className="pb-10">{publishedDate}</h2>
+          <header className="mt-8">
+            {frontmatter.thumb ? (
+              <div className="relative mb-8 overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]">
+                <Image
+                  src={frontmatter.thumb}
+                  alt={frontmatter.title}
+                  width={1200}
+                  height={630}
+                  priority
+                  className="h-auto max-h-[min(50vh,420px)] w-full object-contain"
+                />
+              </div>
+            ) : null}
+            <p className="text-sm text-[var(--color-muted)]">{formatted}</p>
+            <h1 className="font-display mt-3 text-3xl font-extrabold tracking-tight text-[var(--color-text)] sm:text-4xl">
+              {frontmatter.title}
+            </h1>
+            <p className="mt-3 text-lg text-[var(--color-muted)]">
+              {frontmatter.subtitle}
+            </p>
+          </header>
 
-        <article className="prose lg:prose-lg">
-          <Markdown
-            options={{
-              overrides: {
-                pre: {
-                  component: PreBlock,
-                },
-                img: {
-                  props: {
-                    className: "max-w-full mx-auto mt-6 mb-2",
-                  },
-                },
-              },
-            }}
-          >
-            {content}
-          </Markdown>
-        </article>
-      </div>
+          <article className="blog-prose prose prose-invert prose-lg mt-12 max-w-none">
+            <BlogMarkdown content={content} />
+          </article>
+        </main>
+        <Footer />
+      </PageTransition>
     </>
   );
-};
-
-export default PostPage;
+}

@@ -1,0 +1,271 @@
+{
+  "metadata": {
+    "title": "Rafael Fernandes - Engenheiro de Software Fullstack Sênior",
+    "description": "Desenvolvedor dedicado a construir experiências digitais sólidas, escaláveis, acessíveis e responsivas para a web"
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "blog": "Blog",
+    "open_menu": "Abrir menu",
+    "close_menu": "Fechar menu",
+    "language": "Idioma"
+  },
+  "hero": {
+    "greeting": "Olá! Eu sou o Rafael! 👋",
+    "headline": "Construo experiências digitais sólidas, escaláveis, acessíveis e responsivas para a web",
+    "cta_projects": "Ver projetos",
+    "cta_contact": "Entrar em contato",
+    "open_badge": "Aberto a novas oportunidades",
+    "avatar_alt": "Retrato de Rafael Fernandes"
+  },
+  "about": {
+    "title": "Sobre",
+    "subtitle": "Sou um Engenheiro de Software Sênior",
+    "cards": {
+      "experience": {
+        "title": "Experiência",
+        "body": "Com mais de 20 anos de experiência em desenvolvimento de software, levo conhecimento prático profundo para cada projeto."
+      },
+      "collaboration": {
+        "title": "Colaboração e comunicação",
+        "body": "Eu não apenas escrevo código: destaco-me em trabalho em equipe e comunicação. Trabalhei lado a lado com designers, gestores de produto e outros engenheiros, entendendo o valor da comunicação clara e da colaboração."
+      },
+      "problem": {
+        "title": "Resolução de problemas",
+        "body": "Gosto de enfrentar desafios técnicos complexos. Tenho forte pensamento analítico e compreensão profunda de algoritmos, estruturas de dados e tecnologias variadas, o que me permite resolver problemas com eficiência e encontrar soluções inovadoras."
+      },
+      "learning": {
+        "title": "Aprendizado contínuo e adaptação",
+        "body": "A indústria de tecnologia evolui constantemente, e eu abraço isso mantendo-me atualizado com tendências, ferramentas e boas práticas. Minha mentalidade me leva a aprender novas tecnologias e adaptar minhas habilidades continuamente."
+      }
+    },
+    "more": "...e muito mais!"
+  },
+  "techMarquee": {
+    "items": [
+      { "slug": "react", "label": "React.js" },
+      { "slug": "reactoriginal", "label": "React Native" },
+      { "slug": "nextjs", "label": "Next.js" },
+      { "slug": "nodejs", "label": "Node.js" },
+      { "slug": "flutter", "label": "Flutter" },
+      { "slug": "typescript", "label": "TypeScript" },
+      { "slug": "javascript", "label": "JavaScript" },
+      { "slug": "sass", "label": "Sass" },
+      { "slug": "python", "label": "Python" },
+      { "slug": "django", "label": "Django" },
+      { "slug": "mongodb", "label": "MongoDB" },
+      { "slug": "postgresql", "label": "PostgreSQL" },
+      { "slug": "firebase", "label": "Firebase" },
+      { "slug": "googlecloud", "label": "Google Cloud Platform" },
+      { "slug": "amazonwebservices", "label": "AWS" }
+    ]
+  },
+  "experience": {
+    "title": "Experiência",
+    "resume": "Ver currículo completo (PDF) →",
+    "jobs": [
+      {
+        "role": "Engenheiro de Software Sênior",
+        "company": "Fullstack Labs",
+        "period": "2022 – Presente",
+        "body": "Como Engenheiro de Software Sênior na Fullstack Labs, contribuo para o desenvolvimento de produtos web e mobile de alta qualidade para clientes renomados, como Fueled e Encyclopaedia Britannica.",
+        "tags": [
+          "React.js",
+          "Next.js",
+          "Node.js",
+          "JavaScript",
+          "TypeScript",
+          "Jest",
+          "Sass",
+          "Bootstrap",
+          "Python",
+          "AWS Lambda",
+          "Serverless",
+          "PostgreSQL"
+        ]
+      },
+      {
+        "role": "CTO e Desenvolvedor Líder",
+        "company": "ImaginaKIDS",
+        "period": "2017 – 2022",
+        "body": "A ImaginaKIDS é uma startup de EdTech que oferece ferramentas para estudantes criarem seus próprios livros. Essas histórias podem ser distribuídas como ebooks ou impressas. Nossa startup melhorou habilidades de leitura e escrita de mais de 7 mil alunos e mais de 100 professores. Mais de 150 mil páginas foram criadas na plataforma.",
+        "tags": [
+          "React.js",
+          "React Native",
+          "Node.js",
+          "JavaScript",
+          "TypeScript",
+          "Jest",
+          "Express",
+          "Firebase",
+          "Swift",
+          "Redis",
+          "Socket.IO",
+          "Python",
+          "Django",
+          "GCP"
+        ]
+      },
+      {
+        "role": "Professor, pesquisador e líder técnico",
+        "company": "UFMA e IFMA",
+        "period": "2006 – 2022",
+        "body": "Na UFMA e no IFMA contribuí para a formação de centenas de alunos, lecionando em cursos de graduação e pós em Ciência da Computação, incluindo \"Algoritmos e Estruturas de Dados\", \"Programação Orientada a Objetos\", \"Desenvolvimento de Aplicativos Móveis\" e \"Sistemas Distribuídos\". Também atuei como gestor, supervisor, consultor e líder técnico em diversos projetos de P&D em software.",
+        "tags": [
+          "React.js",
+          "Node.js",
+          "Express",
+          "JavaScript",
+          "TypeScript",
+          "Firebase",
+          "MySQL",
+          "Socket.IO",
+          "RabbitMQ",
+          "gRPC"
+        ]
+      },
+      {
+        "role": "Desenvolvedor Web",
+        "company": "Universidade Federal do Maranhão (UFMA)",
+        "period": "2004 – 2006",
+        "body": "Atuei no Centro de Informática da UFMA como Analista de Sistemas e Desenvolvedor Web, dando suporte ao site da universidade e a outros sistemas web.",
+        "tags": ["PHP", "J2EE", "JSP", "JSF", "JPA"]
+      },
+      {
+        "role": "Desenvolvedor Web",
+        "company": "Fapema",
+        "period": "2003 – 2005",
+        "body": "Trabalhei como desenvolvedor web, implementando e mantendo o site da Fapema e um sistema web de gestão de informações.",
+        "tags": ["PHP", "MySQL"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Alguns projetos",
+    "view_demo": "Ver demo",
+    "source_code": "Código-fonte",
+    "live_preview": "Preview ao vivo",
+    "docs": "Documentação",
+    "close": "Fechar",
+    "items": [
+      {
+        "name": "ImaginaKIDS",
+        "description": "Aplicativo iOS para iPads que permite aos estudantes criar seus próprios livros digitais. Os livros podem ser impressos como livros físicos. Há suporte a vários livros, personagens e cenários personalizáveis, balões de fala e caixas de texto.",
+        "initials": "ImaginaKIDS",
+        "tech": ["React Native", "Firebase", "Swift (módulos nativos)"],
+        "demo": "https://rafaelf.dev/videos/ImaginaKIDS.mp4",
+        "source": "",
+        "live": "",
+        "docs": "",
+        "image": "/images/projects/imaginakids.webp"
+      },
+      {
+        "name": "ImaginaWeb",
+        "description": "Versão web da plataforma ImaginaKIDS, permitindo que estudantes usem computadores pessoais para criar histórias com os mesmos recursos do app iOS, além de maior escalabilidade do produto.",
+        "initials": "ImaginaWeb",
+        "tech": ["React.js", "Firebase", "Redux", "Bootstrap"],
+        "demo": "https://rafaelf.dev/videos/ImaginaWeb.mp4",
+        "source": "",
+        "live": "",
+        "docs": "",
+        "image": "/images/projects/imaginaweb.webp"
+      },
+      {
+        "name": "ImaginaShopping",
+        "description": "E-commerce responsivo para pais comprarem pacotes de livros, aplicarem códigos de desconto e pagarem com cartão ou Pix (pagamento brasileiro). Integrado a serviços gráficos parceiros para impressão e envio.",
+        "initials": "ImaginaShopping",
+        "tech": ["React.js", "Firebase", "Cloud Functions", "Redux", "Bootstrap"],
+        "demo": "https://rafaelf.dev/videos/ImaginaShopping.mp4",
+        "source": "",
+        "live": "",
+        "docs": "",
+        "image": "/images/projects/imaginashopping.webp"
+      },
+      {
+        "name": "SHELDON",
+        "description": "Sistema interno (Sistema de Hospedagem e Exportação de Livros Digitais ONline) usado pela equipe ImaginaKIDS para gerar livros em PDF e exportá-los para um servidor de arquivos.",
+        "initials": "SHELDON",
+        "tech": ["React.js", "Bootstrap", "Firebase", "Node.js", "Express", "Socket.IO", "BullMQ", "Redis"],
+        "demo": "https://rafaelf.dev/videos/Sheldon.mp4",
+        "source": "",
+        "live": "",
+        "docs": "",
+        "image": "/images/projects/sheldon.webp"
+      },
+      {
+        "name": "LEONARD",
+        "description": "Plataforma interna (Logística Eletrônica para Organização, Navegação, Aprovação, Remessa e Distribuição de livros) que integra dados de serviços CSV externos e arquivos de livros do SHELDON para criar metadados de impressão em JSON e enviar a serviços gráficos.",
+        "initials": "LEONARD",
+        "tech": ["Python", "Django", "SQLite", "jQuery", "Bootstrap"],
+        "demo": "",
+        "source": "",
+        "live": "",
+        "docs": "",
+        "image": "/images/projects/leonard.webp"
+      },
+      {
+        "name": "GiTrend",
+        "description": "App web para buscar repositórios e usuários em tendência no GitHub. Suporta busca por texto ou linguagem de programação, marcação de favoritos e uma lista de usuários em alta.",
+        "initials": "GiTrend",
+        "tech": ["React.js", "Styled Components", "Redux", "GitHub API"],
+        "demo": "",
+        "source": "https://github.com/rafaelfl/gitrend",
+        "live": "https://gitrend.rafaelf.dev/",
+        "docs": "",
+        "image": "/images/projects/gitrend.webp"
+      },
+      {
+        "name": "Modos",
+        "description": "Aplicativo de m-learning para construir e compartilhar trilhas de microaprendizagem. Professores compartilham mídias (imagens, vídeos, áudios, texto) compondo um percurso de aprendizado para os estudantes.",
+        "initials": "Modos",
+        "tech": ["Flutter", "Firebase"],
+        "demo": "https://rafaelf.dev/videos/Modos.mp4",
+        "source": "",
+        "live": "",
+        "docs": ""
+      },
+      {
+        "name": "Node.js Express Auth API",
+        "description": "API de autenticação open source com rotação de refresh token e detecção de reuso usando JWT. Inclui registro de usuário, login/logout, gestão de perfil, rotas de administrador, rotas protegidas e paginação. Hospedada na Render.",
+        "initials": "Node Auth API",
+        "tech": ["Node.js", "Express", "Passport", "Swagger", "MongoDB", "Redis", "Docker"],
+        "demo": "",
+        "source": "https://github.com/rafaelfl/express-typescript-auth",
+        "live": "https://api.rafaelf.dev/",
+        "docs": "https://api.rafaelf.dev/api-docs/"
+      },
+      {
+        "name": "Web3 Contract Vulnerability Detector API (POC)",
+        "description": "API POC que executa Slither e Mythril em contratos Solidity para detectar vulnerabilidades de segurança (SWC-104, SWC-106). Inclui uma API de sugestões com OpenAI ChatGPT.",
+        "initials": "Web3 Vulnerability Detector API",
+        "tech": ["Node.js", "Express", "Swagger", "OpenAI API", "Docker"],
+        "demo": "",
+        "source": "https://github.com/rafaelfl/web3-security-contract-detector",
+        "live": "",
+        "docs": ""
+      }
+    ]
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "X (Twitter)",
+    "email": "E-mail"
+  },
+  "footer": {
+    "credits": "Desenvolvido com 💜 por Rafael Fernandes Lopes.",
+    "copyright": "© Copyright 2023, Todos os direitos reservados."
+  },
+  "blog": {
+    "title": "Blog",
+    "list_title": "Postagens de Rafael",
+    "list_description": "Seção de blog do site pessoal de Rafael Fernandes",
+    "read_more": "Ler mais",
+    "back_to_posts": "Voltar às postagens"
+  }
+}

@@ -1,14 +1,5 @@
-import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
-import "./globals.scss";
-
-export const metadata: Metadata = {
-  title: "Rafael Fernandes - Fullstack Software Engineer",
-  description:
-    "Developer devoted to build solid, scalable, accessible and responsive digital experiences for the web",
-  metadataBase: new URL("https://rafaelf.dev"),
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return children;
 }

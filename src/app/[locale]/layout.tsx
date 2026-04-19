@@ -1,59 +1,88 @@
-import { ReactNode, Suspense } from "react";
-import { NextIntlClientProvider, createTranslator } from "next-intl";
+import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { DM_Sans, Inter, Syne } from "next/font/google";
 import { notFound } from "next/navigation";
-import { Fredoka } from "next/font/google";
+import { routing } from "@/i18n/routing";
+import "@/styles/globals.css";
 
-import Analytics from "./components/Analytics/Analytics";
-import "../globals.scss";
-
-interface LocaleLayoutProps {
-  children: ReactNode;
-  params: { locale: string };
-}
-
-const fredoka = Fredoka({
-  weight: ["400", "500", "700"],
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-fredoka",
+  variable: "--font-inter",
+  display: "swap",
 });
 
-async function getMessages(locale: string) {
-  try {
-    return (await import(`../../../locales/${locale.toLowerCase()}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  display: "swap",
+  weight: "800",
+});
+
+type Props = {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+};
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params: { locale } }: LocaleLayoutProps) {
-  const messages = await getMessages(locale);
+const defaultSiteUrl = "https://rafaelf.dev";
 
-  const t = createTranslator({ locale, messages });
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata" });
+  const site = new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? defaultSiteUrl,
+  );
 
   return {
-    title: t("Metadata.title"),
-    description: t("Metadata.description"),
-    metadataBase: new URL("https://rafaelf.dev"),
+    metadataBase: site,
+    title: t("title"),
+    description: t("description"),
+    icons: {
+      icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+      shortcut: "/icon.svg",
+    },
+    openGraph: {
+      type: "website",
+      locale: locale === "pt" ? "pt_BR" : "en_US",
+      url: locale === routing.defaultLocale ? site : new URL("/pt", site),
+      siteName: "Rafael Fernandes",
+      title: t("title"),
+      description: t("description"),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+    },
   };
 }
 
-export function generateStaticParams() {
-  return [{ locale: "en-us" }, { locale: "pt-br" }];
-}
+export default async function LocaleLayout({ children, params }: Props) {
+  const { locale } = await params;
+  if (!routing.locales.includes(locale as "en" | "pt")) {
+    notFound();
+  }
 
-export default async function LocaleLayout({ children, params: { locale } }: LocaleLayoutProps) {
-  const messages = await getMessages(locale);
+  setRequestLocale(locale);
+  const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className={`${fredoka.className} bg-darkblue`}>
-        <Suspense>
-          <Analytics />
-        </Suspense>
-
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+    <html
+      lang={locale}
+      className={`${inter.variable} ${dmSans.variable} ${syne.variable} h-full`}
+    >
+      <body className="font-body min-h-full antialiased">
+        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

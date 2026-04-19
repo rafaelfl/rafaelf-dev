@@ -1,97 +1,54 @@
-import fs from "fs";
-import { createTranslator } from "next-intl";
-import matter from "gray-matter";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { PageTransition } from "@/components/PageTransition";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { CursorDot } from "@/components/CursorDot";
+import { PostCard } from "@/components/blog/PostCard";
+import { getAllPosts } from "@/lib/posts";
 
-import PostPreview from "../components/PostPreview/PostPreview";
-
-import enMessages from "@/../locales/en-us.json";
-import ptMessages from "@/../locales/pt-br.json";
-
-const getPostMetadata = (locale: string) => {
-  const dir = `posts/${locale}`;
-
-  const files = fs.readdirSync(dir);
-  const markdownPosts = files.filter((file) => file.endsWith(".md"));
-
-  const posts = markdownPosts.map((filename) => {
-    const fileContents = fs.readFileSync(
-      `posts/${locale}/${filename}`,
-      "utf-8"
-    );
-    const matterResult = matter(fileContents);
-
-    return {
-      title: matterResult.data.title,
-      date: matterResult.data.date,
-      subtitle: matterResult.data.subtitle,
-      thumb: matterResult.data.thumb,
-      slug: filename.replace(".md", ""),
-      locale,
-    };
-  });
-
-  return posts;
+type Props = {
+  params: Promise<{ locale: string }>;
 };
 
-export const generateStaticParams = () => {
-  return [{ locale: "en-us" }, { locale: "pt-br" }];
-};
-
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
-  const tEn = createTranslator({ locale: "en-us", messages: enMessages });
-  const tPt = createTranslator({ locale: "pt-br", messages: ptMessages });
-
-  const t = locale === "pt-br" ? tPt : tEn;
-
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
   return {
-    title: t("blog.metadataTitle"),
-    description: t("blog.metadataDescription"),
-    metadataBase: new URL("https://rafaelf.dev"),
+    title: t("list_title"),
+    description: t("list_description"),
   };
 }
 
-const PostPage = ({ params }: { params: { locale: string } }) => {
-  const tEn = createTranslator({ locale: "en-us", messages: enMessages });
-  const tPt = createTranslator({ locale: "pt-br", messages: ptMessages });
-
-  const locale = params.locale;
-  const t = locale === "pt-br" ? tPt : tEn;
-
-  const postMetadata = getPostMetadata(locale).sort((a, b) => {
-    const strDate1 = a.date;
-    const strDate2 = b.date;
-
-    const year1 = parseInt(strDate1.substring(0, 4));
-    const month1 = parseInt(strDate1.substring(5, 7));
-    const day1 = parseInt(strDate1.substring(8, 10));
-
-    const year2 = parseInt(strDate2.substring(0, 4));
-    const month2 = parseInt(strDate2.substring(5, 7));
-    const day2 = parseInt(strDate2.substring(8, 10));
-
-    const date1 = new Date(year1, month1 - 1, day1);
-    const date2 = new Date(year2, month2 - 1, day2);
-
-    return date2.getTime() - date1.getTime();
-  });
-  const postPreviews = postMetadata.map((post) => (
-    <PostPreview key={post.slug} {...post} />
-  ));
+export default async function PostsPage({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations("blog");
+  const posts = getAllPosts(locale);
 
   return (
-    <section className="px-6 max-w-full md:max-w-4xl pt-6">
-      <h1 className="text-2xl text-darkblue font-bold">
-        {t("blog.blogPosts")}
-      </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12">
-        {postPreviews}
-      </div>
-    </section>
+    <>
+      <ScrollProgress />
+      <CursorDot />
+      <Navbar />
+      <PageTransition>
+        <main className="mx-auto max-w-3xl px-6 pb-24 pt-32 sm:px-8">
+          <h1 className="font-display text-4xl font-extrabold tracking-tight text-[var(--color-text)]">
+            {t("list_title")}
+          </h1>
+          <div className="mt-4">
+            {posts.map((post) => (
+              <PostCard
+                key={post.slug}
+                post={post}
+                readMore={t("read_more")}
+                locale={locale}
+              />
+            ))}
+          </div>
+        </main>
+        <Footer />
+      </PageTransition>
+    </>
   );
-};
-
-export default PostPage;
+}

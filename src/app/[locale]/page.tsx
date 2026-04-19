@@ -1,48 +1,32 @@
-"use client";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
+import { TechMarquee } from "@/components/TechMarquee";
+import { Experience } from "@/components/Experience";
+import { Projects } from "@/components/Projects";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
+import { CursorDot } from "@/components/CursorDot";
+import { PageTransition } from "@/components/PageTransition";
 
-import { tv } from "tailwind-variants";
-
-import useScrollSpySection from "@/app/[locale]/hooks/useScrollSpySection";
-import Navbar from "@/app/[locale]/components/Navbar/Navbar";
-import HomeSection from "./sections/HomeSection/HomeSection";
-import AboutSection from "./sections/AboutSection/AboutSection";
-import ExperienceSection from "./sections/ExperienceSection/ExperienceSection";
-import ProjectsSection from "./sections/ProjectsSection/ProjectsSection";
-import ContactSection from "./sections/ContactSection/ContactSection";
-
-const section = tv({
-  base: "flex flex-col justify-start items-center gap-4 px-8 md:px-20 w-full pt-6 pb-0",
-  variants: {
-    bg: {
-      darkblue: "bg-darkblue text-white",
-      yellow: "bg-yellow",
-      white: "bg-white",
-    },
-    minHeight: {
-      fullPage: "min-h-screen",
-    },
-  },
-  defaultVariants: {
-    bg: "white",
-  },
-});
-
-export default function Home({ params: { locale } }: { params: { locale: string } }) {
-  const activeSection = useScrollSpySection();
-
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start pt-20">
-      <Navbar activeSection={activeSection} locale={locale} />
-
-      <HomeSection className={section({ bg: "darkblue" })} />
-
-      <AboutSection className={section({ minHeight: "fullPage", bg: "white" })} />
-
-      <ExperienceSection className={section({ bg: "yellow" })} />
-
-      <ProjectsSection className={section({ bg: "white" })} />
-
-      <ContactSection className={section({ bg: "darkblue" })} />
-    </main>
+    <>
+      <ScrollProgress />
+      <CursorDot />
+      <Navbar />
+      <PageTransition>
+        <main className="relative z-[1]">
+          <Hero />
+          <About />
+          <TechMarquee />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </PageTransition>
+    </>
   );
 }
