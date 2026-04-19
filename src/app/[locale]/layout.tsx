@@ -42,6 +42,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const site = new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? defaultSiteUrl,
   );
+  const ogImage = new URL("/opengraph-image", site).href;
+  const twitterImage = new URL("/twitter-image", site).href;
 
   return {
     metadataBase: site,
@@ -60,7 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: t("description"),
       images: [
         {
-          url: "/opengraph-image",
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: t("title"),
@@ -71,7 +73,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: ["/twitter-image"],
+      images: [twitterImage],
     },
   };
 }
