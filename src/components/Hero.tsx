@@ -18,9 +18,9 @@ export function Hero() {
         className="hero-grid-bg pointer-events-none absolute inset-0 opacity-40"
         aria-hidden
       />
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-12 lg:flex-row lg:items-center lg:gap-16">
+      <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-16">
         <motion.div
-          className="flex max-w-2xl flex-1 flex-col gap-6"
+          className="flex max-w-2xl min-w-0 flex-col gap-6 lg:col-start-1 lg:row-start-1"
           initial={{ opacity: 0, x: -28 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.55, ease: "easeOut" }}
@@ -35,8 +35,8 @@ export function Hero() {
               className="relative flex h-2 w-2"
               aria-hidden
             >
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow-400 opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-yellow-500" />
             </span>
             <span className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)]">
               {t("open_badge")}
@@ -51,41 +51,10 @@ export function Hero() {
           >
             {t("greeting")}
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            <TypewriterHeadline
-              key={t("headline")}
-              text={t("headline")}
-            />
-          </motion.div>
-
-          <motion.div
-            className="flex flex-col gap-4 sm:flex-row sm:items-center"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-          >
-            <a
-              href="#projects"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--color-primary)] px-7 py-3 text-sm font-semibold text-[var(--color-bg)] shadow-[0_0_24px_rgba(245,200,66,0.25)] transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
-            >
-              {t("cta_projects")}
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center rounded-full border border-[var(--color-secondary)] px-7 py-3 text-sm font-semibold text-[var(--color-secondary)] transition hover:bg-[rgba(59,130,246,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-secondary)]"
-            >
-              {t("cta_contact")}
-            </a>
-          </motion.div>
         </motion.div>
 
         <motion.div
-          className="relative z-[1] mx-auto flex shrink-0 justify-center lg:mx-0"
+          className="relative z-[1] mx-auto flex shrink-0 justify-center self-center lg:col-start-2 lg:row-start-1 lg:row-end-4 lg:mx-0 lg:self-start lg:pt-24 xl:pt-28"
           initial={{ x: 36, opacity: 1 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
@@ -107,6 +76,38 @@ export function Hero() {
               />
             </div>
           </div>
+        </motion.div>
+
+        <motion.div
+          className="max-w-2xl min-w-0 lg:col-start-1 lg:row-start-2"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <TypewriterHeadline
+            key={t("headline")}
+            text={t("headline")}
+          />
+        </motion.div>
+
+        <motion.div
+          className="flex max-w-2xl min-w-0 flex-col gap-4 sm:flex-row sm:items-center lg:col-start-1 lg:row-start-3"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45 }}
+        >
+          <a
+            href="#projects"
+            className="inline-flex items-center justify-center rounded-full bg-[var(--color-primary)] px-7 py-3 text-sm font-semibold text-[var(--color-bg)] shadow-[0_0_24px_rgba(245,200,66,0.25)] transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
+          >
+            {t("cta_projects")}
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-full border border-[var(--color-secondary)] px-7 py-3 text-sm font-semibold text-[var(--color-secondary)] transition hover:bg-[rgba(59,130,246,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-secondary)]"
+          >
+            {t("cta_contact")}
+          </a>
         </motion.div>
       </div>
     </section>
