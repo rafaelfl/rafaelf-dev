@@ -268,6 +268,12 @@
     "link_contact": "Fale comigo",
     "link_blog": "Artigos"
   },
+  "not_found": {
+    "badge": "Fora do mapa",
+    "title": "Página não encontrada",
+    "humor": "A gente publicou um monte de página—essa ainda tá “em breve” em outra linha do tempo. O início, pelo menos, saiu do forno.",
+    "cta": "Voltar ao início"
+  },
   "blog": {
     "title": "Blog",
     "list_title": "Postagens de Rafael",

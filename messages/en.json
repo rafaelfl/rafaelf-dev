@@ -268,6 +268,12 @@
     "link_contact": "Contact me",
     "link_blog": "Articles"
   },
+  "not_found": {
+    "badge": "Off the map",
+    "title": "Page not found",
+    "humor": "We shipped plenty of pages—this one is still “coming soon” in another timeline. Home actually launched.",
+    "cta": "Back to home"
+  },
   "blog": {
     "title": "Blog",
     "list_title": "Rafael's Posts",
