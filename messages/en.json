@@ -253,7 +253,8 @@
   },
   "contact": {
     "title": "Get in touch",
-    "github": "GitHub",
+    "github_personal": "GitHub — @rafaelfl (personal & open source)",
+    "github_work": "GitHub — @rafaelfsl (work)",
     "linkedin": "LinkedIn",
     "twitter": "X (Twitter)",
     "email": "Email"

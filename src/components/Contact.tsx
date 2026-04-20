@@ -29,13 +29,22 @@ const MailIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const links = [
-  { key: "github" as const, href: "https://github.com/rafaelfl", Icon: GitHubIcon },
+  {
+    key: "github_personal" as const,
+    href: "https://github.com/rafaelfl",
+    Icon: GitHubIcon,
+  },
+  {
+    key: "github_work" as const,
+    href: "https://github.com/rafaelfsl",
+    Icon: GitHubIcon,
+  },
   {
     key: "linkedin" as const,
     href: "https://www.linkedin.com/in/rafael-fernandes-lopes",
     Icon: LinkedInIcon,
   },
-  { key: "twitter" as const, href: "https://x.com/rafaelf_l", Icon: XIcon },
+  { key: "twitter" as const, href: "https://x.com/rafaelfdev", Icon: XIcon },
   { key: "email" as const, href: "mailto:hello@rafaelf.dev", Icon: MailIcon },
 ];
 

@@ -9,6 +9,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { CursorDot } from "@/components/CursorDot";
 import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
 import { ShareLinks } from "@/components/blog/ShareLinks";
+import { JsonLd } from "@/components/JsonLd";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getAllPostStaticParams, getPostBySlug } from "@/lib/posts";
@@ -77,8 +78,34 @@ export default async function BlogPostPage({ params }: Props) {
     day: "numeric",
   }).format(new Date(frontmatter.date));
 
+  const siteRoot = new URL("/", siteUrl).href;
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: frontmatter.title,
+    description: frontmatter.subtitle,
+    datePublished: frontmatter.date,
+    author: {
+      "@type": "Person",
+      name: "Rafael Fernandes",
+      url: siteRoot,
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Rafael Fernandes",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    ...(frontmatter.thumb
+      ? { image: [new URL(frontmatter.thumb, siteUrl).href] }
+      : {}),
+  };
+
   return (
     <>
+      <JsonLd data={articleJsonLd} />
       <ScrollProgress />
       <CursorDot />
       <Navbar />
