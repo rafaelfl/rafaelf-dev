@@ -154,6 +154,17 @@
     "close": "Close",
     "items": [
       {
+        "name": "Simula Finanças",
+        "description": "Free financial calculators for Brazilian tech professionals: compare CLT vs PJ, estimate Fator R and monthly DAS under Simples Nacional, price freelance work, and project debts and compound investments. Browser-based simulations with no sign-up or personal data sent to the server.",
+        "initials": "Simula Finanças",
+        "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+        "demo": "",
+        "source": "https://github.com/rafaelfl/simulafinancas",
+        "live": "https://simulafinancas.com.br",
+        "docs": "",
+        "image": "/images/projects/simulafinancas-home.webp"
+      },
+      {
         "name": "ImaginaKIDS",
         "description": "An iOS application for iPads that lets students create their own digital books. Books can be printed as real physical books. Features include multiple books, customizable characters, scenarios, speech balloons, and text boxes.",
         "initials": "ImaginaKIDS",

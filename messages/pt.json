@@ -154,6 +154,17 @@
     "close": "Fechar",
     "items": [
       {
+        "name": "Simula Finanças",
+        "description": "Calculadoras financeiras gratuitas para profissionais de tecnologia no Brasil: compare CLT e PJ, estime Fator R e DAS no Simples Nacional, defina preço/hora como freelancer e projete dívidas e investimentos com juros compostos. Simulações no navegador, sem cadastro e sem envio de dados pessoais ao servidor.",
+        "initials": "Simula Finanças",
+        "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+        "demo": "",
+        "source": "https://github.com/rafaelfl/simulafinancas",
+        "live": "https://simulafinancas.com.br",
+        "docs": "",
+        "image": "/images/projects/simulafinancas-home.webp"
+      },
+      {
         "name": "ImaginaKIDS",
         "description": "Aplicativo iOS para iPads que permite aos estudantes criar seus próprios livros digitais. Os livros podem ser impressos como livros físicos. Há suporte a vários livros, personagens e cenários personalizáveis, balões de fala e caixas de texto.",
         "initials": "ImaginaKIDS",
