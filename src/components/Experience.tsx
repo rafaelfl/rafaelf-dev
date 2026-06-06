@@ -73,7 +73,7 @@ export function Experience() {
           viewport={{ once: true }}
         >
           <a
-            href="/cv.pdf"
+            href="/rafaelf-cv.pdf"
             className="inline-flex items-center justify-center rounded-full border-2 border-[var(--color-primary)] px-6 py-3 text-sm font-semibold text-[var(--color-primary)] transition hover:bg-[rgba(245,200,66,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
           >
             {t("resume")}
