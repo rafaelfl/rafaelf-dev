@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Rafael Fernandes - Engenheiro de Software Fullstack Sênior",
-    "description": "Desenvolvedor dedicado a construir experiências digitais sólidas, escaláveis, acessíveis e responsivas para a web"
+    "description": "Engenheiro de Software Fullstack Sênior com mais de 25 anos de experiência entregando ecossistemas web e mobile escaláveis. Especializado em JavaScript/TypeScript (React, Next.js, Node.js) e Python."
   },
   "nav": {
     "home": "Início",
@@ -28,7 +28,7 @@
     "cards": {
       "experience": {
         "title": "Trajetória profissional",
-        "body": "Com mais de 20 anos de experiência em desenvolvimento de software, levo conhecimento prático profundo para cada projeto."
+        "body": "Com mais de 25 anos de experiência entregando ecossistemas web e mobile escaláveis na indústria e na academia, levo conhecimento prático profundo para cada projeto — do lançamento de plataformas EdTech a milhares de usuários à direção de projetos avançados de P&D."
       },
       "collaboration": {
         "title": "Colaboração e comunicação",
@@ -73,7 +73,7 @@
         "role": "Engenheiro de Software Sênior",
         "company": "Fullstack Labs",
         "period": "2022 – Presente",
-        "body": "Como Engenheiro de Software Sênior na Fullstack Labs, contribuo para o desenvolvimento de produtos web e mobile de alta qualidade para clientes renomados, como Fueled e Encyclopaedia Britannica.",
+        "body": "Contribuí para o design e a entrega de aplicações em produção em mais de 20 produtos para Fueled e Encyclopaedia Britannica, incluindo uma plataforma de planejamento de metas e um suite de aprendizagem digital que atende mais de 140 milhões de estudantes no mundo. Liderei features de ponta a ponta com alta ownership — planejamento com estado de rascunho em tempo real, autenticação SSO entre produtos e relatórios de progresso de alunos. Melhorei performance e confiabilidade da plataforma, incluindo um refactoring que reduziu chamadas de API e cortou round-trips de banco em 50% em endpoints de alto tráfego, e liderando upgrades de Next.js e Node LTS em deploys multi-região.",
         "tags": [
           "React.js",
           "Next.js",
@@ -84,16 +84,16 @@
           "Sass",
           "Bootstrap",
           "Python",
+          "PostgreSQL",
           "AWS Lambda",
-          "Serverless",
-          "PostgreSQL"
+          "Serverless"
         ]
       },
       {
-        "role": "CTO e Desenvolvedor Líder",
-        "company": "ImaginaKIDS",
+        "role": "Fundador e Desenvolvedor Líder",
+        "company": "ImaginaKIDS — Startup EdTech",
         "period": "2017 – 2022",
-        "body": "A ImaginaKIDS é uma startup de EdTech que oferece ferramentas para estudantes criarem seus próprios livros. Essas histórias podem ser distribuídas como ebooks ou impressas. Nossa startup melhorou habilidades de leitura e escrita de mais de 7 mil alunos e mais de 100 professores. Mais de 150 mil páginas foram criadas na plataforma.",
+        "body": "Criei e escalei a plataforma ImaginaKIDS a mais de 15 mil alunos, 300+ professores e 380 mil+ páginas criadas; sustentei R$490 mil em receita recorrente anual com churn abaixo de 10%. Desenvolvi e escalei as plataformas web e mobile de ponta a ponta como lead developer, validando product-market fit e liderança hands-on de produto do zero à receita.",
         "tags": [
           "React.js",
           "React Native",
@@ -112,10 +112,10 @@
         ]
       },
       {
-        "role": "Professor, pesquisador e líder técnico",
-        "company": "UFMA e IFMA",
+        "role": "Professor (Adjunto), Pesquisador e Líder de Inovação",
+        "company": "IFMA (2006–2016) e UFMA (2016–2022)",
         "period": "2006 – 2022",
-        "body": "Na UFMA e no IFMA contribuí para a formação de centenas de alunos, lecionando em cursos de graduação e pós em Ciência da Computação, incluindo \"Algoritmos e Estruturas de Dados\", \"Programação Orientada a Objetos\", \"Desenvolvimento de Aplicativos Móveis\" e \"Sistemas Distribuídos\". Também atuei como gestor, supervisor, consultor e líder técnico em diversos projetos de P&D em software.",
+        "body": "Atuei como Diretor do Departamento de Empreendedorismo e Inovação (DEMI/UFMA), mentoreando 10 startups de tecnologia com 70% de taxa de sucesso na obtenção de financiamento governamental, coordenando 10+ projetos de P&D financiados e impulsionando programas institucionais de empreendedorismo — além de revisor de conferências IEEE e do periódico Wireless Personal Communications da Springer. Lecionei cursos de graduação e pós-graduação em Ciência da Computação em duas grandes instituições federais por quase duas décadas, orientando 7+ mestrandos e publicando 6 artigos em periódicos e 48+ papers em conferências nas áreas de sistemas distribuídos, IoT, computação móvel, EdTech e comunicações sem fio.",
         "tags": [
           "React.js",
           "Node.js",
@@ -131,17 +131,10 @@
       },
       {
         "role": "Desenvolvedor Web",
-        "company": "Universidade Federal do Maranhão (UFMA)",
-        "period": "2004 – 2006",
-        "body": "Atuei no Centro de Informática da UFMA como Analista de Sistemas e Desenvolvedor Web, dando suporte ao site da universidade e a outros sistemas web.",
-        "tags": ["PHP", "J2EE", "JSP", "JSF", "JPA"]
-      },
-      {
-        "role": "Desenvolvedor Web",
-        "company": "Fapema",
-        "period": "2003 – 2005",
-        "body": "Trabalhei como desenvolvedor web, implementando e mantendo o site da Fapema e um sistema web de gestão de informações.",
-        "tags": ["PHP", "MySQL"]
+        "company": "Centro de Informática da UFMA e Fapema",
+        "period": "2003 – 2006",
+        "body": "Construí e mantive sistemas web institucionais e plataformas de gestão de informações no Centro de Informática da UFMA e na Fapema.",
+        "tags": ["PHP", "J2EE", "JSP", "JSF", "JPA", "MySQL"]
       }
     ]
   },
