@@ -1,19 +1,14 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { motion } from "framer-motion";
+import styles from "@/styles/marquee.module.css";
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const locale = useLocale();
 
   return (
-    <motion.div
-      key={locale}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
-    >
+    <div key={locale} className={styles.fade}>
       {children}
-    </motion.div>
+    </div>
   );
 }

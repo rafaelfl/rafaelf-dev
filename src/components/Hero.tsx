@@ -1,10 +1,24 @@
-"use client";
-
+import type { CSSProperties } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { TypewriterHeadline } from "@/components/TypewriterHeadline";
 import heroPhoto from "@/assets/photo.webp";
+
+function enter(vars: {
+  x?: number;
+  y?: number;
+  delay?: number;
+  duration?: number;
+  opacity?: number;
+}): CSSProperties {
+  return {
+    "--enter-x": `${vars.x ?? 0}px`,
+    "--enter-y": `${vars.y ?? 0}px`,
+    "--enter-delay": `${vars.delay ?? 0}s`,
+    "--enter-duration": `${vars.duration ?? 0.4}s`,
+    "--enter-opacity": vars.opacity ?? 0,
+  } as CSSProperties;
+}
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -19,17 +33,13 @@ export function Hero() {
         aria-hidden
       />
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-16">
-        <motion.div
-          className="flex max-w-2xl min-w-0 flex-col gap-6 lg:col-start-1 lg:row-start-1"
-          initial={{ opacity: 0, x: -28 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
+        <div
+          className="hero-enter flex max-w-2xl min-w-0 flex-col gap-6 lg:col-start-1 lg:row-start-1"
+          style={enter({ x: -28, duration: 0.55 })}
         >
-          <motion.div
-            className="inline-flex items-center gap-2 self-start rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]/80 px-3 py-1.5 backdrop-blur"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05 }}
+          <div
+            className="hero-enter inline-flex items-center gap-2 self-start rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]/80 px-3 py-1.5 backdrop-blur"
+            style={enter({ y: 8, delay: 0.05 })}
           >
             <span
               className="relative flex h-2 w-2"
@@ -41,23 +51,19 @@ export function Hero() {
             <span className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)]">
               {t("open_badge")}
             </span>
-          </motion.div>
+          </div>
 
-          <motion.p
-            className="text-lg text-[var(--color-text)]"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.12 }}
+          <p
+            className="hero-enter text-lg text-[var(--color-text)]"
+            style={enter({ y: 12, delay: 0.12 })}
           >
             {t("greeting")}
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
-        <motion.div
-          className="relative z-[1] mx-auto flex shrink-0 justify-center self-center lg:col-start-2 lg:row-start-1 lg:row-end-4 lg:mx-0 lg:self-start lg:pt-24 xl:pt-28"
-          initial={{ x: 36, opacity: 1 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
+        <div
+          className="hero-enter relative z-[1] mx-auto flex shrink-0 justify-center self-center lg:col-start-2 lg:row-start-1 lg:row-end-4 lg:mx-0 lg:self-start lg:pt-24 xl:pt-28"
+          style={enter({ x: 36, delay: 0.1, duration: 0.55, opacity: 1 })}
         >
           <div className="relative h-[224px] w-[224px] shrink-0 sm:h-64 sm:w-64">
             <div
@@ -72,29 +78,26 @@ export function Hero() {
                 height={256}
                 sizes="(max-width: 640px) 224px, 256px"
                 className="block h-full w-full object-cover"
-                priority
+                preload
+                fetchPriority="high"
               />
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="max-w-2xl min-w-0 lg:col-start-1 lg:row-start-2"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+        <div
+          className="hero-enter max-w-2xl min-w-0 lg:col-start-1 lg:row-start-2"
+          style={enter({ y: 16, delay: 0.2 })}
         >
           <TypewriterHeadline
             key={t("headline")}
             text={t("headline")}
           />
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="flex max-w-2xl min-w-0 flex-col gap-4 sm:flex-row sm:items-center lg:col-start-1 lg:row-start-3"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45 }}
+        <div
+          className="hero-enter flex max-w-2xl min-w-0 flex-col gap-4 sm:flex-row sm:items-center lg:col-start-1 lg:row-start-3"
+          style={enter({ y: 16, delay: 0.45 })}
         >
           <a
             href="#projects"
@@ -108,7 +111,7 @@ export function Hero() {
           >
             {t("cta_contact")}
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

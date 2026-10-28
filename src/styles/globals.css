@@ -78,6 +78,24 @@ body::before {
   animation: grid-shift 18s linear infinite;
 }
 
+@keyframes hero-enter {
+  from {
+    opacity: var(--enter-opacity, 0);
+    transform: translate(var(--enter-x, 0), var(--enter-y, 0));
+  }
+}
+
+.hero-enter {
+  animation: hero-enter var(--enter-duration, 0.4s) ease-out
+    var(--enter-delay, 0s) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter {
+    animation: none;
+  }
+}
+
 /* Blog: markdown body */
 .blog-prose {
   --tw-prose-body: var(--color-muted);

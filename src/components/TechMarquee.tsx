@@ -52,6 +52,10 @@ export function TechMarquee() {
                 <img
                   src={src}
                   alt={label}
+                  width={isAws ? 112 : 40}
+                  height={40}
+                  loading="lazy"
+                  decoding="async"
                   className={
                     isAws
                       ? `max-h-10 w-auto max-w-[7rem] object-contain object-center opacity-90 ${iconTone}`.trim()

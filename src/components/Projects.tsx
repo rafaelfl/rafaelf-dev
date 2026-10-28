@@ -86,11 +86,8 @@ export function Projects() {
                       src={project.image}
                       alt={project.name}
                       fill
-                      unoptimized
-                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      sizes="(max-width: 1024px) 100vw, 560px"
                       className="object-cover object-top transition duration-300 group-hover:scale-[1.03]"
-                      priority={i < 2}
-                      loading={i < 2 ? "eager" : "lazy"}
                       aria-hidden
                     />
                     <div

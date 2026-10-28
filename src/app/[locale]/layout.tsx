@@ -25,6 +25,7 @@ const syne = Syne({
   variable: "--font-syne",
   display: "swap",
   weight: "800",
+  preload: false,
 });
 
 type Props = {
@@ -94,7 +95,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       className={`${inter.variable} ${dmSans.variable} ${syne.variable} h-full`}
     >
       <body className="font-body min-h-full antialiased">
-        <Script id="gtm-init" strategy="afterInteractive">
+        <Script id="gtm-init" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
