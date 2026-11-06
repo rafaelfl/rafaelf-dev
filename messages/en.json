@@ -92,6 +92,7 @@
       {
         "role": "Founder & Lead Developer",
         "company": "ImaginaKIDS — EdTech Startup",
+        "branch": true,
         "period": "2017 – 2022",
         "body": "Bootstrapped and scaled the ImaginaKIDS platform to 15k+ students, 300+ teachers, and 380k+ pages created; sustained R$490k in annual recurring revenue with sub-10% churn. Built and scaled web and mobile platforms end-to-end as lead developer, validating strong product-market fit and hands-on product leadership from zero to revenue.",
         "tags": [
