@@ -28,10 +28,6 @@ export function Projects() {
   const [isVideoLoading, setIsVideoLoading] = useState(false);
 
   useEffect(() => {
-    setIsVideoLoading(Boolean(activeDemo));
-  }, [activeDemo]);
-
-  useEffect(() => {
     if (!activeDemo) {
       return;
     }
@@ -129,7 +125,10 @@ export function Projects() {
                   {project.demo ? (
                     <button
                       type="button"
-                      onClick={() => setActiveDemo(project)}
+                      onClick={() => {
+                        setIsVideoLoading(true);
+                        setActiveDemo(project);
+                      }}
                       className={projectActionClassName}
                     >
                       {t("view_demo")}
