@@ -12,6 +12,7 @@ type Props = {
 
 export function ShareLinks({ url, title, headingKey = "share_heading" }: Props) {
   const t = useTranslations("blog");
+  const centered = headingKey === "share_site_heading";
   const [copied, setCopied] = useState(false);
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
@@ -33,13 +34,13 @@ export function ShareLinks({ url, title, headingKey = "share_heading" }: Props) 
 
   return (
     <section
-      className="mt-12 border-t border-[var(--color-border)] pt-8"
+      className={`mt-12 border-t border-[var(--color-border)] pt-8 ${centered ? "pb-8 text-center" : ""}`}
       aria-labelledby="share-heading"
     >
       <h2 id="share-heading" className="text-sm font-semibold text-[var(--color-text)]">
         {t(headingKey)}
       </h2>
-      <ul className="mt-4 flex flex-wrap gap-3">
+      <ul className={`mt-4 flex flex-wrap gap-3 ${centered ? "justify-center" : ""}`}>
         <li>
           <a href={xHref} target="_blank" rel="noopener noreferrer" className={linkClass}>
             {t("share_x")}
