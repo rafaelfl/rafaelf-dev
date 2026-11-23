@@ -14,7 +14,7 @@ import { CursorDot } from "@/components/CursorDot";
 import { PageTransition } from "@/components/PageTransition";
 import { ShareLinks } from "@/components/blog/ShareLinks";
 import { routing } from "@/i18n/routing";
-import { DEFAULT_SITE_URL } from "@/lib/site";
+import { DEFAULT_SITE_URL, languageAlternates } from "@/lib/site";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const pathPrefix = locale === routing.defaultLocale ? "" : `/${locale}`;
   const canonical = new URL(pathPrefix || "/", siteUrl).href;
   return {
-    alternates: { canonical },
+    alternates: { canonical, languages: languageAlternates("") },
     openGraph: { url: canonical },
   };
 }

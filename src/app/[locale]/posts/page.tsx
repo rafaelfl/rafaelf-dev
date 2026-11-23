@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PostCard } from "@/components/blog/PostCard";
 import { routing } from "@/i18n/routing";
 import { getAllPosts } from "@/lib/posts";
-import { DEFAULT_SITE_URL } from "@/lib/site";
+import { DEFAULT_SITE_URL, languageAlternates } from "@/lib/site";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("list_title"),
     description: t("list_description"),
-    alternates: { canonical },
+    alternates: { canonical, languages: languageAlternates("/posts") },
     openGraph: { url: canonical },
   };
 }

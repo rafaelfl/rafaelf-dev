@@ -1,28 +1,33 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { getAllSlugs } from "@/lib/posts";
-import { DEFAULT_SITE_URL } from "@/lib/site";
+import { languageAlternates, localizedUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseURL =
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? DEFAULT_SITE_URL;
   const lastModified = new Date();
+  const urls: MetadataRoute.Sitemap = [];
 
-  const urls: MetadataRoute.Sitemap = [
-    { url: `${baseURL}/`, lastModified },
-    { url: `${baseURL}/pt`, lastModified },
-    { url: `${baseURL}/posts`, lastModified },
-    { url: `${baseURL}/pt/posts`, lastModified },
-  ];
-
-  for (const locale of routing.locales) {
-    const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
-    for (const slug of getAllSlugs(locale)) {
+  // Each page is listed once per locale, with hreflang links to its other versions.
+  const add = (path: string, locales: readonly string[]) => {
+    const languages = languageAlternates(path, locales);
+    for (const locale of locales) {
       urls.push({
-        url: `${baseURL}${prefix}/posts/${slug}`,
+        url: localizedUrl(locale, path),
         lastModified,
+        alternates: { languages },
       });
     }
+  };
+
+  add("", routing.locales);
+  add("/posts", routing.locales);
+
+  const slugs = new Set(routing.locales.flatMap((l) => getAllSlugs(l)));
+  for (const slug of slugs) {
+    add(
+      `/posts/${slug}`,
+      routing.locales.filter((l) => getAllSlugs(l).includes(slug)),
+    );
   }
 
   return urls;

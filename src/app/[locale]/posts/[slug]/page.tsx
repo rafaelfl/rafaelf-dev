@@ -12,8 +12,8 @@ import { ShareLinks } from "@/components/blog/ShareLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { getAllPostStaticParams, getPostBySlug } from "@/lib/posts";
-import { DEFAULT_SITE_URL } from "@/lib/site";
+import { getAllPostStaticParams, getAllSlugs, getPostBySlug } from "@/lib/posts";
+import { DEFAULT_SITE_URL, languageAlternates } from "@/lib/site";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL;
 
@@ -41,7 +41,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: frontmatter.title,
     description: frontmatter.subtitle,
-    alternates: { canonical },
+    alternates: {
+      canonical,
+      languages: languageAlternates(
+        `/posts/${slug}`,
+        routing.locales.filter((l) => getAllSlugs(l).includes(slug)),
+      ),
+    },
     openGraph: {
       url: canonical,
       title: frontmatter.title,
